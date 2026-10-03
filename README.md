@@ -1,133 +1,117 @@
-# Apache Kafka курс 2026: бесплатный курс по Kafka с нуля до профи на русском
+# Apache Kafka kursi 2026: noldan professional darajagacha bepul kurs o'zbek tilida
 
 <p align="center">
   <img src="https://img.shields.io/badge/Apache%20Kafka-4.3-231F20?logo=apachekafka&logoColor=white" alt="Apache Kafka 4.3">
-  <img src="https://img.shields.io/badge/KRaft-без%20ZooKeeper-blue" alt="KRaft без ZooKeeper">
-  <img src="https://img.shields.io/badge/язык-русский-red" alt="Курс на русском">
-  <img src="https://img.shields.io/badge/цена-бесплатно-brightgreen" alt="Бесплатный курс">
-  <img src="https://img.shields.io/badge/уровень-junior%20→%20senior-orange" alt="От junior до senior">
+  <img src="https://img.shields.io/badge/KRaft-ZooKeepersiz-blue" alt="KRaft ZooKeepersiz">
+  <img src="https://img.shields.io/badge/til-o%27zbek-red" alt="Kurs o'zbek tilida">
+  <img src="https://img.shields.io/badge/narx-bepul-brightgreen" alt="Bepul kurs">
+  <img src="https://img.shields.io/badge/daraja-junior%20→%20senior-orange" alt="Juniordan seniorgacha">
 </p>
 
-> **Полный бесплатный курс по Apache Kafka на русском языке.** Теория, практика, Docker, Java, Go и Python, producer и consumer internals, репликация, KRaft, exactly-once, Kafka Streams, Kafka Connect, Schema Registry, мониторинг, безопасность, тюнинг производительности и production-архитектура. Всё в одном README, актуально для **Kafka 4.x (2026)**.
+> **Tarjima haqida.** Bu [justxor](https://github.com/justxor) muallifligidagi [ruscha kursning](https://github.com/justxor/KAFKAFREECOURSR) o'zbekcha tarjimasi. Asl matn: [README.ru.md](README.ru.md). Tarjima asl kursning `1195b09` (2026-09-15) holatiga asoslangan.
 
-**Kafka обучение без воды:** каждый модуль состоит из понятной теории, схем, команд, которые можно запустить у себя, типичных ошибок и вопросов для самопроверки. Курс подходит, чтобы выучить Kafka с нуля, подготовиться к собеседованию на backend, data engineer или DevOps-позицию и спроектировать надёжную систему на Kafka в продакшене.
+> **Apache Kafka bo'yicha o'zbek tilidagi to'liq bepul kurs.** Nazariya, amaliyot, Docker, Java, Go va Python, producer va consumerning ichki tuzilishi, replikatsiya, KRaft, exactly-once, Kafka Streams, Kafka Connect, Schema Registry, monitoring, xavfsizlik, unumdorlikni sozlash (tuning) va production arxitekturasi. Hammasi bitta READMEda, **Kafka 4.x (2026)** uchun dolzarb.
 
-⭐ Если курс полезен, поставь звезду репозиторию: так его найдут другие разработчики.
+**Kafkani ortiqcha gapsiz o'rganish:** har bir modul tushunarli nazariya, sxemalar, o'zingizda ishga tushirish mumkin bo'lgan buyruqlar, tipik xatolar va o'z-o'zini tekshirish savollaridan iborat. Kurs Kafkani noldan o'rganish, backend, data engineer yoki DevOps lavozimiga ish suhbatiga tayyorlanish va productionda Kafka asosida ishonchli tizim loyihalash uchun mos keladi.
 
-## Полезные ресурсы
-
-Лучшие ресурсы, чтобы не отставать от трендов разработки.
-
-🧠 [Machine Learning](https://t.me/+rn-i1Uz1lDtjNmFi) - ИИ-инструменты для генерации Python-кода, умные агенты и всё, что нужно знать из области AI.
-
-[🖥](https://t.me/+p-hGlzVQrqM4MDI6) [Python](https://t.me/+DNiTvr30y9BiNzli) - с помощью понятных картинок и коротких видео авторы объясняют сложные концепции и учат профессиональному подходу в разработке.
-
-👣 [Golang Go](https://t.me/+mACTfs56f6g5YjBi) - авторский канал, посвящённый Go-разработке, DevOps и созданию высоконагруженных сервисов.
-
-🖥 [Javatg](https://t.me/javatg) - лучший канал по Java-разработке.
-
-[📖](https://t.me/+8Dvl5VlUs5NhMTIy) [PythonBooks](https://t.me/+VnfYvBmK_ZM3YzIy) - мы создали канал с книгами по Linux и залили туда, наверное, самую большую подборку книг.
-
-💼 [Python Jobs](https://t.me/+eQsE0ZVnmINmNjQy) - вакансии и подработка для Python-разработчиков.
-
-🔝 [А здесь мы собрали](https://t.me/addlist/8vDUwYRGujRmZjFi) целый кладезь полезных Python-ресурсов для прокачки.
+⭐ Agar kurs foydali bo'lsa, repozitoriyga yulduzcha qo'ying: shunda uni boshqa dasturchilar ham topadi.
 
 ---
 
-## Для кого этот курс по Kafka
+## Bu Kafka kursi kimlar uchun
 
-| Кто ты | Что получишь |
+| Siz kimsiz | Nimaga ega bo'lasiz |
 |---|---|
-| **Новичок** в брокерах сообщений | Понимание, что такое Kafka, зачем она нужна и как запустить её за 5 минут |
-| **Backend-разработчик** (Java, Go, Python, Node.js, .NET) | Надёжные producer и consumer, обработка ошибок, идемпотентность, transactional outbox |
-| **Data engineer** | CDC с Debezium, Kafka Connect, Kafka Streams, схемы данных, event streaming пайплайны |
-| **DevOps / SRE** | KRaft-кластер, репликация, мониторинг, алерты, безопасность, тюнинг, Kubernetes |
-| **Архитектор / Tech Lead** | Проектирование топиков, event-driven architecture, multi-DC, антипаттерны |
-| **Готовишься к собеседованию** | 30 вопросов по Kafka с ответами уровня junior, middle и senior |
+| Xabar brokerlarida **yangi boshlovchi** | Kafka nima ekani, nima uchun kerakligi va uni 5 daqiqada qanday ishga tushirishni tushunish |
+| **Backend dasturchi** (Java, Go, Python, Node.js, .NET) | Ishonchli producer va consumer, xatolarni qayta ishlash, idempotentlik, transactional outbox |
+| **Data engineer** | Debezium bilan CDC, Kafka Connect, Kafka Streams, ma'lumotlar sxemalari, event streaming pipelinelari |
+| **DevOps / SRE** | KRaft klasteri, replikatsiya, monitoring, alertlar, xavfsizlik, tuning, Kubernetes |
+| **Arxitektor / Tech Lead** | Topiclarni loyihalash, event-driven architecture, multi-DC, antipatternlar |
+| **Ish suhbatiga tayyorlanyapsiz** | Kafka bo'yicha junior, middle va senior darajasidagi 30 ta savol va javoblari |
 
-## Что ты будешь уметь после курса
+## Kursdan keyin nimalarni qila olasiz
 
-- объяснить архитектуру Apache Kafka: broker, topic, partition, offset, replica, ISR, controller, KRaft;
-- поднять Kafka-кластер из трёх узлов в Docker и ломать его, наблюдая leader election;
-- писать producer и consumer на Java, Go и Python без потери и дублирования сообщений;
-- выбирать `acks`, `min.insync.replicas`, `linger.ms`, `batch.size`, compression под задачу;
-- понимать at-most-once, at-least-once и exactly-once и реализовывать каждую семантику;
-- использовать транзакции Kafka и паттерн transactional outbox;
-- строить retry-топики и DLQ (dead letter queue);
-- проектировать схему событий и их эволюцию через Schema Registry (Avro, Protobuf);
-- подключать базы данных через Kafka Connect и Debezium (CDC);
-- писать stream processing на Kafka Streams;
-- использовать Share Groups (очереди в Kafka, KIP-932);
-- мониторить consumer lag, under-replicated partitions и настраивать алерты;
-- включать TLS, SASL/SCRAM, ACL и квоты;
-- рассчитывать количество partitions, дисков и брокеров для продакшена.
-
----
-
-## Содержание
-
-- [Для кого этот курс по Kafka](#для-кого-этот-курс-по-kafka)
-- [Что ты будешь уметь после курса](#что-ты-будешь-уметь-после-курса)
-- [Как проходить курс](#как-проходить-курс)
-- [Модуль 0. Что такое Apache Kafka и зачем она нужна](#модуль-0-что-такое-apache-kafka-и-зачем-она-нужна)
-- [Модуль 1. Архитектура Kafka: broker, topic, partition, offset](#модуль-1-архитектура-kafka-broker-topic-partition-offset)
-- [Модуль 2. Установка Kafka в Docker и первые команды](#модуль-2-установка-kafka-в-docker-и-первые-команды)
-- [Модуль 3. Partitions, ключи и порядок сообщений](#модуль-3-partitions-ключи-и-порядок-сообщений)
-- [Модуль 4. Репликация Kafka: leader, ISR, acks, min.insync.replicas](#модуль-4-репликация-kafka-leader-isr-acks-mininsyncreplicas)
-- [Модуль 5. Kafka Producer: как устроен и как настроить](#модуль-5-kafka-producer-как-устроен-и-как-настроить)
-- [Модуль 6. Kafka Consumer и Consumer Groups](#модуль-6-kafka-consumer-и-consumer-groups)
-- [Модуль 7. Exactly-once, транзакции Kafka и transactional outbox](#модуль-7-exactly-once-транзакции-kafka-и-transactional-outbox)
-- [Модуль 8. Хранение данных: сегменты, retention, log compaction](#модуль-8-хранение-данных-сегменты-retention-log-compaction)
-- [Модуль 9. Share Groups: очереди в Kafka](#модуль-9-share-groups-очереди-в-kafka)
-- [Модуль 10. Schema Registry, Avro, Protobuf и проектирование событий](#модуль-10-schema-registry-avro-protobuf-и-проектирование-событий)
-- [Модуль 11. Kafka Connect и CDC с Debezium](#модуль-11-kafka-connect-и-cdc-с-debezium)
-- [Модуль 12. Kafka Streams: потоковая обработка данных](#модуль-12-kafka-streams-потоковая-обработка-данных)
-- [Модуль 13. Обработка ошибок: retry, DLQ и poison pill](#модуль-13-обработка-ошибок-retry-dlq-и-poison-pill)
-- [Модуль 14. Производительность и тюнинг Kafka](#модуль-14-производительность-и-тюнинг-kafka)
-- [Модуль 15. Мониторинг Kafka: метрики, consumer lag, алерты](#модуль-15-мониторинг-kafka-метрики-consumer-lag-алерты)
-- [Модуль 16. Безопасность Kafka: TLS, SASL, ACL, квоты](#модуль-16-безопасность-kafka-tls-sasl-acl-квоты)
-- [Модуль 17. Kafka в продакшене: архитектура и эксплуатация](#модуль-17-kafka-в-продакшене-архитектура-и-эксплуатация)
-- [Модуль 18. Итоговый проект: event-driven интернет-магазин](#модуль-18-итоговый-проект-event-driven-интернет-магазин)
-- [Шпаргалка Kafka CLI](#шпаргалка-kafka-cli)
-- [Шпаргалка важных настроек](#шпаргалка-важных-настроек)
-- [Вопросы на собеседовании по Kafka с ответами](#вопросы-на-собеседовании-по-kafka-с-ответами)
-- [FAQ: частые вопросы про Apache Kafka](#faq-частые-вопросы-про-apache-kafka)
-- [Глоссарий Kafka](#глоссарий-kafka)
-- [Официальные источники и что читать дальше](#официальные-источники-и-что-читать-дальше)
+- Apache Kafka arxitekturasini tushuntirib berish: broker, topic, partition, offset, replica, ISR, controller, KRaft;
+- Dockerda uch tugunli (node) Kafka klasterini ko'tarish va leader election jarayonini kuzatib, uni buzib ko'rish;
+- Java, Go va Pythonda xabarlarni yo'qotmaydigan va takrorlamaydigan producer va consumer yozish;
+- vazifaga qarab `acks`, `min.insync.replicas`, `linger.ms`, `batch.size` va compressionni tanlash;
+- at-most-once, at-least-once va exactly-once nima ekanini tushunish va har bir semantikani amalga oshirish;
+- Kafka tranzaksiyalari va transactional outbox patternidan foydalanish;
+- retry-topiclar va DLQ (dead letter queue) qurish;
+- hodisalar sxemasini va uning evolyutsiyasini Schema Registry (Avro, Protobuf) orqali loyihalash;
+- ma'lumotlar bazalarini Kafka Connect va Debezium (CDC) orqali ulash;
+- Kafka Streamsda stream processing yozish;
+- Share Groupsdan foydalanish (Kafkadagi navbatlar, KIP-932);
+- consumer lag va under-replicated partitionlarni monitoring qilish hamda alertlarni sozlash;
+- TLS, SASL/SCRAM, ACL va kvotalarni yoqish;
+- production uchun partitionlar, disklar va brokerlar sonini hisoblash.
 
 ---
 
-## Как проходить курс
+## Mundarija
 
-1. **Иди по порядку.** Модули 0-4 это фундамент. Без понимания partition, offset и ISR всё остальное будет магией.
-2. **Запускай каждую команду.** Kafka учится руками. Прочитать про rebalance и увидеть его в логах это разные уровни понимания.
-3. **Ломай кластер.** Останавливай брокеры, убивай consumer, переполняй диск. Именно так появляется production-опыт.
-4. **Отвечай на вопросы в конце модуля** вслух, как на собеседовании.
-5. **Сделай итоговый проект.** Он собирает все темы в одну систему.
-
-**Что нужно установить:** Docker и Docker Compose, Java 17+ (для примеров на Java и Kafka Streams), Git, любую IDE. Для примеров на Go нужен Go 1.22+, для Python нужен Python 3.10+.
-
-**Версия:** все примеры написаны для Apache Kafka 4.x, образ `apache/kafka:4.3.1`. Kafka 4.x работает только в режиме KRaft, ZooKeeper полностью удалён.
+- [Bu Kafka kursi kimlar uchun](#bu-kafka-kursi-kimlar-uchun)
+- [Kursdan keyin nimalarni qila olasiz](#kursdan-keyin-nimalarni-qila-olasiz)
+- [Kursni qanday o'tish kerak](#kursni-qanday-otish-kerak)
+- [Modul 0. Apache Kafka nima va u nima uchun kerak](#modul-0-apache-kafka-nima-va-u-nima-uchun-kerak)
+- [Modul 1. Kafka arxitekturasi: broker, topic, partition, offset](#modul-1-kafka-arxitekturasi-broker-topic-partition-offset)
+- [Modul 2. Kafkani Dockerda o'rnatish va birinchi buyruqlar](#modul-2-kafkani-dockerda-ornatish-va-birinchi-buyruqlar)
+- [Modul 3. Partitionlar, kalitlar va xabarlar tartibi](#modul-3-partitionlar-kalitlar-va-xabarlar-tartibi)
+- [Modul 4. Kafka replikatsiyasi: leader, ISR, acks, min.insync.replicas](#modul-4-kafka-replikatsiyasi-leader-isr-acks-mininsyncreplicas)
+- [Modul 5. Kafka Producer: qanday tuzilgan va qanday sozlanadi](#modul-5-kafka-producer-qanday-tuzilgan-va-qanday-sozlanadi)
+- [Modul 6. Kafka Consumer va Consumer Groups](#modul-6-kafka-consumer-va-consumer-groups)
+- [Modul 7. Exactly-once, Kafka tranzaksiyalari va transactional outbox](#modul-7-exactly-once-kafka-tranzaksiyalari-va-transactional-outbox)
+- [Modul 8. Ma'lumotlarni saqlash: segmentlar, retention, log compaction](#modul-8-malumotlarni-saqlash-segmentlar-retention-log-compaction)
+- [Modul 9. Share Groups: Kafkadagi navbatlar](#modul-9-share-groups-kafkadagi-navbatlar)
+- [Modul 10. Schema Registry, Avro, Protobuf va hodisalarni loyihalash](#modul-10-schema-registry-avro-protobuf-va-hodisalarni-loyihalash)
+- [Modul 11. Kafka Connect va Debezium bilan CDC](#modul-11-kafka-connect-va-debezium-bilan-cdc)
+- [Modul 12. Kafka Streams: ma'lumotlar oqimini qayta ishlash](#modul-12-kafka-streams-malumotlar-oqimini-qayta-ishlash)
+- [Modul 13. Xatolarni qayta ishlash: retry, DLQ va poison pill](#modul-13-xatolarni-qayta-ishlash-retry-dlq-va-poison-pill)
+- [Modul 14. Kafka unumdorligi va tuning](#modul-14-kafka-unumdorligi-va-tuning)
+- [Modul 15. Kafka monitoringi: metrikalar, consumer lag, alertlar](#modul-15-kafka-monitoringi-metrikalar-consumer-lag-alertlar)
+- [Modul 16. Kafka xavfsizligi: TLS, SASL, ACL, kvotalar](#modul-16-kafka-xavfsizligi-tls-sasl-acl-kvotalar)
+- [Modul 17. Kafka productionda: arxitektura va ekspluatatsiya](#modul-17-kafka-productionda-arxitektura-va-ekspluatatsiya)
+- [Modul 18. Yakuniy loyiha: event-driven internet-do'kon](#modul-18-yakuniy-loyiha-event-driven-internet-dokon)
+- [Kafka CLI shpargalkasi](#kafka-cli-shpargalkasi)
+- [Muhim sozlamalar shpargalkasi](#muhim-sozlamalar-shpargalkasi)
+- [Kafka bo'yicha ish suhbati savollari va javoblari](#kafka-boyicha-ish-suhbati-savollari-va-javoblari)
+- [FAQ: Apache Kafka haqida ko'p beriladigan savollar](#faq-apache-kafka-haqida-kop-beriladigan-savollar)
+- [Kafka lug'ati](#kafka-lugati)
+- [Rasmiy manbalar va keyin nima o'qish kerak](#rasmiy-manbalar-va-keyin-nima-oqish-kerak)
 
 ---
 
-# Модуль 0. Что такое Apache Kafka и зачем она нужна
+## Kursni qanday o'tish kerak
 
-## 0.1 Определение Apache Kafka простыми словами
+1. **Tartib bilan boring.** 0-4 modullar poydevor. Partition, offset va ISR nima ekanini tushunmasangiz, qolgan hammasi sehrgarlikdek tuyuladi.
+2. **Har bir buyruqni ishga tushiring.** Kafka qo'l bilan o'rganiladi. Rebalance haqida o'qish va uni loglarda ko'rish tushunishning turli darajalari.
+3. **Klasterni buzing.** Brokerlarni to'xtating, consumerni o'ldiring, diskni to'ldirib yuboring. Production tajribasi aynan shunday paydo bo'ladi.
+4. **Modul oxiridagi savollarga** xuddi ish suhbatidagidek ovoz chiqarib **javob bering.**
+5. **Yakuniy loyihani bajaring.** U barcha mavzularni bitta tizimga jamlaydi.
 
-**Apache Kafka** это распределённая платформа потоковой передачи событий (event streaming platform). Она делает три вещи:
+**Nimalarni o'rnatish kerak:** Docker va Docker Compose, Java 17+ (Java va Kafka Streams misollari uchun), Git, istalgan IDE. Go misollari uchun Go 1.22+, Python misollari uchun Python 3.10+ kerak.
 
-1. **Публикует и подписывается** на потоки событий (как брокер сообщений).
-2. **Надёжно хранит** события на диске столько, сколько нужно: часы, дни, годы.
-3. **Обрабатывает** потоки событий в реальном времени или перечитывает историю.
+**Versiya:** barcha misollar Apache Kafka 4.x uchun yozilgan, image `apache/kafka:4.3.1`. Kafka 4.x faqat KRaft rejimida ishlaydi, ZooKeeper butunlay olib tashlangan.
 
-Главная идея Kafka: **распределённый append-only log** (журнал, в который можно только дописывать). Всё остальное, от репликации до exactly-once, построено вокруг этой простой структуры.
+---
 
-Kafka была создана в LinkedIn в 2011 году для обработки активности пользователей, передана в Apache Software Foundation и сегодня используется большинством компаний из Fortune 100: банками, маркетплейсами, телекомом, такси, стримингами, игровыми студиями.
+# Modul 0. Apache Kafka nima va u nima uchun kerak
 
-## 0.2 Проблема, которую решает Kafka
+## 0.1 Apache Kafkaning sodda tildagi ta'rifi
 
-Представим интернет-магазин. Пользователь оформил заказ, и об этом должны узнать сразу несколько систем:
+**Apache Kafka** hodisalarni oqim tarzida uzatuvchi taqsimlangan platforma (event streaming platform). U uchta ishni bajaradi:
+
+1. Hodisalar oqimlarini **e'lon qiladi va ularga obuna bo'ladi** (xabar brokeri kabi).
+2. Hodisalarni diskda kerakli muddatgacha **ishonchli saqlaydi**: soatlab, kunlab, yillab.
+3. Hodisalar oqimlarini real vaqtda **qayta ishlaydi** yoki tarixni qaytadan o'qiydi.
+
+Kafkaning asosiy g'oyasi: **taqsimlangan append-only log** (faqat oxiriga qo'shib yozish mumkin bo'lgan jurnal). Qolgan hamma narsa, replikatsiyadan tortib exactly-oncegacha, shu oddiy tuzilma atrofida qurilgan.
+
+Kafka 2011-yilda LinkedInda foydalanuvchilar faolligini qayta ishlash uchun yaratilgan, keyin Apache Software Foundationga topshirilgan va bugun Fortune 100 ro'yxatidagi kompaniyalarning ko'pchiligi undan foydalanadi: banklar, marketpleyslar, telekom, taksi, striming servislari, o'yin studiyalari.
+
+## 0.2 Kafka hal qiladigan muammo
+
+Internet-do'konni tasavvur qilaylik. Foydalanuvchi buyurtma berdi va bu haqda birdaniga bir nechta tizim xabar topishi kerak:
 
 ```text
                     +--> Payment Service
@@ -141,7 +125,7 @@ Order Service ------+--> Warehouse
                     +--> Fraud Detection
 ```
 
-Без Kafka Order Service вызывает каждый сервис напрямую по HTTP:
+Kafkasiz Order Service har bir servisni HTTP orqali to'g'ridan-to'g'ri chaqiradi:
 
 ```text
 Order Service
@@ -153,19 +137,19 @@ Order Service
    +--> POST /fraud
 ```
 
-На маленьком проекте это работает. Потом начинаются проблемы:
+Kichik loyihada bu ishlaydi. Keyin muammolar boshlanadi:
 
-| Вопрос | Проблема синхронной интеграции |
+| Savol | Sinxron integratsiya muammosi |
 |---|---|
-| Notification Service упал | Заказ падает целиком или теряется уведомление |
-| Analytics тормозит 3 секунды | Пользователь ждёт 3 секунды на оформлении заказа |
-| Появилось ещё 10 потребителей | Приходится менять и деплоить Order Service |
-| Нужно перечитать заказы за вчера | Данные уже нигде не лежат |
-| Пик нагрузки в Чёрную пятницу | Нижестоящие сервисы ложатся каскадом |
+| Notification Service ishdan chiqdi | Buyurtma butunlay yiqiladi yoki bildirishnoma yo'qoladi |
+| Analytics 3 soniya sekinlashyapti | Foydalanuvchi buyurtmani rasmiylashtirishda 3 soniya kutadi |
+| Yana 10 ta iste'molchi paydo bo'ldi | Order Serviceni o'zgartirish va deploy qilishga to'g'ri keladi |
+| Kechagi buyurtmalarni qayta o'qish kerak | Ma'lumotlar endi hech qayerda saqlanmagan |
+| Qora jumadagi yuklama cho'qqisi | Quyi oqimdagi servislar kaskad bo'lib yiqiladi |
 
-Это называется **сильная связанность (tight coupling)**: каждый сервис знает о каждом.
+Bu **kuchli bog'liqlik (tight coupling)** deyiladi: har bir servis boshqa har bir servis haqida biladi.
 
-## 0.3 Как выглядит та же система с Kafka
+## 0.3 Xuddi shu tizim Kafka bilan qanday ko'rinadi
 
 ```text
 Order Service
@@ -181,19 +165,19 @@ Order Service
 Payment  Warehouse Analytics Fraud
 ```
 
-Order Service публикует **одно событие** `OrderCreated` и больше ни о ком не знает. Каждый потребитель читает события в своём темпе.
+Order Service **bitta hodisa** `OrderCreated` ni e'lon qiladi va boshqa hech kim haqida bilmaydi. Har bir iste'molchi hodisalarni o'z sur'atida o'qiydi.
 
-Что мы получили:
+Nimaga erishdik:
 
-- **Слабая связанность.** Новый сервис подключается без изменения Order Service.
-- **Буферизация.** Если Analytics упал, события ждут его в Kafka и будут обработаны после восстановления.
-- **Сглаживание пиков.** Kafka принимает миллионы событий в секунду, потребители обрабатывают их с комфортной скоростью.
-- **Replay.** Можно перечитать события за любой период, пока они хранятся (retention).
-- **Масштабирование.** Нагрузка на чтение распределяется между экземплярами сервиса.
+- **Kuchsiz bog'liqlik.** Yangi servis Order Serviceni o'zgartirmasdan ulanadi.
+- **Buferlash.** Agar Analytics ishdan chiqsa, hodisalar uni Kafkada kutib turadi va u tiklanganidan keyin qayta ishlanadi.
+- **Cho'qqilarni tekislash.** Kafka soniyasiga millionlab hodisani qabul qiladi, iste'molchilar esa ularni o'zlariga qulay tezlikda qayta ishlaydi.
+- **Replay.** Hodisalar saqlanayotgan muddat (retention) ichida ularni istalgan davr uchun qayta o'qish mumkin.
+- **Masshtablash.** O'qish yuklamasi servis nusxalari (instance) o'rtasida taqsimlanadi.
 
-## 0.4 Что такое событие (event)
+## 0.4 Hodisa (event) nima
 
-**Событие** это неизменяемый факт о том, что уже произошло.
+**Hodisa** allaqachon sodir bo'lgan narsa haqidagi o'zgarmas fakt.
 
 ```json
 {
@@ -208,191 +192,191 @@ Order Service публикует **одно событие** `OrderCreated` и �
 }
 ```
 
-Свойства события:
+Hodisaning xususiyatlari:
 
-- написано в **прошедшем времени**: `OrderCreated`, `PaymentFailed`, `UserRegistered`;
-- **неизменяемо**: событие нельзя отредактировать, можно только опубликовать новое (`OrderCancelled`);
-- содержит **время**, когда факт произошёл;
-- имеет **уникальный идентификатор**, чтобы потребитель мог отбросить дубликат.
+- **o'tgan zamonda** yoziladi: `OrderCreated`, `PaymentFailed`, `UserRegistered`;
+- **o'zgarmas**: hodisani tahrirlab bo'lmaydi, faqat yangisini e'lon qilish mumkin (`OrderCancelled`);
+- fakt sodir bo'lgan **vaqtni** o'z ichiga oladi;
+- iste'molchi dublikatni tashlab yubora olishi uchun **noyob identifikatorga** ega.
 
-### Событие и команда: не одно и то же
+### Hodisa va buyruq: bir xil narsa emas
 
-| | Event (событие) | Command (команда) |
+| | Event (hodisa) | Command (buyruq) |
 |---|---|---|
-| Смысл | Это уже случилось | Сделай это |
-| Пример | `OrderCreated` | `CreateOrder` |
-| Время | Прошедшее | Повелительное наклонение |
-| Получателей | Любое число, отправитель их не знает | Обычно один конкретный |
-| Можно отказать | Нет, факт уже произошёл | Да, команду можно отклонить |
+| Ma'nosi | Bu allaqachon sodir bo'ldi | Buni bajar |
+| Misol | `OrderCreated` | `CreateOrder` |
+| Zamon | O'tgan zamon | Buyruq mayli |
+| Qabul qiluvchilar | Istalgan sonda, yuboruvchi ularni bilmaydi | Odatda bitta aniq qabul qiluvchi |
+| Rad etish mumkinmi | Yo'q, fakt allaqachon sodir bo'lgan | Ha, buyruqni rad etish mumkin |
 
-Kafka отлично подходит для событий. Команды через Kafka тоже передают, но это отдельный стиль интеграции со своими компромиссами.
+Kafka hodisalar uchun juda mos keladi. Buyruqlar ham Kafka orqali uzatiladi, lekin bu o'ziga xos murosalari (trade-off) bor alohida integratsiya uslubi.
 
-## 0.5 Kafka это не просто очередь сообщений
+## 0.5 Kafka shunchaki xabarlar navbati emas
 
-Частая ошибка новичков:
+Yangi boshlovchilarning keng tarqalgan xatosi:
 
 ```text
-Kafka = RabbitMQ для больших нагрузок
+Kafka = katta yuklamalar uchun RabbitMQ
 ```
 
-В классической очереди сообщение **удаляется** после того, как его забрал потребитель. В Kafka сообщение **остаётся в журнале**, а потребитель лишь запоминает позицию (offset), до которой дочитал.
+Klassik navbatda xabar iste'molchi uni olganidan keyin **o'chiriladi**. Kafkada esa xabar **jurnalda qoladi**, iste'molchi faqat qayergacha o'qiganini, ya'ni pozitsiyani (offset) eslab qoladi.
 
 ```text
 partition-0
 
 offset:  0    1    2    3    4    5
-        [A]  [B]  [C]  [D]  [E]  [F]  <-- append (запись в конец)
+        [A]  [B]  [C]  [D]  [E]  [F]  <-- append (oxiriga yozish)
                         ^
                         |
-          consumer group "analytics" дочитала до offset 3
+          consumer group "analytics" offset 3 gacha o'qigan
 
-          consumer group "billing" может читать с offset 0 независимо
+          consumer group "billing" offset 0 dan mustaqil o'qishi mumkin
 ```
 
-Отсюда главные свойства Kafka:
+Kafkaning asosiy xususiyatlari shundan kelib chiqadi:
 
-- **много независимых читателей** одних и тех же данных;
-- **повторное чтение** истории;
-- **строгий порядок** внутри partition;
-- **огромная пропускная способность** за счёт последовательной записи на диск.
+- bir xil ma'lumotlarning **ko'plab mustaqil o'quvchilari**;
+- tarixni **qayta o'qish**;
+- partition ichida **qat'iy tartib**;
+- diskka ketma-ket yozish hisobiga **ulkan o'tkazuvchanlik**.
 
 ## 0.6 Kafka vs RabbitMQ vs HTTP vs Redis Streams
 
-| Критерий | Apache Kafka | RabbitMQ | HTTP/gRPC | Redis Streams |
+| Mezon | Apache Kafka | RabbitMQ | HTTP/gRPC | Redis Streams |
 |---|---|---|---|---|
-| Модель | Распределённый лог | Брокер очередей (AMQP) | Запрос-ответ | Лог в памяти |
-| Хранение после чтения | Да, по retention | Нет (классические очереди) | Нет | Да, ограничено памятью |
-| Replay истории | Да | Ограниченно (Streams) | Нет | Да |
-| Пропускная способность | Миллионы msg/s на кластер | Десятки-сотни тысяч msg/s | Зависит от сервиса | Высокая, но ограничена RAM |
-| Порядок | Внутри partition | Внутри очереди | Нет | Внутри stream |
-| Сложная маршрутизация | Нет, через топики и потребителей | Да (exchanges, routing keys) | Нет | Нет |
-| Задержка | Миллисекунды | Субмиллисекунды-миллисекунды | Зависит от сети | Субмиллисекунды |
-| Когда выбирать | Event streaming, аналитика, CDC, интеграция микросервисов | Task queues, RPC, сложный роутинг | Синхронный ответ пользователю | Лёгкие стримы внутри одного сервиса |
+| Model | Taqsimlangan log | Navbatlar brokeri (AMQP) | So'rov-javob | Xotiradagi log |
+| O'qilgandan keyin saqlash | Ha, retention bo'yicha | Yo'q (klassik navbatlar) | Yo'q | Ha, xotira bilan cheklangan |
+| Tarixni replay qilish | Ha | Cheklangan (Streams) | Yo'q | Ha |
+| O'tkazuvchanlik | Klasterga millionlab msg/s | O'n minglab-yuz minglab msg/s | Servisga bog'liq | Yuqori, lekin RAM bilan cheklangan |
+| Tartib | Partition ichida | Navbat ichida | Yo'q | Stream ichida |
+| Murakkab marshrutlash | Yo'q, topiclar va iste'molchilar orqali | Ha (exchanges, routing keys) | Yo'q | Yo'q |
+| Kechikish | Millisoniyalar | Submillisoniyalar-millisoniyalar | Tarmoqqa bog'liq | Submillisoniyalar |
+| Qachon tanlash kerak | Event streaming, analitika, CDC, mikroservislar integratsiyasi | Task queues, RPC, murakkab routing | Foydalanuvchiga sinxron javob | Bitta servis ichidagi yengil streamlar |
 
-> Начиная с Kafka 4.2 появились **Share Groups** (очереди в Kafka, KIP-932): потребители могут обрабатывать сообщения одного partition параллельно с поштучным подтверждением. Это закрывает часть сценариев RabbitMQ. Подробно в [модуле 9](#модуль-9-share-groups-очереди-в-kafka).
+> Kafka 4.2 dan boshlab **Share Groups** (Kafkadagi navbatlar, KIP-932) paydo bo'ldi: iste'molchilar bitta partition xabarlarini parallel ravishda, har birini alohida tasdiqlab qayta ishlashi mumkin. Bu RabbitMQ ssenariylarining bir qismini qoplaydi. Batafsil [9-modulda](#modul-9-share-groups-kafkadagi-navbatlar).
 
-### Kafka и HTTP вместе
+### Kafka va HTTP birgalikda
 
-Kafka не заменяет HTTP. Типичная схема:
+Kafka HTTPning o'rnini bosmaydi. Tipik sxema:
 
 ```text
-Client --HTTP--> Order API --(сохраняет заказ, отвечает 201)--> Client
+Client --HTTP--> Order API --(buyurtmani saqlaydi, 201 qaytaradi)--> Client
                      |
-                     +--event OrderCreated--> Kafka --> остальные сервисы
+                     +--event OrderCreated--> Kafka --> boshqa servislar
 ```
 
-HTTP нужен, когда пользователь ждёт синхронный ответ. Kafka нужна для асинхронного распространения событий.
+HTTP foydalanuvchi sinxron javob kutayotganda kerak. Kafka hodisalarni asinxron tarqatish uchun kerak.
 
-## 0.7 Где используют Kafka: реальные сценарии
+## 0.7 Kafka qayerda ishlatiladi: real ssenariylar
 
-| Сценарий | Как применяется Kafka |
+| Ssenariy | Kafka qanday qo'llanadi |
 |---|---|
-| **Микросервисы** | Event-driven взаимодействие, хореография саг, распространение изменений |
-| **Аналитика в реальном времени** | Клики, просмотры, события приложений летят в Kafka, оттуда в ClickHouse, Druid, Pinot, Snowflake |
-| **Сбор логов и метрик** | Приложения пишут логи в Kafka, дальше Elasticsearch/OpenSearch, Loki, S3 |
-| **CDC (Change Data Capture)** | Debezium читает WAL PostgreSQL или binlog MySQL и публикует изменения таблиц |
-| **Финансы и финтех** | Транзакции, антифрод, расчёт балансов, аудит |
-| **IoT и телеметрия** | Датчики, геопозиции курьеров и такси, телеметрия автомобилей |
-| **Machine Learning** | Online feature store, стриминговые признаки, доставка событий в модели |
-| **Интеграция данных** | Центральная шина между legacy-системами, хранилищем данных и новыми сервисами |
+| **Mikroservislar** | Event-driven o'zaro aloqa, sagalar xoreografiyasi, o'zgarishlarni tarqatish |
+| **Real vaqtdagi analitika** | Kliklar, ko'rishlar, ilovalar hodisalari Kafkaga, u yerdan ClickHouse, Druid, Pinot, Snowflakega boradi |
+| **Loglar va metrikalarni yig'ish** | Ilovalar loglarni Kafkaga yozadi, undan keyin Elasticsearch/OpenSearch, Loki, S3 |
+| **CDC (Change Data Capture)** | Debezium PostgreSQL WALini yoki MySQL binlogini o'qiydi va jadvallardagi o'zgarishlarni e'lon qiladi |
+| **Moliya va fintex** | Tranzaksiyalar, antifrod, balanslarni hisoblash, audit |
+| **IoT va telemetriya** | Datchiklar, kuryerlar va taksilarning geopozitsiyasi, avtomobillar telemetriyasi |
+| **Machine Learning** | Online feature store, oqimli belgilar (streaming features), hodisalarni modellarga yetkazish |
+| **Ma'lumotlar integratsiyasi** | Legacy tizimlar, ma'lumotlar ombori va yangi servislar o'rtasidagi markaziy shina |
 
-## 0.8 Когда Kafka не нужна
+## 0.8 Kafka qachon kerak emas
 
-Kafka это сложная распределённая система. Не бери её, если:
+Kafka murakkab taqsimlangan tizim. Quyidagi hollarda uni tanlamang:
 
-- у тебя один монолит и пара фоновых задач: хватит очереди в базе или Redis;
-- нужен синхронный ответ пользователю: используй HTTP или gRPC;
-- нагрузка сотни сообщений в минуту и не нужен replay;
-- нужна сложная маршрутизация по заголовкам, приоритеты и TTL на сообщение: посмотри на RabbitMQ;
-- в команде нет человека, готового поддерживать кластер, и нет бюджета на managed Kafka.
+- sizda bitta monolit va bir-ikkita fon vazifasi bor: ma'lumotlar bazasidagi navbat yoki Redis yetarli;
+- foydalanuvchiga sinxron javob kerak: HTTP yoki gRPCdan foydalaning;
+- yuklama daqiqasiga yuzlab xabar va replay kerak emas;
+- headerlar bo'yicha murakkab marshrutlash, prioritetlar va xabarga TTL kerak: RabbitMQga qarang;
+- jamoada klasterni qo'llab-quvvatlashga tayyor odam yo'q va managed Kafka uchun byudjet ham yo'q.
 
-**Kafka действительно полезна, когда** много производителей и потребителей, нужна история событий, высокая нагрузка, несколько команд работают с одними данными, есть CDC или потоковая аналитика.
+**Kafka haqiqatan foydali bo'ladi, qachonki** xabar yuboruvchilar va iste'molchilar ko'p bo'lsa, hodisalar tarixi kerak bo'lsa, yuklama yuqori bo'lsa, bir nechta jamoa bir xil ma'lumotlar bilan ishlasa, CDC yoki oqimli analitika bo'lsa.
 
-## 0.9 Что Kafka НЕ делает за тебя
+## 0.9 Kafka siz uchun nimalarni QILMAYDI
 
-Kafka даёт инфраструктурные гарантии. Корректность системы всё равно проектируешь ты:
+Kafka infratuzilma darajasidagi kafolatlarni beradi. Tizimning to'g'ri ishlashini baribir o'zingiz loyihalaysiz:
 
-- идемпотентность обработки на стороне приложения;
-- схему и версионирование событий;
-- стратегию retry и обработку «ядовитых» сообщений (poison pill);
-- мониторинг и алерты;
-- безопасность и разграничение доступа;
-- выбор ключей партиционирования под бизнес-инварианты.
+- ilova tomonida qayta ishlashning idempotentligi;
+- hodisalar sxemasi va versiyalanishi;
+- retry strategiyasi va «zaharli» xabarlarni (poison pill) qayta ishlash;
+- monitoring va alertlar;
+- xavfsizlik va kirish huquqlarini chegaralash;
+- biznes invariantlariga mos partitsiyalash kalitlarini tanlash.
 
-### Вопросы для самопроверки
+### O'z-o'zini tekshirish uchun savollar
 
-1. Чем событие отличается от команды?
-2. Почему в Kafka сообщение не удаляется после чтения и что это даёт?
-3. В каких случаях ты выберешь RabbitMQ вместо Kafka?
-4. Почему синхронная цепочка HTTP-вызовов плохо переносит пиковую нагрузку?
+1. Hodisa buyruqdan nimasi bilan farq qiladi?
+2. Nima uchun Kafkada xabar o'qilgandan keyin o'chirilmaydi va bu nima beradi?
+3. Qaysi hollarda Kafka o'rniga RabbitMQni tanlaysiz?
+4. Nima uchun HTTP chaqiruvlarining sinxron zanjiri yuklama cho'qqisiga yomon bardosh beradi?
 
 ---
 
-# Модуль 1. Архитектура Kafka: broker, topic, partition, offset
+# Modul 1. Kafka arxitekturasi: broker, topic, partition, offset
 
-## 1.1 Главная иерархия
+## 1.1 Asosiy iyerarxiya
 
 ```text
-Cluster (кластер)
-  └── Broker (сервер Kafka)
-        └── Topic (логический поток событий)
-              └── Partition (упорядоченный журнал)
-                    └── Segment (файл на диске)
-                          └── Record (запись)
+Cluster (klaster)
+  └── Broker (Kafka serveri)
+        └── Topic (hodisalarning mantiqiy oqimi)
+              └── Partition (tartiblangan jurnal)
+                    └── Segment (diskdagi fayl)
+                          └── Record (yozuv)
 ```
 
-Запомни эту картинку. На ней держится весь курс.
+Bu rasmni eslab qoling. Butun kurs shunga tayanadi.
 
-## 1.2 Основные компоненты Kafka
+## 1.2 Kafkaning asosiy komponentlari
 
-| Компонент | Что это | Аналогия |
+| Komponent | Bu nima | O'xshatish |
 |---|---|---|
-| **Record** (message) | Одна запись: key, value, headers, timestamp | Строка в журнале |
-| **Topic** | Именованный поток записей одного типа | Таблица в БД |
-| **Partition** | Упорядоченный неизменяемый журнал внутри топика | Шард таблицы |
-| **Offset** | Порядковый номер записи внутри partition | Номер строки |
-| **Broker** | Процесс Kafka, хранящий partitions и обслуживающий клиентов | Сервер БД |
-| **Cluster** | Группа брокеров | Кластер БД |
-| **Controller** | Узел, управляющий метаданными кластера (KRaft) | Мастер метаданных |
-| **Producer** | Клиент, который пишет записи | Писатель |
-| **Consumer** | Клиент, который читает записи | Читатель |
-| **Consumer Group** | Группа consumer, делящих между собой partitions | Пул воркеров |
-| **Replica** | Копия partition на другом брокере | Реплика БД |
+| **Record** (message) | Bitta yozuv: key, value, headers, timestamp | Jurnaldagi satr |
+| **Topic** | Bir turdagi yozuvlarning nomlangan oqimi | Ma'lumotlar bazasidagi jadval |
+| **Partition** | Topic ichidagi tartiblangan, o'zgarmas jurnal | Jadval shardi |
+| **Offset** | Partition ichidagi yozuvning tartib raqami | Satr raqami |
+| **Broker** | Partitionlarni saqlaydigan va klientlarga xizmat ko'rsatadigan Kafka jarayoni | Ma'lumotlar bazasi serveri |
+| **Cluster** | Brokerlar guruhi | Ma'lumotlar bazasi klasteri |
+| **Controller** | Klaster metadatasini boshqaradigan tugun (KRaft) | Metadata masteri |
+| **Producer** | Yozuvlarni yozadigan klient | Yozuvchi |
+| **Consumer** | Yozuvlarni o'qiydigan klient | O'quvchi |
+| **Consumer Group** | Partitionlarni o'zaro bo'lib oladigan consumerlar guruhi | Workerlar puli |
+| **Replica** | Partitionning boshqa brokerdagi nusxasi | Ma'lumotlar bazasi replikasi |
 
-## 1.3 Структура записи (Record)
+## 1.3 Yozuv (Record) tuzilishi
 
 ```text
-+-------------------------------------------+
-| Record                                    |
-|-------------------------------------------|
-| key        : "order-123"   (может быть null)
-| value      : {...json/avro/protobuf...}   |
-| headers    : trace-id=abc, source=web     |
-| timestamp  : 1789460503000                |
-| offset     : 42  (назначает broker)       |
-| partition  : 3   (выбирает producer)      |
-+-------------------------------------------+
++---------------------------------------------------+
+| Record                                            |
+|---------------------------------------------------|
+| key        : "order-123"   (null bo'lishi mumkin) |
+| value      : {...json/avro/protobuf...}           |
+| headers    : trace-id=abc, source=web             |
+| timestamp  : 1789460503000                        |
+| offset     : 42  (broker tayinlaydi)              |
+| partition  : 3   (producer tanlaydi)              |
++---------------------------------------------------+
 ```
 
-- **key** определяет partition и, значит, порядок событий. Все записи с одним ключом попадают в один partition.
-- **value** это полезная нагрузка. Kafka работает с байтами и не знает формат данных.
-- **headers** это метаданные: trace id, тип события, версия схемы.
-- **timestamp** бывает `CreateTime` (время создания у producer) или `LogAppendTime` (время записи на брокер), настраивается `message.timestamp.type`.
+- **key** partitionni, demak hodisalar tartibini ham belgilaydi. Bir xil kalitli barcha yozuvlar bitta partitionga tushadi.
+- **value** foydali yuk (payload). Kafka baytlar bilan ishlaydi va ma'lumotlar formatini bilmaydi.
+- **headers** metadata: trace id, hodisa turi, sxema versiyasi.
+- **timestamp** `CreateTime` (producerdagi yaratilish vaqti) yoki `LogAppendTime` (brokerga yozilgan vaqt) bo'lishi mumkin, `message.timestamp.type` orqali sozlanadi.
 
-Записи передаются и хранятся **батчами (RecordBatch)**. Сжатие применяется к целому батчу, поэтому оно так эффективно.
+Yozuvlar **batchlar (RecordBatch)** ko'rinishida uzatiladi va saqlanadi. Siqish butun batchga qo'llanadi, shuning uchun u juda samarali.
 
 ## 1.4 Topic
 
-**Topic** это логическое имя потока событий: `orders`, `payments`, `user-clicks`.
+**Topic** hodisalar oqimining mantiqiy nomi: `orders`, `payments`, `user-clicks`.
 
-- Топик состоит из одного или нескольких partitions.
-- У топика есть собственные настройки: `retention.ms`, `cleanup.policy`, `min.insync.replicas`, `max.message.bytes`.
-- Топик не удаляет сообщение после чтения.
+- Topic bitta yoki bir nechta partitiondan iborat.
+- Topicning o'z sozlamalari bor: `retention.ms`, `cleanup.policy`, `min.insync.replicas`, `max.message.bytes`.
+- Topic xabarni o'qilgandan keyin o'chirmaydi.
 
-**Именование топиков** в продакшене лучше стандартизировать:
+Productionda **topiclarni nomlashni** standartlashtirgan ma'qul:
 
 ```text
-<домен>.<сущность>.<тип>.<версия>
+<domen>.<obyekt>.<tur>.<versiya>
 
 shop.orders.events.v1
 payments.transactions.events.v1
@@ -400,9 +384,9 @@ crm.customers.cdc.v1
 shop.orders.events.v1.dlq
 ```
 
-## 1.5 Partition: единица масштабирования и порядка
+## 1.5 Partition: masshtablash va tartib birligi
 
-**Partition** это отдельный упорядоченный журнал. Каждый partition хранится целиком на одном брокере (плюс реплики на других).
+**Partition** alohida tartiblangan jurnal. Har bir partition butunligicha bitta brokerda saqlanadi (bunga qo'shimcha boshqa brokerlarda replikalari bo'ladi).
 
 ```text
 topic: orders (3 partitions)
@@ -412,33 +396,33 @@ partition-1:  [0:order-102] [1:order-105]
 partition-2:  [0:order-103] [1:order-106] [2:order-107] [3:order-109]
 ```
 
-Partition определяет:
+Partition quyidagilarni belgilaydi:
 
-- **параллелизм записи**: разные partitions пишутся на разные брокеры;
-- **параллелизм чтения**: один partition читается максимум одним consumer в группе;
-- **область порядка**: Kafka гарантирует порядок **только внутри partition**;
-- **распределение данных** между брокерами;
-- **потолок пропускной способности** топика.
+- **yozish parallelligi**: turli partitionlar turli brokerlarga yoziladi;
+- **o'qish parallelligi**: bitta partitionni guruhdagi ko'pi bilan bitta consumer o'qiydi;
+- **tartib doirasi**: Kafka tartibni **faqat partition ichida** kafolatlaydi;
+- brokerlar o'rtasida **ma'lumotlar taqsimoti**;
+- topicning **o'tkazuvchanlik chegarasi**.
 
-Поэтому partition важнее topic. Topic это просто имя, а физика системы живёт в partitions.
+Shuning uchun partition topicdan muhimroq. Topic shunchaki nom, tizimning fizikasi esa partitionlarda yashaydi.
 
 ## 1.6 Offset
 
-**Offset** это монотонно растущий номер записи **внутри одного partition**.
+**Offset** yozuvning **bitta partition ichidagi** monoton o'sib boruvchi raqami.
 
 ```text
 partition-0: offset 0, 1, 2, 3, 4 ...
 partition-1: offset 0, 1, 2, 3 ...
 ```
 
-Важные следствия:
+Muhim oqibatlar:
 
-- offset **не уникален в топике**: offset 5 есть в каждом partition;
-- offset **не является ID сообщения**: для дедупликации нужен собственный `event_id`;
-- в compacted-топиках и при транзакциях offsets могут идти с пропусками;
-- consumer хранит **committed offset** это номер **следующей** записи, которую нужно прочитать.
+- offset **topic ichida noyob emas**: offset 5 har bir partitionda bor;
+- offset **xabar IDsi emas**: deduplikatsiya uchun o'zingizning `event_id` kerak;
+- compacted-topiclarda va tranzaksiyalarda offsetlar oraliq tashlab ketishi mumkin;
+- consumer **committed offset** saqlaydi: bu o'qilishi kerak bo'lgan **keyingi** yozuvning raqami.
 
-Ключевые позиции в partition:
+Partitiondagi asosiy pozitsiyalar:
 
 ```text
  offset:  0   1   2   3   4   5   6   7
@@ -447,38 +431,38 @@ partition-1: offset 0, 1, 2, 3 ...
           |           |           |       |
    log start    committed    high         log end
    offset       offset       watermark    offset (LEO)
-                (группы)     (HW)
+                (guruhniki)  (HW)
 ```
 
-- **Log Start Offset**: самая старая доступная запись (старые удалены retention).
-- **Committed Offset**: докуда дочитала конкретная consumer group.
-- **High Watermark (HW)**: последняя запись, подтверждённая всеми репликами из ISR. Consumer видит записи только до HW.
-- **Log End Offset (LEO)**: позиция, куда будет записана следующая запись у лидера.
+- **Log Start Offset**: mavjud bo'lgan eng eski yozuv (eskilari retention bo'yicha o'chirilgan).
+- **Committed Offset**: muayyan consumer group qayergacha o'qigani.
+- **High Watermark (HW)**: ISRdagi barcha replikalar tasdiqlagan oxirgi yozuv. Consumer yozuvlarni faqat HWgacha ko'radi.
+- **Log End Offset (LEO)**: leaderda keyingi yozuv yoziladigan pozitsiya.
 - **Consumer lag** = HW − committed offset.
 
 ## 1.7 Broker
 
-**Broker** это процесс Kafka (JVM), который:
+**Broker** quyidagilarni bajaradigan Kafka jarayoni (JVM):
 
-- принимает записи от producer и пишет их на диск;
-- отдаёт записи consumer;
-- реплицирует partitions с других брокеров;
-- обслуживает группы потребителей (group coordinator);
-- хранит offsets групп во внутреннем топике `__consumer_offsets`.
+- producerdan yozuvlarni qabul qiladi va ularni diskka yozadi;
+- yozuvlarni consumerga beradi;
+- boshqa brokerlardagi partitionlarni replikatsiya qiladi;
+- iste'molchilar guruhlariga xizmat ko'rsatadi (group coordinator);
+- guruhlarning offsetlarini `__consumer_offsets` ichki topicida saqlaydi.
 
-Клиенту достаточно знать адрес одного брокера (`bootstrap.servers`). Он получит метаданные всего кластера и дальше будет ходить напрямую к лидерам нужных partitions.
+Klient bitta brokerning manzilini (`bootstrap.servers`) bilishi yetarli. U butun klasterning metadatasini oladi va bundan keyin kerakli partitionlarning leaderlariga to'g'ridan-to'g'ri murojaat qiladi.
 
 ```text
 1. client --> bootstrap broker: Metadata request
-2. broker --> client: список брокеров, topics, лидеры partitions
+2. broker --> client: brokerlar ro'yxati, topiclar, partition leaderlari
 3. client --> leader partition-0 (broker-2): Produce / Fetch
 ```
 
-> Самая частая ошибка при запуске Kafka в Docker: неправильный `advertised.listeners`. Брокер отдаёт клиенту адрес, по которому клиент потом не может подключиться. Разберём в модуле 2.
+> Kafkani Dockerda ishga tushirishdagi eng ko'p uchraydigan xato: noto'g'ri `advertised.listeners`. Broker klientga shunday manzil beradiki, klient keyin u orqali ulana olmaydi. Buni 2-modulda ko'rib chiqamiz.
 
-## 1.8 KRaft: Kafka без ZooKeeper
+## 1.8 KRaft: ZooKeepersiz Kafka
 
-До версии 3.x Kafka хранила метаданные (список топиков, лидеров, конфигурации, ACL) в **Apache ZooKeeper**. В **Kafka 4.0 ZooKeeper полностью удалён**, единственный режим работы теперь **KRaft** (Kafka Raft).
+3.x versiyasigacha Kafka metadatani (topiclar ro'yxati, leaderlar, konfiguratsiyalar, ACL) **Apache ZooKeeper** da saqlar edi. **Kafka 4.0 da ZooKeeper butunlay olib tashlangan**, endi yagona ish rejimi **KRaft** (Kafka Raft).
 
 ```text
             KRaft controller quorum
@@ -486,81 +470,81 @@ partition-1: offset 0, 1, 2, 3 ...
      | controller-1| controller-2| controller-3|
      |   (leader)  |  (follower) |  (follower) |
      +-------------+-------------+-------------+
-              | журнал метаданных __cluster_metadata
+              | metadata jurnali __cluster_metadata
               v
      +---------+   +---------+   +---------+
      |broker-1 |   |broker-2 |   |broker-3 |
      +---------+   +---------+   +---------+
 ```
 
-Как работает KRaft:
+KRaft qanday ishlaydi:
 
-- метаданные хранятся как **журнал событий** во внутреннем топике `__cluster_metadata`;
-- контроллеры выбирают лидера по протоколу **Raft**;
-- активный контроллер принимает решения: создание топиков, выбор лидеров partitions, реакция на падение брокера;
-- брокеры получают изменения метаданных инкрементально и держат их в памяти.
+- metadata `__cluster_metadata` ichki topicida **hodisalar jurnali** sifatida saqlanadi;
+- controllerlar leaderni **Raft** protokoli bo'yicha saylaydi;
+- faol controller qarorlar qabul qiladi: topiclarni yaratish, partition leaderlarini tanlash, broker ishdan chiqqanda chora ko'rish;
+- brokerlar metadata o'zgarishlarini inkremental tarzda oladi va ularni xotirada saqlaydi.
 
-Что даёт KRaft:
+KRaft nima beradi:
 
-- одна система вместо двух (не нужно отдельно эксплуатировать ZooKeeper);
-- быстрый failover контроллера (секунды вместо минут);
-- поддержка **миллионов partitions** в кластере;
-- быстрый старт и shutdown брокеров.
+- ikkita tizim o'rniga bitta (ZooKeeperni alohida ekspluatatsiya qilish shart emas);
+- controllerning tez failoveri (daqiqalar o'rniga soniyalar);
+- klasterda **millionlab partitionlarni** qo'llab-quvvatlash;
+- brokerlarning tez ishga tushishi va shutdowni.
 
-**Роли узлов** (`process.roles`):
+**Tugunlar rollari** (`process.roles`):
 
-| Значение | Когда использовать |
+| Qiymat | Qachon ishlatiladi |
 |---|---|
-| `broker,controller` (combined) | Разработка, тесты, маленькие кластеры |
-| `controller` | Продакшен: 3 или 5 выделенных контроллеров |
-| `broker` | Продакшен: брокеры с данными |
+| `broker,controller` (combined) | Dasturlash, testlar, kichik klasterlar |
+| `controller` | Production: 3 yoki 5 ta ajratilgan controller |
+| `broker` | Production: ma'lumot saqlaydigan brokerlar |
 
-Кворум из 3 контроллеров переживает падение 1 узла, из 5 контроллеров переживает падение 2 узлов. Чётное количество контроллеров не добавляет отказоустойчивости.
+3 ta controllerdan iborat kvorum 1 ta tugunning ishdan chiqishiga, 5 ta controllerdan iborat kvorum esa 2 ta tugunning ishdan chiqishiga bardosh beradi. Controllerlar sonining juft bo'lishi bardoshlilikni oshirmaydi.
 
-> **Миграция с ZooKeeper:** обновиться с кластера на ZooKeeper сразу до 4.x нельзя. Сначала нужно перейти на 3.9 и мигрировать метаданные в KRaft, и только потом обновляться до 4.x.
+> **ZooKeeperdan migratsiya:** ZooKeeperdagi klasterdan birdaniga 4.x ga yangilanib bo'lmaydi. Avval 3.9 ga o'tib, metadatani KRaftga migratsiya qilish kerak, shundan keyingina 4.x ga yangilanadi.
 
-## 1.9 Первая ментальная модель
+## 1.9 Birinchi mental model
 
 ```text
-Producer пишет record с key
-   -> key хешируется -> выбирается partition
-   -> запись уходит лидеру partition
-   -> лидер дописывает её в конец лога на диске
-   -> followers копируют запись
-   -> запись становится доступна consumer (до high watermark)
-   -> consumer читает батчами и коммитит offset
-   -> запись живёт на диске до истечения retention
+Producer key bilan record yozadi
+   -> key xeshlanadi -> partition tanlanadi
+   -> yozuv partition leaderiga ketadi
+   -> leader uni diskdagi log oxiriga qo'shib yozadi
+   -> followerlar yozuvni nusxalaydi
+   -> yozuv consumer uchun ochiladi (high watermark gacha)
+   -> consumer batchlab o'qiydi va offsetni commit qiladi
+   -> yozuv retention muddati tugaguncha diskda turadi
 ```
 
-### Вопросы для самопроверки
+### O'z-o'zini tekshirish uchun savollar
 
-1. Почему offset нельзя использовать как глобальный ID сообщения?
-2. Что такое high watermark и почему consumer не видит записи после него?
-3. Зачем Kafka отказалась от ZooKeeper?
-4. Почему для кворума контроллеров берут 3 или 5 узлов, а не 4?
+1. Nima uchun offsetni xabarning global IDsi sifatida ishlatib bo'lmaydi?
+2. High watermark nima va nima uchun consumer undan keyingi yozuvlarni ko'rmaydi?
+3. Kafka nima uchun ZooKeeperdan voz kechdi?
+4. Nima uchun controllerlar kvorumi uchun 4 ta emas, 3 yoki 5 ta tugun olinadi?
 
 ---
 
-# Модуль 2. Установка Kafka в Docker и первые команды
+# Modul 2. Kafkani Dockerda o'rnatish va birinchi buyruqlar
 
-## 2.1 Самый быстрый запуск Kafka (один узел)
+## 2.1 Kafkani eng tez ishga tushirish (bitta tugun)
 
 ```bash
 docker run -d --name kafka -p 9092:9092 apache/kafka:4.3.1
 ```
 
-Образ `apache/kafka` по умолчанию запускает один узел в режиме KRaft с ролями broker и controller, слушающий `localhost:9092`.
+`apache/kafka` image standart holatda KRaft rejimida, broker va controller rollari bilan bitta tugunni ishga tushiradi, u `localhost:9092` ni tinglaydi.
 
-Проверяем:
+Tekshiramiz:
 
 ```bash
 docker ps
 docker logs kafka | grep -i "started"
 ```
 
-## 2.2 Первый topic, первое сообщение
+## 2.2 Birinchi topic, birinchi xabar
 
-Создаём топик:
+Topic yaratamiz:
 
 ```bash
 docker exec kafka /opt/kafka/bin/kafka-topics.sh \
@@ -568,7 +552,7 @@ docker exec kafka /opt/kafka/bin/kafka-topics.sh \
   --create --topic hello-kafka --partitions 3 --replication-factor 1
 ```
 
-Смотрим описание:
+Tavsifini ko'ramiz:
 
 ```bash
 docker exec kafka /opt/kafka/bin/kafka-topics.sh \
@@ -576,7 +560,7 @@ docker exec kafka /opt/kafka/bin/kafka-topics.sh \
   --describe --topic hello-kafka
 ```
 
-Пишем сообщения (терминал 1):
+Xabarlar yozamiz (1-terminal):
 
 ```bash
 docker exec -it kafka /opt/kafka/bin/kafka-console-producer.sh \
@@ -590,7 +574,7 @@ docker exec -it kafka /opt/kafka/bin/kafka-console-producer.sh \
 > order-123 created
 ```
 
-Читаем (терминал 2):
+O'qiymiz (2-terminal):
 
 ```bash
 docker exec -it kafka /opt/kafka/bin/kafka-console-consumer.sh \
@@ -599,9 +583,9 @@ docker exec -it kafka /opt/kafka/bin/kafka-console-consumer.sh \
   --from-beginning
 ```
 
-Ты увидишь все три сообщения, **но порядок может отличаться** от порядка отправки. Почему? У топика 3 partitions, а записи без ключа распределяются по ним. Порядок гарантирован только внутри partition.
+Uchala xabarni ham ko'rasiz, **lekin tartib** yuborilgan tartibdan **farq qilishi mumkin**. Nima uchun? Topicda 3 ta partition bor, kalitsiz yozuvlar esa ular bo'yicha taqsimlanadi. Tartib faqat partition ichida kafolatlangan.
 
-## 2.3 Сообщения с ключами
+## 2.3 Kalitli xabarlar
 
 ```bash
 docker exec -it kafka /opt/kafka/bin/kafka-console-producer.sh \
@@ -618,7 +602,7 @@ docker exec -it kafka /opt/kafka/bin/kafka-console-producer.sh \
 > user-1:checkout
 ```
 
-Читаем с выводом ключа, partition и offset:
+Kalit, partition va offsetni chiqarib o'qiymiz:
 
 ```bash
 docker exec -it kafka /opt/kafka/bin/kafka-console-consumer.sh \
@@ -629,11 +613,11 @@ docker exec -it kafka /opt/kafka/bin/kafka-console-consumer.sh \
   --property print.offset=true
 ```
 
-Все события `user-1` окажутся в одном partition и будут идти строго по порядку.
+`user-1` ning barcha hodisalari bitta partitionga tushadi va qat'iy tartibda keladi.
 
-## 2.4 Кластер из трёх брокеров в Docker Compose
+## 2.4 Docker Composeda uchta brokerdan iborat klaster
 
-Для изучения репликации нужен настоящий кластер. Создай директорию и файл `docker-compose.yml`:
+Replikatsiyani o'rganish uchun haqiqiy klaster kerak. Direktoriya va `docker-compose.yml` faylini yarating:
 
 ```bash
 mkdir kafka-course && cd kafka-course
@@ -700,49 +684,49 @@ services:
     depends_on: [kafka-1, kafka-2, kafka-3]
 ```
 
-Запуск:
+Ishga tushirish:
 
 ```bash
 docker compose up -d
 docker compose ps
 ```
 
-Web-интерфейс Kafka UI откроется на `http://localhost:8080`.
+Kafka UI web-interfeysi `http://localhost:8080` manzilida ochiladi.
 
-## 2.5 Listeners и advertised.listeners: почему клиент не подключается
+## 2.5 Listeners va advertised.listeners: klient nima uchun ulanmayapti
 
-Это самая частая причина вопросов «Kafka в Docker не работает».
+«Kafka Dockerda ishlamayapti» degan savollarning eng ko'p uchraydigan sababi shu.
 
 ```text
-KAFKA_LISTENERS            на каких интерфейсах и портах брокер СЛУШАЕТ
-KAFKA_ADVERTISED_LISTENERS какой адрес брокер СООБЩАЕТ клиентам
+KAFKA_LISTENERS            broker qaysi interfeys va portlarda TINGLAYDI
+KAFKA_ADVERTISED_LISTENERS broker klientlarga qaysi manzilni MA'LUM QILADI
 ```
 
-Клиент сначала подключается к `bootstrap.servers`, получает метаданные и затем ходит **на advertised-адреса**. Поэтому:
+Klient avval `bootstrap.servers` ga ulanadi, metadatani oladi va shundan keyin **advertised-manzillarga** murojaat qiladi. Shuning uchun:
 
-| Откуда клиент | Какой listener использует | Адрес |
+| Klient qayerdan | Qaysi listenerdan foydalanadi | Manzil |
 |---|---|---|
-| Другой контейнер в той же сети Docker | `INTERNAL` | `kafka-1:9092` |
-| Приложение на твоём ноутбуке | `EXTERNAL` | `localhost:19092` |
-| Контроллеры между собой | `CONTROLLER` | `kafka-1:9093` |
+| Xuddi shu Docker tarmog'idagi boshqa konteyner | `INTERNAL` | `kafka-1:9092` |
+| Noutbukingizdagi ilova | `EXTERNAL` | `localhost:19092` |
+| Controllerlar o'zaro | `CONTROLLER` | `kafka-1:9093` |
 
-Если advertised-адрес будет `kafka-1:9092`, приложение на хосте получит его в метаданных и упадёт с ошибкой `UnknownHostException` или бесконечными попытками переподключения.
+Agar advertised-manzil `kafka-1:9092` bo'lsa, hostdagi ilova uni metadatada oladi va `UnknownHostException` xatosi bilan yoki cheksiz qayta ulanish urinishlari bilan yiqiladi.
 
-## 2.6 Проверяем KRaft-кворум
+## 2.6 KRaft-kvorumni tekshiramiz
 
 ```bash
 docker exec kafka-1 /opt/kafka/bin/kafka-metadata-quorum.sh \
   --bootstrap-server kafka-1:9092 describe --status
 ```
 
-Ты увидишь `LeaderId`, `CurrentVoters`, `HighWatermark` и отставание каждого контроллера:
+`LeaderId`, `CurrentVoters`, `HighWatermark` ni va har bir controllerning ortda qolishini ko'rasiz:
 
 ```bash
 docker exec kafka-1 /opt/kafka/bin/kafka-metadata-quorum.sh \
   --bootstrap-server kafka-1:9092 describe --replication
 ```
 
-## 2.7 Где Kafka хранит данные на диске
+## 2.7 Kafka ma'lumotlarni diskda qayerda saqlaydi
 
 ```bash
 docker exec kafka-1 ls /tmp/kraft-combined-logs
@@ -750,74 +734,74 @@ docker exec kafka-1 ls /tmp/kraft-combined-logs
 
 ```text
 orders-0/
-├── 00000000000000000000.log        # сами записи
-├── 00000000000000000000.index      # offset -> позиция в файле
+├── 00000000000000000000.log        # yozuvlarning o'zi
+├── 00000000000000000000.index      # offset -> fayldagi pozitsiya
 ├── 00000000000000000000.timeindex  # timestamp -> offset
 ├── leader-epoch-checkpoint
 └── partition.metadata
 ```
 
-> В образе `apache/kafka` данные по умолчанию лежат в `/tmp/kraft-combined-logs` внутри контейнера. Для долговременного хранения примонтируй volume и задай `KAFKA_LOG_DIRS`.
+> `apache/kafka` imageda ma'lumotlar standart holatda konteyner ichidagi `/tmp/kraft-combined-logs` da turadi. Uzoq muddatli saqlash uchun volume ulang va `KAFKA_LOG_DIRS` ni belgilang.
 
-## 2.8 Альтернативы для локальной разработки
+## 2.8 Lokal dasturlash uchun muqobillar
 
-- **Testcontainers** (`org.testcontainers:kafka`, модуль для Go и Python): Kafka в интеграционных тестах.
-- **Redpanda**: Kafka-совместимый брокер на C++, удобен для локальных тестов, но это другой продукт со своими особенностями.
-- **Managed Kafka**: Confluent Cloud, Amazon MSK, Aiven, Yandex Managed Service for Apache Kafka, VK Cloud и другие. Для продакшена без собственной команды эксплуатации часто это лучший выбор.
+- **Testcontainers** (`org.testcontainers:kafka`, Go va Python uchun modul): integratsion testlardagi Kafka.
+- **Redpanda**: C++ da yozilgan, Kafka bilan mos keluvchi broker, lokal testlar uchun qulay, lekin bu o'ziga xos xususiyatlari bor boshqa mahsulot.
+- **Managed Kafka**: Confluent Cloud, Amazon MSK, Aiven, Yandex Managed Service for Apache Kafka, VK Cloud va boshqalar. O'z ekspluatatsiya jamoasi bo'lmagan production uchun ko'pincha bu eng yaxshi tanlov.
 
-### Практика
+### Amaliyot
 
-1. Подними кластер из трёх брокеров.
-2. Создай топик `hello-kafka` с 3 partitions и отправь 10 сообщений с ключами.
-3. Найди в Kafka UI, в какой partition попал каждый ключ.
-4. Проверь статус KRaft-кворума и определи, какой узел лидер.
+1. Uchta brokerdan iborat klasterni ko'taring.
+2. 3 ta partitionli `hello-kafka` topicini yarating va kalitli 10 ta xabar yuboring.
+3. Kafka UIda har bir kalit qaysi partitionga tushganini toping.
+4. KRaft-kvorum holatini tekshiring va qaysi tugun leader ekanini aniqlang.
 
 ---
 
-# Модуль 3. Partitions, ключи и порядок сообщений
+# Modul 3. Partitionlar, kalitlar va xabarlar tartibi
 
-## 3.1 Как producer выбирает partition
+## 3.1 Producer partitionni qanday tanlaydi
 
 ```text
              key != null                         key == null
                  |                                    |
    partition = murmur2(key) % numPartitions   sticky partitioner:
-                 |                            пишет батч в один partition,
-                 v                            потом переключается на другой
-    одинаковый key -> одинаковый partition     (равномерно и с хорошим батчингом)
+                 |                            batchni bitta partitionga yozadi,
+                 v                            keyin boshqasiga o'tadi
+    bir xil key -> bir xil partition          (bir tekis va yaxshi batching bilan)
 ```
 
-Правила:
+Qoidalar:
 
-1. Если в записи **явно указан partition**, используется он.
-2. Если есть **key**, partition = `murmur2(key) mod число_partitions`.
-3. Если key нет, работает **built-in sticky partitioner**: он заполняет батч для одного partition и затем переключается. Это даёт крупные батчи и низкую задержку.
-4. Можно написать **собственный Partitioner** (например, для «горячих» ключей).
+1. Agar yozuvda **partition aniq ko'rsatilgan** bo'lsa, o'sha ishlatiladi.
+2. Agar **key** bo'lsa, partition = `murmur2(key) mod partitionlar_soni`.
+3. Agar key bo'lmasa, **built-in sticky partitioner** ishlaydi: u bitta partition uchun batchni to'ldiradi va keyin boshqasiga o'tadi. Bu yirik batchlar va past kechikish beradi.
+4. **O'z Partitioneringizni** yozish mumkin (masalan, «qaynoq» kalitlar uchun).
 
-## 3.2 Почему нет глобального порядка
+## 3.2 Nima uchun global tartib yo'q
 
 ```text
-Отправили: A1, B1, A2, B2, A3
+Yuborildi: A1, B1, A2, B2, A3
 
-partition-0 (key A): A1 -> A2 -> A3   порядок сохранён
-partition-1 (key B): B1 -> B2         порядок сохранён
+partition-0 (key A): A1 -> A2 -> A3   tartib saqlangan
+partition-1 (key B): B1 -> B2         tartib saqlangan
 
-Consumer может получить: A1, B1, B2, A2, A3
+Consumer quyidagicha olishi mumkin: A1, B1, B2, A2, A3
 ```
 
-Глобальный порядок по всему топику возможен только с **одним partition**, а это убивает масштабирование. Правильный вопрос звучит так: **какой порядок нужен бизнесу?** Обычно порядок нужен **в рамках сущности**: одного заказа, одного счёта, одного пользователя.
+Butun topic bo'yicha global tartib faqat **bitta partition** bilan mumkin, bu esa masshtablashni yo'qqa chiqaradi. To'g'ri savol shunday: **biznesga qanday tartib kerak?** Odatda tartib **bitta obyekt doirasida** kerak: bitta buyurtma, bitta hisob, bitta foydalanuvchi.
 
-## 3.3 Как выбрать ключ партиционирования
+## 3.3 Partitsiyalash kalitini qanday tanlash kerak
 
-| Задача | Хороший ключ | Плохой ключ |
+| Vazifa | Yaxshi kalit | Yomon kalit |
 |---|---|---|
-| Жизненный цикл заказа | `order_id` | `event_type` (все `OrderCreated` в одном partition) |
-| Баланс банковского счёта | `account_id` | `transaction_id` (списания и пополнения перемешаются) |
-| Действия пользователя | `user_id` | `country` (Россия займёт один partition) |
-| Метрики датчиков | `device_id` | `timestamp` |
-| Логи без требований к порядку | `null` | `hostname` при 3 хостах и 50 partitions |
+| Buyurtmaning hayot sikli | `order_id` | `event_type` (barcha `OrderCreated` bitta partitionda) |
+| Bank hisobi balansi | `account_id` | `transaction_id` (yechishlar va to'ldirishlar aralashib ketadi) |
+| Foydalanuvchi harakatlari | `user_id` | `country` (Rossiya bitta partitionni egallaydi) |
+| Datchiklar metrikalari | `device_id` | `timestamp` |
+| Tartibga talab qo'yilmagan loglar | `null` | 3 ta host va 50 ta partition bo'lganda `hostname` |
 
-**Задача про банковский счёт.** События по счёту `acc-1`:
+**Bank hisobi haqidagi masala.** `acc-1` hisobi bo'yicha hodisalar:
 
 ```text
 Deposit +1000
@@ -825,22 +809,22 @@ Withdraw -700
 Withdraw -500
 ```
 
-Если ключ `transaction_id`, события попадут в разные partitions, и consumer может обработать `-500` раньше `+1000`: отказ в операции при достаточном балансе. Ключ `account_id` гарантирует последовательную обработку.
+Agar kalit `transaction_id` bo'lsa, hodisalar turli partitionlarga tushadi va consumer `-500` ni `+1000` dan oldin qayta ishlashi mumkin: balans yetarli bo'la turib operatsiya rad etiladi. `account_id` kaliti ketma-ket qayta ishlashni kafolatlaydi.
 
-## 3.4 Горячие ключи (hot partitions)
+## 3.4 Qaynoq kalitlar (hot partitions)
 
-Если один ключ генерирует 40% трафика (крупный продавец, популярный стример), его partition перегружен, а consumer этого partition отстаёт.
+Agar bitta kalit trafikning 40% ini hosil qilsa (yirik sotuvchi, mashhur strimer), uning partitioni ortiqcha yuklanadi, shu partitionning consumeri esa ortda qoladi.
 
-Решения:
+Yechimlar:
 
-- **составной ключ** `seller_id + bucket`, где bucket = `hash(order_id) % 8`, если порядок нужен только в рамках заказа;
-- вынос горячего клиента в **отдельный топик**;
-- **кастомный partitioner** для списка известных горячих ключей;
-- пересмотр требований к порядку.
+- **tarkibiy kalit** `seller_id + bucket`, bunda bucket = `hash(order_id) % 8`, agar tartib faqat buyurtma doirasida kerak bo'lsa;
+- qaynoq klientni **alohida topicga** chiqarish;
+- ma'lum qaynoq kalitlar ro'yxati uchun **maxsus (custom) partitioner**;
+- tartibga qo'yilgan talablarni qayta ko'rib chiqish.
 
-## 3.5 Ловушка: увеличение числа partitions
+## 3.5 Tuzoq: partitionlar sonini oshirish
 
-Число partitions можно только увеличить, уменьшить нельзя.
+Partitionlar sonini faqat oshirish mumkin, kamaytirib bo'lmaydi.
 
 ```bash
 docker exec kafka-1 /opt/kafka/bin/kafka-topics.sh \
@@ -848,111 +832,111 @@ docker exec kafka-1 /opt/kafka/bin/kafka-topics.sh \
   --alter --topic orders --partitions 12
 ```
 
-Но формула `hash(key) % N` меняется:
+Lekin `hash(key) % N` formulasi o'zgaradi:
 
 ```text
-было 6 partitions:  hash("order-123") % 6  = 1
-стало 12 partitions: hash("order-123") % 12 = 7
+6 ta partition edi:    hash("order-123") % 6  = 1
+12 ta partition bo'ldi: hash("order-123") % 12 = 7
 ```
 
-Новые события заказа уйдут в partition 7, а старые остались в partition 1. Consumer может обработать новые события раньше старых. **Порядок по ключу ломается на переходный период.**
+Buyurtmaning yangi hodisalari partition 7 ga ketadi, eskilari esa partition 1 da qolgan. Consumer yangi hodisalarni eskilaridan oldin qayta ishlashi mumkin. **O'tish davrida kalit bo'yicha tartib buziladi.**
 
-Как жить с этим:
+Bu bilan qanday yashash kerak:
 
-- закладывай число partitions **с запасом** на 1-2 года роста;
-- увеличивай partitions, когда старые данные уже обработаны и сущности «закрыты»;
-- для строгих требований создавай **новый топик** и мигрируй потребителей.
+- partitionlar sonini 1-2 yillik o'sishni hisobga olib, **zaxira bilan** belgilang;
+- partitionlarni eski ma'lumotlar qayta ishlanib bo'lgan va obyektlar «yopilgan» paytda oshiring;
+- qat'iy talablar uchun **yangi topic** yarating va iste'molchilarni unga ko'chiring.
 
-## 3.6 Сколько partitions нужно топику
+## 3.6 Topicga nechta partition kerak
 
-Формула для оценки:
+Baholash uchun formula:
 
 ```text
 partitions >= max( T / Tp , T / Tc )
 
-T  - целевая пропускная способность топика (MB/s)
-Tp - сколько MB/s выдерживает один partition на запись
-Tc - сколько MB/s обрабатывает один consumer
+T  - topicning maqsadli o'tkazuvchanligi (MB/s)
+Tp - bitta partition yozishda necha MB/s ga bardosh beradi
+Tc - bitta consumer necha MB/s ni qayta ishlaydi
 ```
 
-Пример: нужно 100 MB/s, один consumer обрабатывает 10 MB/s, один partition принимает 50 MB/s.
+Misol: 100 MB/s kerak, bitta consumer 10 MB/s ni qayta ishlaydi, bitta partition 50 MB/s ni qabul qiladi.
 
 ```text
 max(100/50, 100/10) = max(2, 10) = 10 partitions
-+ запас на рост x2 = 20 partitions
++ o'sish uchun zaxira x2 = 20 partitions
 ```
 
-Практические ориентиры:
+Amaliy mo'ljallar:
 
-- маленький топик: 3-6 partitions;
-- средний сервис: 12-24 partitions;
-- высоконагруженный поток: 50-200+ partitions;
-- удобно выбирать числа с большим количеством делителей: 6, 12, 24, 48, 60.
+- kichik topic: 3-6 ta partition;
+- o'rtacha servis: 12-24 ta partition;
+- yuqori yuklamali oqim: 50-200+ ta partition;
+- bo'luvchilari ko'p sonlarni tanlash qulay: 6, 12, 24, 48, 60.
 
-Слишком много partitions тоже плохо: больше файлов и памяти на брокерах, дольше rebalance, больше метаданных, выше end-to-end задержка при `acks=all`.
+Partitionlarning haddan tashqari ko'pligi ham yomon: brokerlarda fayllar va xotira ko'proq sarflanadi, rebalance uzoqroq davom etadi, metadata ko'payadi, `acks=all` da end-to-end kechikish ortadi.
 
-### Практика
+### Amaliyot
 
-1. Создай топик `accounts` с 6 partitions.
-2. Отправь по 5 событий для ключей `acc-1`, `acc-2`, `acc-3` и проверь, что события одного счёта в одном partition.
-3. Увеличь число partitions до 12, отправь ещё события и найди ключ, который «переехал».
+1. 6 ta partitionli `accounts` topicini yarating.
+2. `acc-1`, `acc-2`, `acc-3` kalitlari uchun 5 tadan hodisa yuboring va bitta hisobning hodisalari bitta partitionda ekanini tekshiring.
+3. Partitionlar sonini 12 taga oshiring, yana hodisalar yuboring va «ko'chib o'tgan» kalitni toping.
 
 ---
 
-# Модуль 4. Репликация Kafka: leader, ISR, acks, min.insync.replicas
+# Modul 4. Kafka replikatsiyasi: leader, ISR, acks, min.insync.replicas
 
 ## 4.1 Replication factor
 
-Каждый partition имеет N копий (**replication factor**). Одна копия **leader**, остальные **followers**.
+Har bir partitionning N ta nusxasi bor (**replication factor**). Bitta nusxa **leader**, qolganlari **followers**.
 
 ```text
 topic orders, partition-0, replication.factor=3
 
-broker-1: partition-0 (LEADER)   <-- producer пишет, consumer читает
-broker-2: partition-0 (follower) <-- копирует у лидера
-broker-3: partition-0 (follower) <-- копирует у лидера
+broker-1: partition-0 (LEADER)   <-- producer yozadi, consumer o'qiydi
+broker-2: partition-0 (follower) <-- leaderdan nusxalaydi
+broker-3: partition-0 (follower) <-- leaderdan nusxalaydi
 ```
 
-- Producer всегда пишет **в лидера**.
-- Consumer по умолчанию читает **из лидера** (с KIP-392 можно читать с ближайшей реплики через `client.rack` и `replica.selector.class`).
-- Followers постоянно отправляют лидеру fetch-запросы, как обычные consumer.
+- Producer har doim **leaderga** yozadi.
+- Consumer standart holatda **leaderdan** o'qiydi (KIP-392 bilan `client.rack` va `replica.selector.class` orqali eng yaqin replikadan o'qish mumkin).
+- Followerlar oddiy consumer kabi leaderga doimiy ravishda fetch-so'rovlar yuboradi.
 
 ## 4.2 ISR (In-Sync Replicas)
 
-**ISR** это набор реплик, которые успевают за лидером. Реплика выпадает из ISR, если не догоняла лидера дольше `replica.lag.time.max.ms` (по умолчанию 30 секунд).
+**ISR** leaderga ulgurib borayotgan replikalar to'plami. Replika leaderga `replica.lag.time.max.ms` dan (standart qiymati 30 soniya) uzoqroq yetib ololmasa, ISRdan chiqib qoladi.
 
 ```text
-Replicas: 1,2,3   все реплики, назначенные partition
-ISR:      1,3     реплики, синхронные с лидером прямо сейчас
+Replicas: 1,2,3   partitionga tayinlangan barcha replikalar
+ISR:      1,3     ayni paytda leader bilan sinxron replikalar
 ```
 
-Реплика вне ISR не может стать лидером при обычном выборе. Иначе мы потеряем подтверждённые данные.
+ISRdan tashqaridagi replika oddiy saylovda leader bo'la olmaydi. Aks holda tasdiqlangan ma'lumotlarni yo'qotamiz.
 
-## 4.3 acks: подтверждение записи
+## 4.3 acks: yozuvni tasdiqlash
 
-| `acks` | Когда producer получает ОК | Риск потери | Задержка |
+| `acks` | Producer qachon OK oladi | Yo'qotish xavfi | Kechikish |
 |---|---|---|---|
-| `0` | Сразу после отправки в сокет | Высокий: брокер мог не получить запись | Минимальная |
-| `1` | Лидер записал в свой лог | Средний: лидер умер до репликации | Низкая |
-| `all` (`-1`) | Записали все реплики из ISR | Минимальный при правильном `min.insync.replicas` | Выше |
+| `0` | Soketga yuborilgan zahoti | Yuqori: broker yozuvni olmagan bo'lishi mumkin | Minimal |
+| `1` | Leader o'z logiga yozganda | O'rtacha: leader replikatsiyagacha o'lgan bo'lishi mumkin | Past |
+| `all` (`-1`) | ISRdagi barcha replikalar yozganda | `min.insync.replicas` to'g'ri bo'lsa minimal | Yuqoriroq |
 
-С Kafka 3.0 значения по умолчанию у producer: `acks=all` и `enable.idempotence=true`.
+Kafka 3.0 dan boshlab producerning standart qiymatlari: `acks=all` va `enable.idempotence=true`.
 
-## 4.4 Почему acks=all недостаточно без min.insync.replicas
+## 4.4 Nima uchun min.insync.replicas bo'lmasa acks=all yetarli emas
 
-`acks=all` означает «все реплики **из текущего ISR**». Если ISR сжался до одного лидера, `acks=all` превращается в `acks=1`.
+`acks=all` «**joriy ISRdagi** barcha replikalar» degan ma'noni bildiradi. Agar ISR bitta leadergacha qisqargan bo'lsa, `acks=all` amalda `acks=1` ga aylanadi.
 
 ```text
-replication.factor=3, min.insync.replicas=1 (по умолчанию)
+replication.factor=3, min.insync.replicas=1 (standart qiymat)
 
-ISR = {1}            <- два follower отстали
-producer acks=all    <- запись подтверждена только лидером
-broker-1 умирает     <- подтверждённые данные ПОТЕРЯНЫ
+ISR = {1}            <- ikkita follower ortda qoldi
+producer acks=all    <- yozuvni faqat leader tasdiqladi
+broker-1 o'ladi      <- tasdiqlangan ma'lumotlar YO'QOLDI
 ```
 
-**`min.insync.replicas`** задаёт минимальный размер ISR, при котором брокер принимает записи с `acks=all`. Если ISR меньше, producer получает ошибку `NotEnoughReplicasException`, и данные не теряются молча.
+**`min.insync.replicas`** broker `acks=all` bilan kelgan yozuvlarni qabul qiladigan ISRning minimal o'lchamini belgilaydi. Agar ISR undan kichik bo'lsa, producer `NotEnoughReplicasException` xatosini oladi va ma'lumotlar jimgina yo'qolmaydi.
 
-**Золотой стандарт надёжности:**
+**Ishonchlilikning oltin standarti:**
 
 ```properties
 # topic / broker
@@ -965,33 +949,33 @@ acks=all
 enable.idempotence=true
 ```
 
-Эта конфигурация переживает падение одного брокера без потери данных и без остановки записи.
+Bu konfiguratsiya bitta broker ishdan chiqqanda ma'lumot yo'qotmaydi va yozishni ham to'xtatmaydi.
 
-| RF | min.insync.replicas | Переживёт падение без потери записи | Запись продолжится при падении |
+| RF | min.insync.replicas | Yozuvni yo'qotmasdan nechta broker ishdan chiqishiga bardosh beradi | Nechta broker ishdan chiqqanda yozish davom etadi |
 |---|---|---|---|
-| 3 | 1 | Нет гарантии | 2 брокеров |
-| 3 | 2 | 1 брокера | 1 брокера |
-| 3 | 3 | 2 брокеров | 0 брокеров (запись встанет) |
-| 5 | 3 | 2 брокеров | 2 брокеров |
+| 3 | 1 | Kafolat yo'q | 2 ta broker |
+| 3 | 2 | 1 ta broker | 1 ta broker |
+| 3 | 3 | 2 ta broker | 0 ta broker (yozish to'xtaydi) |
+| 5 | 3 | 2 ta broker | 2 ta broker |
 
-## 4.5 High watermark и leader epoch
+## 4.5 High watermark va leader epoch
 
-- Лидер продвигает **high watermark**, когда запись реплицирована на все реплики ISR.
-- Consumer видят только записи до HW. Поэтому они не прочитают запись, которая может исчезнуть при смене лидера.
-- **Leader epoch** это номер «эпохи» лидерства. При смене лидера followers по эпохе понимают, какой хвост лога нужно обрезать, чтобы не было расхождений между репликами.
+- Yozuv ISRdagi barcha replikalarga replikatsiya qilingach, leader **high watermark** ni oldinga suradi.
+- Consumerlar faqat HWgacha bo'lgan yozuvlarni ko'radi. Shuning uchun ular leader almashganda yo'qolib qolishi mumkin bo'lgan yozuvni o'qimaydi.
+- **Leader epoch** leaderlik «davri»ning raqami. Leader almashganda followerlar epoch bo'yicha replikalar orasida tafovut bo'lmasligi uchun logning qaysi oxirgi qismini kesib tashlash kerakligini tushunadi.
 
 ## 4.6 Unclean leader election
 
-Если все реплики ISR умерли и осталась только отстающая реплика, есть выбор:
+Agar ISRdagi barcha replikalar o'lgan va faqat ortda qolgan replika qolgan bo'lsa, tanlov bor:
 
-| `unclean.leader.election.enable` | Поведение | Цена |
+| `unclean.leader.election.enable` | Xatti-harakat | Narxi |
 |---|---|---|
-| `false` (по умолчанию) | Partition недоступен, пока не вернётся реплика из ISR | Потеря доступности |
-| `true` | Лидером станет отстающая реплика | Потеря подтверждённых данных |
+| `false` (standart qiymat) | ISRdagi replika qaytmaguncha partition ishlamaydi | Mavjudlikni (availability) yo'qotish |
+| `true` | Ortda qolgan replika leader bo'ladi | Tasdiqlangan ma'lumotlarni yo'qotish |
 
-Для платежей и заказов выбирают консистентность (`false`). Для метрик и логов иногда допустимо `true`.
+To'lovlar va buyurtmalar uchun konsistentlik (`false`) tanlanadi. Metrikalar va loglar uchun ba'zan `true` ga yo'l qo'yish mumkin.
 
-## 4.7 Практика: создаём production-like топик
+## 4.7 Amaliyot: production-like topic yaratamiz
 
 ```bash
 docker exec kafka-1 /opt/kafka/bin/kafka-topics.sh \
@@ -1014,9 +998,9 @@ Topic: orders  PartitionCount: 6  ReplicationFactor: 3  Configs: min.insync.repl
   ...
 ```
 
-Лидеры распределены по брокерам равномерно. Первая реплика в списке `Replicas` это **preferred leader**.
+Leaderlar brokerlar bo'yicha bir tekis taqsimlangan. `Replicas` ro'yxatidagi birinchi replika **preferred leader** hisoblanadi.
 
-## 4.8 Практика: убиваем брокер
+## 4.8 Amaliyot: brokerni o'ldiramiz
 
 ```bash
 docker stop kafka-1
@@ -1026,20 +1010,20 @@ docker exec kafka-2 /opt/kafka/bin/kafka-topics.sh \
 ```
 
 ```text
-Было:  Partition: 0  Leader: 1  Replicas: 1,2,3  Isr: 1,2,3
-Стало: Partition: 0  Leader: 2  Replicas: 1,2,3  Isr: 2,3
+Edi:    Partition: 0  Leader: 1  Replicas: 1,2,3  Isr: 1,2,3
+Bo'ldi: Partition: 0  Leader: 2  Replicas: 1,2,3  Isr: 2,3
 ```
 
-Контроллер выбрал нового лидера из ISR. Producer и consumer обновили метаданные и продолжили работу.
+Controller ISRdan yangi leaderni tanladi. Producer va consumer metadatani yangilab, ishni davom ettirdi.
 
-Покажем только проблемные partitions:
+Faqat muammoli partitionlarni ko'rsatamiz:
 
 ```bash
 docker exec kafka-2 /opt/kafka/bin/kafka-topics.sh \
   --bootstrap-server kafka-2:9092 --describe --under-replicated-partitions
 ```
 
-Теперь **останови второй брокер** и попробуй писать:
+Endi **ikkinchi brokerni to'xtating** va yozib ko'ring:
 
 ```bash
 docker stop kafka-2
@@ -1048,15 +1032,15 @@ docker exec -it kafka-3 /opt/kafka/bin/kafka-console-producer.sh \
   --producer-property acks=all
 ```
 
-Получишь `NotEnoughReplicas`: ISR = 1 < `min.insync.replicas` = 2. Kafka **отказывается** принимать запись, которую не может надёжно сохранить. Это правильное поведение.
+`NotEnoughReplicas` olasiz: ISR = 1 < `min.insync.replicas` = 2. Kafka ishonchli saqlay olmaydigan yozuvni qabul qilishdan **bosh tortadi**. Bu to'g'ri xatti-harakat.
 
-Возвращаем брокеры:
+Brokerlarni qaytaramiz:
 
 ```bash
 docker start kafka-1 kafka-2
 ```
 
-После догоняющей репликации брокеры вернутся в ISR. Kafka периодически возвращает лидерство preferred-репликам (`auto.leader.rebalance.enable=true`). Сделать это вручную:
+Brokerlar replikatsiyada yetib olgach, ISRga qaytadi. Kafka leaderlikni vaqti-vaqti bilan preferred-replikalarga qaytaradi (`auto.leader.rebalance.enable=true`). Buni qo'lda bajarish:
 
 ```bash
 docker exec kafka-1 /opt/kafka/bin/kafka-leader-election.sh \
@@ -1065,33 +1049,33 @@ docker exec kafka-1 /opt/kafka/bin/kafka-leader-election.sh \
 
 ## 4.9 Rack awareness
 
-Если брокеры стоят в разных стойках или зонах доступности, укажи `broker.rack`. Kafka разместит реплики одного partition в **разных зонах**, и падение целой зоны не уничтожит все копии.
+Agar brokerlar turli stoykalarda (rack) yoki turli availability zonalarda joylashgan bo'lsa, `broker.rack` ni ko'rsating. Kafka bitta partitionning replikalarini **turli zonalarga** joylashtiradi va butun bir zonaning ishdan chiqishi barcha nusxalarni yo'q qilmaydi.
 
 ```properties
 broker.rack=eu-central-1a
 ```
 
-## 4.10 Антипаттерн: replication.factor = 1
+## 4.10 Antipattern: replication.factor = 1
 
 ```text
 replication.factor=1
 ```
 
-Один брокер умер, диск сломался, и partition недоступен или потерян навсегда. Для любых важных данных в продакшене используй `replication.factor=3`.
+Bitta broker o'ldi, disk buzildi, va partition ishlamaydi yoki butunlay yo'qoladi. Productiondagi har qanday muhim ma'lumot uchun `replication.factor=3` dan foydalaning.
 
-### Вопросы для самопроверки
+### O'z-o'zini tekshirish uchun savollar
 
-1. Чем replica отличается от ISR?
-2. Почему `acks=all` без `min.insync.replicas=2` не гарантирует сохранность?
-3. Что произойдёт с записью при RF=3, min.insync.replicas=2 и двух упавших брокерах?
-4. Что такое unclean leader election и когда его включают?
-5. Зачем нужен `broker.rack`?
+1. Replica ISRdan nimasi bilan farq qiladi?
+2. Nima uchun `min.insync.replicas=2` bo'lmasa `acks=all` ma'lumotlarning saqlanishini kafolatlamaydi?
+3. RF=3, min.insync.replicas=2 va ikkita broker ishdan chiqqan holatda yozish bilan nima sodir bo'ladi?
+4. Unclean leader election nima va u qachon yoqiladi?
+5. `broker.rack` nima uchun kerak?
 
 ---
 
-# Модуль 5. Kafka Producer: как устроен и как настроить
+# Modul 5. Kafka Producer: qanday tuzilgan va qanday sozlanadi
 
-## 5.1 Внутреннее устройство producer
+## 5.1 Producerning ichki tuzilishi
 
 ```text
 send(record)
@@ -1100,88 +1084,88 @@ send(record)
 [Serializer] key/value -> bytes
    |
    v
-[Partitioner] выбирает partition
+[Partitioner] partitionni tanlaydi
    |
    v
-[RecordAccumulator]  буферы батчей по partition (buffer.memory)
+[RecordAccumulator]  partitionlar bo'yicha batch buferlari (buffer.memory)
    |   batch orders-0: [r1][r2][r3]
    |   batch orders-1: [r4]
    v
-[Sender thread] забирает готовые батчи (batch.size или linger.ms)
-   |   группирует по брокеру-лидеру, сжимает
+[Sender thread] tayyor batchlarni oladi (batch.size yoki linger.ms)
+   |   leader-broker bo'yicha guruhlaydi, siqadi
    v
-Network -> Broker leader -> ответ -> callback / Future
+Network -> Broker leader -> javob -> callback / Future
 ```
 
-Ключевой момент: `send()` **асинхронный**. Он кладёт запись в буфер и сразу возвращает `Future`. Реальная отправка происходит в фоновом потоке Sender.
+Asosiy jihat: `send()` **asinxron**. U yozuvni buferga qo'yadi va darhol `Future` qaytaradi. Haqiqiy yuborish Sender fon oqimida (thread) sodir bo'ladi.
 
-## 5.2 Батчинг: linger.ms и batch.size
+## 5.2 Batching: linger.ms va batch.size
 
-| Параметр | По умолчанию | Смысл |
+| Parametr | Standart qiymat | Ma'nosi |
 |---|---|---|
-| `batch.size` | 16384 (16 KB) | Максимальный размер батча на один partition |
-| `linger.ms` | 5 (с Kafka 4.0) | Сколько ждать наполнения батча перед отправкой |
-| `buffer.memory` | 33554432 (32 MB) | Общий буфер producer |
-| `max.block.ms` | 60000 | Сколько `send()` блокируется, если буфер полон или нет метаданных |
+| `batch.size` | 16384 (16 KB) | Bitta partition uchun batchning maksimal o'lchami |
+| `linger.ms` | 5 (Kafka 4.0 dan) | Yuborishdan oldin batch to'lishini qancha kutish |
+| `buffer.memory` | 33554432 (32 MB) | Producerning umumiy buferi |
+| `max.block.ms` | 60000 | Bufer to'la yoki metadata yo'q bo'lsa, `send()` qancha vaqt bloklanadi |
 | `compression.type` | `none` | `gzip`, `snappy`, `lz4`, `zstd` |
 
-Батч уходит, когда **заполнен `batch.size`** или **истёк `linger.ms`**, смотря что наступит раньше.
+Batch **`batch.size` to'lganda** yoki **`linger.ms` tugaganda** yuboriladi, qaysi biri oldin yuz bersa.
 
 ```text
-linger.ms=0   много маленьких запросов, низкая задержка, низкий throughput
-linger.ms=20  крупные батчи, лучшее сжатие, throughput в разы выше
+linger.ms=0   ko'plab kichik so'rovlar, past kechikish, past throughput
+linger.ms=20  yirik batchlar, yaxshiroq siqish, throughput bir necha baravar yuqori
 ```
 
-## 5.3 Сжатие
+## 5.3 Siqish
 
-| Алгоритм | Степень сжатия | CPU | Когда использовать |
+| Algoritm | Siqish darajasi | CPU | Qachon ishlatiladi |
 |---|---|---|---|
-| `lz4` | Средняя | Низкий | Хороший выбор по умолчанию для высокой нагрузки |
-| `zstd` | Высокая | Средний | Экономия трафика и диска, JSON-логи |
-| `snappy` | Средняя | Низкий | Совместимость со старыми системами |
-| `gzip` | Высокая | Высокий | Редко, когда важен каждый байт |
+| `lz4` | O'rtacha | Past | Yuqori yuklama uchun yaxshi standart tanlov |
+| `zstd` | Yuqori | O'rtacha | Trafik va diskni tejash, JSON-loglar |
+| `snappy` | O'rtacha | Past | Eski tizimlar bilan moslik |
+| `gzip` | Yuqori | Yuqori | Kamdan-kam, har bir bayt muhim bo'lganda |
 
-Сжатие работает на уровне батча: чем больше батч, тем лучше сжатие. Держи на топике `compression.type=producer`, чтобы брокер не пережимал данные.
+Siqish batch darajasida ishlaydi: batch qancha katta bo'lsa, siqish shuncha yaxshi. Broker ma'lumotlarni qayta siqmasligi uchun topicda `compression.type=producer` ni saqlang.
 
-## 5.4 Retries и таймауты
+## 5.4 Retries va timeoutlar
 
 ```text
 |<------------------- delivery.timeout.ms (120 s) ------------------->|
 | linger | request.timeout.ms | retry.backoff | request.timeout.ms | ...
 ```
 
-| Параметр | По умолчанию | Смысл |
+| Parametr | Standart qiymat | Ma'nosi |
 |---|---|---|
-| `retries` | `2147483647` | Практически бесконечно, ограничивает `delivery.timeout.ms` |
-| `delivery.timeout.ms` | 120000 | Общее время на доставку записи, включая все повторы |
-| `request.timeout.ms` | 30000 | Ожидание ответа на один запрос |
-| `retry.backoff.ms` | 100 | Пауза между повторами (растёт экспоненциально до `retry.backoff.max.ms`) |
+| `retries` | `2147483647` | Amalda cheksiz, uni `delivery.timeout.ms` cheklaydi |
+| `delivery.timeout.ms` | 120000 | Barcha qayta urinishlarni qo'shib hisoblaganda yozuvni yetkazishga ajratilgan umumiy vaqt |
+| `request.timeout.ms` | 30000 | Bitta so'rovga javobni kutish |
+| `retry.backoff.ms` | 100 | Qayta urinishlar orasidagi pauza (`retry.backoff.max.ms` gacha eksponensial o'sadi) |
 
-Ретраи безопасны только с идемпотентностью. Иначе при потере ответа брокера запись будет продублирована.
+Retrylar faqat idempotentlik bilan xavfsiz. Aks holda brokerning javobi yo'qolsa, yozuv takrorlanib qoladi.
 
-## 5.5 Идемпотентный producer
+## 5.5 Idempotent producer
 
-Проблема без идемпотентности:
+Idempotentliksiz muammo:
 
 ```text
 producer --> broker: batch #1
-broker пишет batch #1 в лог
-broker --> producer: ACK   (ответ потерялся в сети)
-producer: таймаут, retry batch #1
-broker пишет batch #1 ЕЩЁ РАЗ   <-- дубликат
+broker batch #1 ni logga yozadi
+broker --> producer: ACK   (javob tarmoqda yo'qoldi)
+producer: timeout, retry batch #1
+broker batch #1 ni YANA BIR MARTA yozadi   <-- dublikat
 ```
 
-С `enable.idempotence=true`:
+`enable.idempotence=true` bilan:
 
-- producer получает **Producer ID (PID)**;
-- каждый батч получает **sequence number** в рамках partition;
-- брокер отбрасывает батч с уже виденным sequence number.
+- producer **Producer ID (PID)** oladi;
+- har bir batch partition doirasida **sequence number** oladi;
+- broker avval ko'rilgan sequence numberli batchni tashlab yuboradi.
 
-Требования: `acks=all`, `max.in.flight.requests.per.connection <= 5`. Порядок внутри partition сохраняется даже при ретраях.
+Talablar: `acks=all`, `max.in.flight.requests.per.connection <= 5`. Partition ichidagi tartib retrylarda ham saqlanadi.
 
-> Идемпотентность защищает от дублей **из-за ретраев одного экземпляра producer**. Если приложение упало и заново отправило то же бизнес-событие, это новый PID и дубликат. Для этого нужен `event_id` и идемпотентный consumer.
+> Idempotentlik **bitta producer nusxasining retrylari tufayli** paydo bo'ladigan dublikatlardan himoya qiladi. Agar ilova yiqilib, o'sha biznes-hodisani qaytadan yuborsa, bu yangi PID va dublikat. Buning uchun `event_id` va idempotent consumer kerak.
 
-## 5.6 Producer на Java
+## 5.6 Javada producer
 
 ```xml
 <dependency>
@@ -1203,12 +1187,12 @@ public class OrderProducer {
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
-        // надёжность
+        // ishonchlilik
         props.put(ProducerConfig.ACKS_CONFIG, "all");
         props.put(ProducerConfig.ENABLE_IDEMPOTENCE_CONFIG, true);
         props.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG, 120_000);
 
-        // производительность
+        // unumdorlik
         props.put(ProducerConfig.LINGER_MS_CONFIG, 20);
         props.put(ProducerConfig.BATCH_SIZE_CONFIG, 64 * 1024);
         props.put(ProducerConfig.COMPRESSION_TYPE_CONFIG, "lz4");
@@ -1224,8 +1208,8 @@ public class OrderProducer {
 
                 producer.send(record, (metadata, exception) -> {
                     if (exception != null) {
-                        // сюда попадаем после исчерпания delivery.timeout.ms
-                        System.err.println("Не удалось отправить " + orderId + ": " + exception);
+                        // delivery.timeout.ms tugaganidan keyin shu yerga tushamiz
+                        System.err.println("Yuborib bo'lmadi " + orderId + ": " + exception);
                     } else {
                         System.out.printf("%s -> partition=%d offset=%d%n",
                                 orderId, metadata.partition(), metadata.offset());
@@ -1238,14 +1222,14 @@ public class OrderProducer {
 }
 ```
 
-**Правила:**
+**Qoidalar:**
 
-- создавай **один `KafkaProducer` на приложение**: он потокобезопасен и дорог в создании;
-- **всегда обрабатывай ошибку в callback**, иначе потеря данных будет незаметной;
-- вызывай `flush()` и `close()` при остановке приложения, иначе буфер пропадёт;
-- не делай `send().get()` на каждую запись в горячем пути: это убивает батчинг.
+- **har bir ilovaga bitta `KafkaProducer`** yarating: u thread-safe va uni yaratish qimmat;
+- **callbackdagi xatoni har doim qayta ishlang**, aks holda ma'lumot yo'qolishi sezilmay qoladi;
+- ilova to'xtayotganda `flush()` va `close()` ni chaqiring, aks holda bufer yo'qoladi;
+- qaynoq yo'lda (hot path) har bir yozuv uchun `send().get()` qilmang: bu batchingni yo'qqa chiqaradi.
 
-## 5.7 Producer на Go (franz-go)
+## 5.7 Goda producer (franz-go)
 
 ```go
 package main
@@ -1291,9 +1275,9 @@ func main() {
 }
 ```
 
-Популярные клиенты Kafka для Go: `franz-go` (чистый Go, полная поддержка протокола), `confluent-kafka-go` (обёртка над librdkafka), `segmentio/kafka-go`.
+Go uchun mashhur Kafka klientlari: `franz-go` (sof Go, protokolni to'liq qo'llab-quvvatlaydi), `confluent-kafka-go` (librdkafka ustidagi wrapper), `segmentio/kafka-go`.
 
-## 5.8 Producer на Python (confluent-kafka)
+## 5.8 Pythonda producer (confluent-kafka)
 
 ```bash
 pip install confluent-kafka
@@ -1313,30 +1297,30 @@ producer = Producer({
 
 def on_delivery(err, msg):
     if err:
-        print(f"Ошибка доставки: {err}")
+        print(f"Yetkazishda xato: {err}")
     else:
         print(f"{msg.key().decode()} -> partition={msg.partition()} offset={msg.offset()}")
 
 for i in range(1, 11):
     order = {"order_id": f"order-{i}", "amount": i * 100}
     producer.produce("orders", key=order["order_id"], value=json.dumps(order), callback=on_delivery)
-    producer.poll(0)  # обработать callbacks
+    producer.poll(0)  # callbacklarni qayta ishlash
 
 producer.flush()
 ```
 
-## 5.9 Профили настроек producer
+## 5.9 Producer sozlamalari profillari
 
-| Цель | Настройки |
+| Maqsad | Sozlamalar |
 |---|---|
-| **Максимальная надёжность** (платежи) | `acks=all`, `enable.idempotence=true`, топик RF=3 и `min.insync.replicas=2`, либо транзакции |
-| **Максимальный throughput** (логи, клики) | `linger.ms=50-100`, `batch.size=256KB-1MB`, `compression.type=zstd` или `lz4`, `buffer.memory` больше |
-| **Минимальная задержка** | `linger.ms=0`, небольшие батчи, `compression.type=none` или `lz4` |
+| **Maksimal ishonchlilik** (to'lovlar) | `acks=all`, `enable.idempotence=true`, topic RF=3 va `min.insync.replicas=2`, yoki tranzaksiyalar |
+| **Maksimal throughput** (loglar, kliklar) | `linger.ms=50-100`, `batch.size=256KB-1MB`, `compression.type=zstd` yoki `lz4`, kattaroq `buffer.memory` |
+| **Minimal kechikish** | `linger.ms=0`, kichik batchlar, `compression.type=none` yoki `lz4` |
 
-### Практика
+### Amaliyot
 
-1. Запусти Java producer и посмотри, как ключи распределились по partitions.
-2. Замерь пропускную способность с `linger.ms=0` и `linger.ms=50`:
+1. Java producerni ishga tushiring va kalitlar partitionlar bo'yicha qanday taqsimlanganini ko'ring.
+2. `linger.ms=0` va `linger.ms=50` bilan o'tkazuvchanlikni o'lchang:
 
 ```bash
 docker exec kafka-1 /opt/kafka/bin/kafka-producer-perf-test.sh \
@@ -1348,35 +1332,35 @@ docker exec kafka-1 /opt/kafka/bin/kafka-producer-perf-test.sh \
   --producer-props bootstrap.servers=kafka-1:9092 acks=all linger.ms=50 batch.size=262144 compression.type=lz4
 ```
 
-3. Сравни `records/sec`, `avg latency` и `99th` перцентиль.
+3. `records/sec`, `avg latency` va `99th` persentilni solishtiring.
 
 ---
 
-# Модуль 6. Kafka Consumer и Consumer Groups
+# Modul 6. Kafka Consumer va Consumer Groups
 
-## 6.1 Poll loop: как читает consumer
+## 6.1 Poll loop: consumer qanday o'qiydi
 
-Consumer в Kafka работает по модели **pull**: он сам запрашивает данные у брокера.
+Kafkada consumer **pull** modeli bo'yicha ishlaydi: u ma'lumotlarni brokerdan o'zi so'raydi.
 
 ```text
 while (running) {
-    records = consumer.poll(timeout)     // fetch батчами, heartbeat, rebalance
+    records = consumer.poll(timeout)     // batchlab fetch, heartbeat, rebalance
     for record in records:
         process(record)
-    consumer.commit()                     // сохранить прогресс
+    consumer.commit()                     // progressni saqlash
 }
 ```
 
-Что происходит внутри `poll()`:
+`poll()` ichida nima sodir bo'ladi:
 
-- отправка fetch-запросов лидерам назначенных partitions;
-- участие в протоколе группы (heartbeat, rebalance);
-- возврат накопленных записей (до `max.poll.records`);
-- автоматический commit, если включён `enable.auto.commit`.
+- tayinlangan partitionlarning leaderlariga fetch-so'rovlar yuboriladi;
+- guruh protokolida ishtirok etiladi (heartbeat, rebalance);
+- to'plangan yozuvlar qaytariladi (`max.poll.records` gacha);
+- `enable.auto.commit` yoqilgan bo'lsa, avtomatik commit qilinadi.
 
 ## 6.2 Consumer Group
 
-**Consumer group** это набор consumer с одним `group.id`, которые **делят partitions между собой**.
+**Consumer group** bitta `group.id` ga ega bo'lgan va **partitionlarni o'zaro bo'lib oladigan** consumerlar to'plami.
 
 ```text
 topic orders: 6 partitions
@@ -1387,60 +1371,60 @@ group "billing" (3 consumers)          group "analytics" (1 consumer)
   consumer-3: p4, p5
 ```
 
-Правила:
+Qoidalar:
 
-- **один partition читается ровно одним consumer внутри группы**;
-- разные группы читают топик **независимо** и хранят свои offsets;
-- масштабирование чтения = добавление consumer в группу.
+- **bitta partitionni guruh ichida aynan bitta consumer o'qiydi**;
+- turli guruhlar topicni **mustaqil** o'qiydi va o'z offsetlarini saqlaydi;
+- o'qishni masshtablash = guruhga consumer qo'shish.
 
-## 6.3 Consumer больше, чем partitions
+## 6.3 Consumerlar partitionlardan ko'p bo'lsa
 
 ```text
 6 partitions, 8 consumers
 
-consumer-1..6: по одному partition
-consumer-7:    простаивает
-consumer-8:    простаивает
+consumer-1..6: bittadan partition
+consumer-7:    bo'sh turadi
+consumer-8:    bo'sh turadi
 ```
 
-**20 consumer не ускорят топик с 10 partitions.** Лишние consumer работают как горячий резерв. Хочешь больше параллелизма, увеличивай partitions или обрабатывай записи параллельно внутри consumer (с сохранением порядка по ключу).
+**20 ta consumer 10 ta partitionli topicni tezlashtirmaydi.** Ortiqcha consumerlar qaynoq zaxira (hot standby) sifatida ishlaydi. Ko'proq parallellik kerak bo'lsa, partitionlarni ko'paytiring yoki yozuvlarni consumer ichida parallel qayta ishlang (kalit bo'yicha tartibni saqlagan holda).
 
-## 6.4 Offsets и commit
+## 6.4 Offsetlar va commit
 
-Прогресс группы хранится во внутреннем топике `__consumer_offsets` (compacted). Commit означает «группа обработала всё до offset N, следующей читать N».
+Guruhning progressi `__consumer_offsets` ichki topicida (compacted) saqlanadi. Commit «guruh offset N gacha hammasini qayta ishladi, keyingi o'qiladigani N» degan ma'noni bildiradi.
 
-| Режим | Как работает | Риск |
+| Rejim | Qanday ishlaydi | Xavf |
 |---|---|---|
-| `enable.auto.commit=true` (по умолчанию) | Коммит каждые `auto.commit.interval.ms` (5 s) внутри `poll()` | Дубли при падении; потеря, если обработка асинхронная |
-| `commitSync()` | Блокирующий коммит после обработки батча | Ниже throughput, зато предсказуемо |
-| `commitAsync()` | Неблокирующий коммит | При ошибке нет повтора; в конце нужен `commitSync()` |
-| Коммит в своей БД | Offset сохраняется в одной транзакции с результатом | Сложнее, но даёт exactly-once эффект |
+| `enable.auto.commit=true` (standart qiymat) | `poll()` ichida har `auto.commit.interval.ms` da (5 s) commit | Yiqilganda dublikatlar; qayta ishlash asinxron bo'lsa, yo'qotish |
+| `commitSync()` | Batch qayta ishlangandan keyin bloklovchi commit | Throughput pastroq, lekin oldindan aytib bo'ladigan natija |
+| `commitAsync()` | Bloklamaydigan commit | Xato bo'lsa qayta urinish yo'q; oxirida `commitSync()` kerak |
+| O'z ma'lumotlar bazangizda commit | Offset natija bilan bitta tranzaksiyada saqlanadi | Murakkabroq, lekin exactly-once effektini beradi |
 
-**`auto.offset.reset`** определяет, откуда читать, если у группы нет сохранённого offset:
+**`auto.offset.reset`** guruhda saqlangan offset bo'lmasa, qayerdan o'qishni belgilaydi:
 
-- `latest` (по умолчанию): только новые сообщения;
-- `earliest`: с самого начала;
-- `none`: выбросить ошибку.
+- `latest` (standart qiymat): faqat yangi xabarlar;
+- `earliest`: eng boshidan;
+- `none`: xato tashlash.
 
-## 6.5 Семантики доставки
+## 6.5 Yetkazish semantikalari
 
 ```text
-AT-MOST-ONCE (не больше одного раза)
+AT-MOST-ONCE (ko'pi bilan bir marta)
   poll -> commit -> process
-  упали во время process -> сообщение ПОТЕРЯНО
+  process paytida yiqildik -> xabar YO'QOLDI
 
-AT-LEAST-ONCE (хотя бы один раз)
+AT-LEAST-ONCE (kamida bir marta)
   poll -> process -> commit
-  упали перед commit -> сообщение обработается ПОВТОРНО
+  commitdan oldin yiqildik -> xabar QAYTA ishlanadi
 
-EXACTLY-ONCE (ровно один раз)
-  транзакции Kafka (read-process-write внутри Kafka)
-  или at-least-once + идемпотентная обработка
+EXACTLY-ONCE (aynan bir marta)
+  Kafka tranzaksiyalari (Kafka ichida read-process-write)
+  yoki at-least-once + idempotent qayta ishlash
 ```
 
-**Правило продакшена:** используй at-least-once и делай обработку **идемпотентной**. Дубликаты в распределённых системах неизбежны: ретраи, rebalance, падения.
+**Production qoidasi:** at-least-once dan foydalaning va qayta ishlashni **idempotent** qiling. Taqsimlangan tizimlarda dublikatlar muqarrar: retrylar, rebalance, yiqilishlar.
 
-## 6.6 Consumer на Java с ручным коммитом
+## 6.6 Javada qo'lda commit qiladigan consumer
 
 ```java
 import org.apache.kafka.clients.consumer.*;
@@ -1460,12 +1444,12 @@ public class BillingConsumer {
         props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 500);
-        // новый протокол групп (KIP-848), см. раздел 6.9
+        // guruhlarning yangi protokoli (KIP-848), 6.9 bo'limga qarang
         props.put(ConsumerConfig.GROUP_PROTOCOL_CONFIG, "consumer");
 
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
 
-        // корректное завершение по Ctrl+C
+        // Ctrl+C bosilganda to'g'ri yakunlash
         Thread mainThread = Thread.currentThread();
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             consumer.wakeup();
@@ -1477,16 +1461,16 @@ public class BillingConsumer {
             while (true) {
                 ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(500));
                 for (ConsumerRecord<String, String> r : records) {
-                    process(r); // должна быть идемпотентной
+                    process(r); // idempotent bo'lishi kerak
                 }
                 if (!records.isEmpty()) {
                     consumer.commitSync();
                 }
             }
         } catch (WakeupException e) {
-            // штатная остановка
+            // odatiy to'xtash
         } finally {
-            consumer.close(); // покинуть группу быстро, без ожидания session timeout
+            consumer.close(); // guruhni session timeoutni kutmasdan tez tark etish
         }
     }
 
@@ -1497,9 +1481,9 @@ public class BillingConsumer {
 }
 ```
 
-**Важно:** `KafkaConsumer` **не потокобезопасен**. Один consumer = один поток. Единственный безопасный вызов из другого потока это `wakeup()`.
+**Muhim:** `KafkaConsumer` **thread-safe emas**. Bitta consumer = bitta thread. Boshqa threaddan chaqirish xavfsiz bo'lgan yagona metod `wakeup()`.
 
-## 6.7 Consumer на Python и Go
+## 6.7 Python va Goda consumer
 
 **Python (confluent-kafka):**
 
@@ -1555,67 +1539,67 @@ for {
 
 ## 6.8 Rebalance
 
-**Rebalance** это перераспределение partitions между consumer группы. Причины:
+**Rebalance** partitionlarni guruhdagi consumerlar o'rtasida qayta taqsimlash. Sabablari:
 
-- новый consumer присоединился к группе;
-- consumer корректно вышел или упал;
-- consumer перестал слать heartbeat дольше `session.timeout.ms`;
-- consumer не вызывал `poll()` дольше `max.poll.interval.ms`;
-- изменилось число partitions или подписка.
+- guruhga yangi consumer qo'shildi;
+- consumer to'g'ri tartibda chiqdi yoki yiqildi;
+- consumer `session.timeout.ms` dan uzoqroq heartbeat yubormadi;
+- consumer `max.poll.interval.ms` dan uzoqroq `poll()` ni chaqirmadi;
+- partitionlar soni yoki obuna o'zgardi.
 
-### Классический протокол: eager и cooperative
+### Klassik protokol: eager va cooperative
 
 ```text
 EAGER (stop-the-world):
-  все consumer отдают ВСЕ partitions -> пауза -> новое распределение
+  barcha consumerlar HAMMA partitionlarni topshiradi -> pauza -> yangi taqsimot
 
 COOPERATIVE (incremental, CooperativeStickyAssignor):
-  отдают только те partitions, которые переезжают -> остальные продолжают работать
+  faqat ko'chadigan partitionlar topshiriladi -> qolganlari ishlashda davom etadi
 ```
 
-| Параметр | По умолчанию | Смысл |
+| Parametr | Standart qiymat | Ma'nosi |
 |---|---|---|
-| `session.timeout.ms` | 45000 | Нет heartbeat дольше, consumer считается мёртвым |
-| `heartbeat.interval.ms` | 3000 | Как часто слать heartbeat |
-| `max.poll.interval.ms` | 300000 | Максимум между вызовами `poll()` |
-| `max.poll.records` | 500 | Максимум записей за один `poll()` |
-| `partition.assignment.strategy` | `RangeAssignor, CooperativeStickyAssignor` | Стратегия назначения |
+| `session.timeout.ms` | 45000 | Heartbeat bundan uzoqroq kelmasa, consumer o'lgan hisoblanadi |
+| `heartbeat.interval.ms` | 3000 | Heartbeat qanchalik tez-tez yuboriladi |
+| `max.poll.interval.ms` | 300000 | `poll()` chaqiruvlari orasidagi maksimal vaqt |
+| `max.poll.records` | 500 | Bitta `poll()` da keladigan yozuvlarning maksimal soni |
+| `partition.assignment.strategy` | `RangeAssignor, CooperativeStickyAssignor` | Tayinlash strategiyasi |
 
-### Самая частая авария: долгая обработка
+### Eng ko'p uchraydigan avariya: uzoq davom etadigan qayta ishlash
 
 ```text
 max.poll.records = 500
-обработка одной записи = 1 s (вызов медленного API)
+bitta yozuvni qayta ishlash = 1 s (sekin API chaqiruvi)
 500 s > max.poll.interval.ms (300 s)
--> consumer исключён из группы
+-> consumer guruhdan chiqariladi
 -> rebalance
--> батч обрабатывается заново другим consumer
--> снова не успевает -> бесконечный цикл rebalance
+-> batchni boshqa consumer qaytadan qayta ishlaydi
+-> yana ulgurmaydi -> cheksiz rebalance sikli
 ```
 
-Решения: уменьшить `max.poll.records`, ускорить обработку, увеличить `max.poll.interval.ms`, вынести тяжёлую работу в пул потоков с паузой partitions (`consumer.pause()`).
+Yechimlar: `max.poll.records` ni kamaytirish, qayta ishlashni tezlashtirish, `max.poll.interval.ms` ni oshirish, og'ir ishni partitionlarni pauza qilgan holda (`consumer.pause()`) threadlar puliga chiqarish.
 
 ### Static membership
 
-С `group.instance.id` consumer получает постоянную идентичность. При рестарте пода в Kubernetes rebalance не запускается, если consumer вернулся в пределах `session.timeout.ms`. Это спасает от шторма rebalance при rolling deploy.
+`group.instance.id` bilan consumer doimiy identifikatsiyaga ega bo'ladi. Kubernetesda pod qayta ishga tushganda, consumer `session.timeout.ms` ichida qaytsa, rebalance boshlanmaydi. Bu rolling deploy paytidagi rebalance bo'ronidan qutqaradi.
 
-## 6.9 Новый протокол consumer group (KIP-848)
+## 6.9 Consumer groupning yangi protokoli (KIP-848)
 
-В Kafka 4.0 стал общедоступным **новый протокол групп** потребителей.
+Kafka 4.0 da iste'molchilar **guruhlarining yangi protokoli** hamma uchun ochiq (GA) bo'ldi.
 
 ```properties
 group.protocol=consumer
 ```
 
-Что изменилось:
+Nima o'zgardi:
 
-- **назначение partitions рассчитывает брокер** (group coordinator), а не лидер группы на клиенте;
-- rebalance **полностью инкрементальный**, без глобальной синхронизации всех участников;
-- медленный consumer больше не тормозит rebalance всей группы;
-- `session.timeout.ms` и `heartbeat.interval.ms` настраиваются на брокере (`group.consumer.session.timeout.ms`, `group.consumer.heartbeat.interval.ms`);
-- стратегия выбирается через `group.remote.assignor` (`uniform` или `range`) вместо `partition.assignment.strategy`.
+- **partitionlarni tayinlashni** klientdagi guruh leaderi emas, **broker hisoblaydi** (group coordinator);
+- rebalance **to'liq inkremental**, barcha ishtirokchilarni global sinxronlashsiz;
+- sekin consumer endi butun guruhning rebalanceini sekinlashtirmaydi;
+- `session.timeout.ms` va `heartbeat.interval.ms` brokerda sozlanadi (`group.consumer.session.timeout.ms`, `group.consumer.heartbeat.interval.ms`);
+- strategiya `partition.assignment.strategy` o'rniga `group.remote.assignor` (`uniform` yoki `range`) orqali tanlanadi.
 
-Для новых приложений на Kafka 4.x рекомендуется использовать `group.protocol=consumer`. Классический протокол (`group.protocol=classic`) остаётся для совместимости.
+Kafka 4.x dagi yangi ilovalar uchun `group.protocol=consumer` dan foydalanish tavsiya etiladi. Klassik protokol (`group.protocol=classic`) moslik uchun qoladi.
 
 ## 6.10 Consumer lag
 
@@ -1630,13 +1614,13 @@ billing  orders  0          1200            1250            50    consumer-1-...
 billing  orders  1          980             4980            4000  consumer-2-...
 ```
 
-- **LAG** = сколько сообщений группа ещё не обработала.
-- Высокий lag **не всегда проблема**: важно, растёт он или сокращается, и укладывается ли задержка в SLA.
-- Lag только на одном partition обычно означает горячий ключ или «ядовитое» сообщение.
+- **LAG** = guruh hali nechta xabarni qayta ishlamagani.
+- Yuqori lag **har doim ham muammo emas**: muhimi, u o'syaptimi yoki qisqaryaptimi va kechikish SLAga sig'yaptimi.
+- Faqat bitta partitiondagi lag odatda qaynoq kalit yoki «zaharli» xabar borligini bildiradi.
 
-## 6.11 Сброс offsets
+## 6.11 Offsetlarni reset qilish
 
-Перечитать топик с начала (группа должна быть остановлена):
+Topicni boshidan qayta o'qish (guruh to'xtatilgan bo'lishi kerak):
 
 ```bash
 docker exec kafka-1 /opt/kafka/bin/kafka-consumer-groups.sh \
@@ -1644,47 +1628,47 @@ docker exec kafka-1 /opt/kafka/bin/kafka-consumer-groups.sh \
   --reset-offsets --to-earliest --execute
 ```
 
-Другие варианты: `--to-latest`, `--to-offset 100`, `--shift-by -500`, `--to-datetime 2026-09-15T00:00:00.000`, `--by-duration PT2H`. Без `--execute` команда показывает план (dry run).
+Boshqa variantlar: `--to-latest`, `--to-offset 100`, `--shift-by -500`, `--to-datetime 2026-09-15T00:00:00.000`, `--by-duration PT2H`. `--execute` bo'lmasa, buyruq faqat rejani ko'rsatadi (dry run).
 
-### Практика
+### Amaliyot
 
-1. Запусти 3 consumer в группе `billing` для топика с 6 partitions и посмотри распределение.
-2. Запусти 7-й consumer и убедись, что он простаивает.
-3. Добавь в обработку `Thread.sleep(1000)`, уменьши `max.poll.interval.ms` до 10000 и воспроизведи цикл rebalance.
-4. Сбрось offsets группы на 1 час назад.
+1. 6 ta partitionli topic uchun `billing` guruhida 3 ta consumerni ishga tushiring va taqsimotni ko'ring.
+2. 7-consumerni ishga tushiring va uning bo'sh turganiga ishonch hosil qiling.
+3. Qayta ishlashga `Thread.sleep(1000)` qo'shing, `max.poll.interval.ms` ni 10000 gacha kamaytiring va rebalance siklini qayta hosil qiling.
+4. Guruh offsetlarini 1 soat orqaga reset qiling.
 
 ---
 
-# Модуль 7. Exactly-once, транзакции Kafka и transactional outbox
+# Modul 7. Exactly-once, Kafka tranzaksiyalari va transactional outbox
 
-## 7.1 Где появляются дубли и потери
+## 7.1 Dublikatlar va yo'qotishlar qayerda paydo bo'ladi
 
-| Сценарий | Результат | Защита |
+| Ssenariy | Natija | Himoya |
 |---|---|---|
-| Producer не получил ACK и повторил отправку | Дубль в топике | `enable.idempotence=true` |
-| Приложение упало после send, но до отметки «отправлено» | Дубль бизнес-события | `event_id` + идемпотентный consumer |
-| Consumer обработал, но упал до commit | Повторная обработка | Идемпотентная обработка |
-| Consumer закоммитил до обработки и упал | Потеря | Коммит после обработки |
-| Сервис записал в БД, но упал до отправки в Kafka | Потеря события | Transactional outbox |
-| Сервис отправил в Kafka, но транзакция БД откатилась | «Фантомное» событие | Transactional outbox |
-| RF=1 или `acks=1` и упал брокер | Потеря | RF=3, `min.insync.replicas=2`, `acks=all` |
+| Producer ACK olmadi va yuborishni takrorladi | Topicda dublikat | `enable.idempotence=true` |
+| Ilova senddan keyin, lekin «yuborildi» belgisini qo'yishdan oldin yiqildi | Biznes-hodisa dublikati | `event_id` + idempotent consumer |
+| Consumer qayta ishladi, lekin commitdan oldin yiqildi | Qayta ishlashning takrorlanishi | Idempotent qayta ishlash |
+| Consumer qayta ishlashdan oldin commit qildi va yiqildi | Yo'qotish | Qayta ishlashdan keyin commit qilish |
+| Servis ma'lumotlar bazasiga yozdi, lekin Kafkaga yuborishdan oldin yiqildi | Hodisaning yo'qolishi | Transactional outbox |
+| Servis Kafkaga yubordi, lekin ma'lumotlar bazasi tranzaksiyasi rollback bo'ldi | «Fantom» hodisa | Transactional outbox |
+| RF=1 yoki `acks=1` va broker yiqildi | Yo'qotish | RF=3, `min.insync.replicas=2`, `acks=all` |
 
-## 7.2 Транзакции Kafka
+## 7.2 Kafka tranzaksiyalari
 
-Транзакции позволяют **атомарно** записать сообщения в несколько partitions и закоммитить offsets consumer: либо всё, либо ничего. Это основа паттерна **consume-transform-produce** с exactly-once.
+Tranzaksiyalar xabarlarni bir nechta partitionga **atomar** yozish va consumer offsetlarini commit qilish imkonini beradi: yo hammasi, yo hech narsa. Bu exactly-once bilan ishlaydigan **consume-transform-produce** patternining asosi.
 
 ```text
       read                    process                   write + commit offsets
-orders ----> [ приложение ] -----------> payments  (одна транзакция Kafka)
+orders ----> [   ilova    ] -----------> payments  (bitta Kafka tranzaksiyasi)
 ```
 
-Как это устроено:
+Bu qanday tuzilgan:
 
-- producer получает `transactional.id` (стабильный идентификатор экземпляра);
-- **Transaction Coordinator** на брокере хранит состояние в топике `__transaction_state`;
-- в partitions пишутся данные, а в конце транзакции **control records** (commit или abort);
-- consumer с `isolation.level=read_committed` видит только закоммиченные данные;
-- **fencing**: если стартовал новый экземпляр с тем же `transactional.id`, старый «зомби» получает `ProducerFencedException`.
+- producer `transactional.id` oladi (nusxaning barqaror identifikatori);
+- brokerdagi **Transaction Coordinator** holatni `__transaction_state` topicida saqlaydi;
+- partitionlarga ma'lumotlar yoziladi, tranzaksiya oxirida esa **control records** (commit yoki abort);
+- `isolation.level=read_committed` bo'lgan consumer faqat commit qilingan ma'lumotlarni ko'radi;
+- **fencing**: agar xuddi shu `transactional.id` bilan yangi nusxa ishga tushsa, eski «zombi» `ProducerFencedException` oladi.
 
 ```java
 Properties p = new Properties();
@@ -1720,11 +1704,11 @@ while (true) {
         producer.sendOffsetsToTransaction(offsets, consumer.groupMetadata());
         producer.commitTransaction();
     } catch (ProducerFencedException e) {
-        producer.close();   // нас заменил другой экземпляр
+        producer.close();   // bizni boshqa nusxa almashtirdi
         break;
     } catch (KafkaException e) {
         producer.abortTransaction();
-        // откатить позицию consumer к последнему закоммиченному offset
+        // consumer pozitsiyasini oxirgi commit qilingan offsetga qaytarish
         for (TopicPartition tp : records.partitions()) {
             OffsetAndMetadata committed = consumer.committed(Set.of(tp)).get(tp);
             consumer.seek(tp, committed == null ? 0 : committed.offset());
@@ -1733,11 +1717,11 @@ while (true) {
 }
 ```
 
-> **Граница exactly-once.** Транзакции Kafka дают exactly-once **только внутри Kafka**: чтение из топика, запись в топик, коммит offset. Если обработка отправляет email, списывает деньги во внешнем API или пишет в PostgreSQL, эти эффекты не входят в транзакцию Kafka. Для них нужна идемпотентность.
+> **Exactly-once chegarasi.** Kafka tranzaksiyalari exactly-once ni **faqat Kafka ichida** beradi: topicdan o'qish, topicga yozish, offsetni commit qilish. Agar qayta ishlash email yuborsa, tashqi APIda pul yechsa yoki PostgreSQLga yozsa, bu effektlar Kafka tranzaksiyasiga kirmaydi. Ular uchun idempotentlik kerak.
 
-## 7.3 Идемпотентный consumer
+## 7.3 Idempotent consumer
 
-Самый надёжный способ получить «эффективно ровно один раз» при записи во внешнюю БД:
+Tashqi ma'lumotlar bazasiga yozishda «amalda aynan bir marta» natijasiga erishishning eng ishonchli usuli:
 
 ```sql
 CREATE TABLE processed_events (
@@ -1750,34 +1734,34 @@ CREATE TABLE processed_events (
 BEGIN;
 INSERT INTO processed_events (event_id) VALUES ($1)
   ON CONFLICT (event_id) DO NOTHING;
--- если вставлено 0 строк, событие уже обработано: COMMIT и выходим
+-- agar 0 ta satr qo'shilgan bo'lsa, hodisa allaqachon qayta ishlangan: COMMIT qilib chiqamiz
 UPDATE accounts SET balance = balance - $2 WHERE id = $3;
 COMMIT;
--- затем commit offset в Kafka
+-- keyin Kafkada offsetni commit qilamiz
 ```
 
-Другие варианты: `UPSERT` по естественному ключу, условное обновление по версии (`WHERE version = $expected`), хранение offset partition в той же таблице, что и результат.
+Boshqa variantlar: tabiiy kalit bo'yicha `UPSERT`, versiya bo'yicha shartli yangilash (`WHERE version = $expected`), partition offsetini natija bilan bitta jadvalda saqlash.
 
-## 7.4 Transactional outbox: как не потерять событие
+## 7.4 Transactional outbox: hodisani qanday yo'qotmaslik kerak
 
-**Проблема двойной записи (dual write):**
+**Ikki joyga yozish muammosi (dual write):**
 
 ```text
 1. INSERT INTO orders ...     OK
-2. producer.send(OrderCreated) -> сервис упал
-   -> заказ есть, события нет, остальные системы не узнали о заказе
+2. producer.send(OrderCreated) -> servis yiqildi
+   -> buyurtma bor, hodisa yo'q, boshqa tizimlar buyurtma haqida bilmadi
 ```
 
-**Решение: outbox-таблица в той же БД.**
+**Yechim: xuddi shu ma'lumotlar bazasidagi outbox-jadval.**
 
 ```text
-+---------------- одна транзакция БД ----------------+
++------ bitta ma'lumotlar bazasi tranzaksiyasi -------+
 | INSERT INTO orders (...)                            |
 | INSERT INTO outbox (id, aggregate_id, type, payload)|
 +-----------------------------------------------------+
                |
                v
-  Debezium (CDC) или outbox-relay читает outbox
+  Debezium (CDC) yoki outbox-relay outboxni o'qiydi
                |
                v
          Kafka topic shop.orders.events.v1
@@ -1787,56 +1771,56 @@ COMMIT;
 CREATE TABLE outbox (
     id             UUID PRIMARY KEY,
     aggregatetype  TEXT NOT NULL,     -- "order"
-    aggregateid    TEXT NOT NULL,     -- ключ Kafka
+    aggregateid    TEXT NOT NULL,     -- Kafka kaliti
     type           TEXT NOT NULL,     -- "OrderCreated"
     payload        JSONB NOT NULL,
     created_at     TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 ```
 
-Relay может публиковать событие повторно, поэтому потребители всё равно должны быть идемпотентны по `id`. Настройку Debezium Outbox Event Router смотри в [модуле 11](#модуль-11-kafka-connect-и-cdc-с-debezium).
+Relay hodisani qayta e'lon qilishi mumkin, shuning uchun iste'molchilar baribir `id` bo'yicha idempotent bo'lishi kerak. Debezium Outbox Event Router sozlamasini [11-modulda](#modul-11-kafka-connect-va-debezium-bilan-cdc) ko'ring.
 
-## 7.5 Итог: какую гарантию выбрать
+## 7.5 Xulosa: qaysi kafolatni tanlash kerak
 
-| Задача | Рекомендация |
+| Vazifa | Tavsiya |
 |---|---|
-| Логи, метрики, клики | At-least-once, дубли допустимы |
-| Микросервисы, бизнес-события | At-least-once + идемпотентный consumer + outbox |
-| Kafka -> обработка -> Kafka | Транзакции Kafka или Kafka Streams `exactly_once_v2` |
-| Kafka -> БД | Идемпотентная запись или offset в той же транзакции БД |
+| Loglar, metrikalar, kliklar | At-least-once, dublikatlarga yo'l qo'yiladi |
+| Mikroservislar, biznes-hodisalar | At-least-once + idempotent consumer + outbox |
+| Kafka -> qayta ishlash -> Kafka | Kafka tranzaksiyalari yoki Kafka Streams `exactly_once_v2` |
+| Kafka -> ma'lumotlar bazasi | Idempotent yozish yoki offsetni ma'lumotlar bazasining o'sha tranzaksiyasida saqlash |
 
-### Вопросы для самопроверки
+### O'z-o'zini tekshirish uchun savollar
 
-1. Почему идемпотентный producer не защищает от дублей при рестарте приложения?
-2. Что такое fencing и зачем нужен `transactional.id`?
-3. Почему exactly-once в Kafka не распространяется на внешний HTTP-вызов?
-4. Какую проблему решает transactional outbox?
+1. Nima uchun idempotent producer ilova qayta ishga tushgandagi dublikatlardan himoya qilmaydi?
+2. Fencing nima va `transactional.id` nima uchun kerak?
+3. Nima uchun Kafkadagi exactly-once tashqi HTTP chaqiruviga taalluqli emas?
+4. Transactional outbox qanday muammoni hal qiladi?
 
 ---
 
-# Модуль 8. Хранение данных: сегменты, retention, log compaction
+# Modul 8. Ma'lumotlarni saqlash: segmentlar, retention, log compaction
 
-## 8.1 Сегменты и индексы
+## 8.1 Segmentlar va indekslar
 
-Partition на диске разбит на **сегменты**:
+Partition diskda **segmentlarga** bo'lingan:
 
 ```text
 orders-0/
-  00000000000000000000.log        старый сегмент (закрыт)
+  00000000000000000000.log        eski segment (yopilgan)
   00000000000000000000.index
   00000000000000000000.timeindex
-  00000000000001000000.log        старый сегмент (закрыт)
+  00000000000001000000.log        eski segment (yopilgan)
   00000000000001000000.index
-  00000000000002000000.log        ACTIVE сегмент: сюда идёт запись
+  00000000000002000000.log        ACTIVE segment: yozish shu yerga ketadi
   00000000000002000000.index
 ```
 
-- Имя файла это **base offset** первой записи сегмента.
-- Новый сегмент создаётся по достижении `segment.bytes` (1 GB) или `segment.ms` (7 дней).
-- **Удаление и компактизация работают только с закрытыми сегментами.**
-- `.index` это разреженный индекс offset -> позиция в файле; поиск записи: бинарный поиск по индексу + короткое последовательное чтение.
+- Fayl nomi segmentdagi birinchi yozuvning **base offset**i.
+- Yangi segment `segment.bytes` (1 GB) yoki `segment.ms` (7 kun) ga yetganda yaratiladi.
+- **O'chirish va kompaktlash faqat yopilgan segmentlar bilan ishlaydi.**
+- `.index` siyrak indeks: offset -> fayldagi pozitsiya; yozuvni qidirish: indeks bo'yicha binar qidiruv + qisqa ketma-ket o'qish.
 
-Посмотреть содержимое сегмента:
+Segment tarkibini ko'rish:
 
 ```bash
 docker exec kafka-1 /opt/kafka/bin/kafka-dump-log.sh \
@@ -1844,43 +1828,43 @@ docker exec kafka-1 /opt/kafka/bin/kafka-dump-log.sh \
   --print-data-log
 ```
 
-## 8.2 Почему Kafka такая быстрая
+## 8.2 Nima uchun Kafka bunchalik tez
 
-| Приём | Как работает |
+| Usul | Qanday ishlaydi |
 |---|---|
-| **Последовательная запись** | Только append в конец файла, диски и SSD любят последовательный I/O |
-| **Page cache ОС** | Kafka не кэширует данные в JVM heap, чтение идёт из кэша файловой системы |
-| **Zero-copy** (`sendfile`) | Данные из page cache отправляются в сокет без копирования в user space |
-| **Батчинг** | Записи группируются на producer, брокере и consumer |
-| **Сжатие батчей** | Меньше сети и диска, брокер не распаковывает данные |
-| **Партиционирование** | Нагрузка распределена по брокерам и дискам |
-| **Бинарный протокол** | Компактный протокол поверх TCP с пайплайнингом |
+| **Ketma-ket yozish** | Faqat fayl oxiriga append, disklar va SSDlar ketma-ket I/O ni yaxshi ko'radi |
+| **OS page cache** | Kafka ma'lumotlarni JVM heapda keshlamaydi, o'qish fayl tizimi keshidan bajariladi |
+| **Zero-copy** (`sendfile`) | Page cachedagi ma'lumotlar user spacega nusxalanmasdan soketga yuboriladi |
+| **Batching** | Yozuvlar producerda, brokerda va consumerda guruhlanadi |
+| **Batchlarni siqish** | Tarmoq va disk kamroq sarflanadi, broker ma'lumotlarni ochmaydi |
+| **Partitsiyalash** | Yuklama brokerlar va disklar bo'yicha taqsimlangan |
+| **Binar protokol** | TCP ustidagi ixcham, pipelining bilan ishlaydigan protokol |
 
-> Zero-copy не работает при включённом TLS: данные нужно шифровать в user space. Поэтому TLS заметно увеличивает нагрузку на CPU брокеров.
+> TLS yoqilganda zero-copy ishlamaydi: ma'lumotlarni user spaceda shifrlash kerak. Shuning uchun TLS brokerlarning CPU yuklamasini sezilarli oshiradi.
 
-## 8.3 Page cache и JVM heap
+## 8.3 Page cache va JVM heap
 
 ```text
-Сервер 64 GB RAM
-  JVM heap Kafka:  6 GB   (метаданные, буферы запросов)
-  Page cache ОС:  ~55 GB  (горячие данные партиций)
+Server 64 GB RAM
+  Kafka JVM heap:  6 GB   (metadata, so'rov buferlari)
+  OS page cache:  ~55 GB  (partitionlarning qaynoq ma'lumotlari)
 ```
 
-Рекомендации:
+Tavsiyalar:
 
-- heap брокера 4-8 GB достаточно даже для больших нагрузок;
-- оставляй остальную память операционной системе под page cache;
-- `vm.swappiness=1`, swap на брокере убивает задержки;
-- consumer, которые читают «хвост» топика, получают данные из памяти; consumer, читающие старую историю, идут на диск и могут вытеснять горячие данные.
+- brokerning heapi uchun 4-8 GB katta yuklamalarda ham yetarli;
+- qolgan xotirani operatsion tizimga page cache uchun qoldiring;
+- `vm.swappiness=1`, brokerdagi swap kechikishlarni keskin yomonlashtiradi;
+- topicning «dumini» o'qiydigan consumerlar ma'lumotni xotiradan oladi; eski tarixni o'qiydigan consumerlar diskka boradi va qaynoq ma'lumotlarni siqib chiqarishi mumkin.
 
-## 8.4 Retention: сколько хранить
+## 8.4 Retention: qancha saqlash kerak
 
-| Параметр | По умолчанию | Смысл |
+| Parametr | Standart qiymat | Ma'nosi |
 |---|---|---|
-| `retention.ms` (топик) / `log.retention.hours` (брокер) | 7 дней | Время хранения |
-| `retention.bytes` | `-1` (без лимита) | Лимит размера **на partition** |
-| `segment.bytes` | 1 GB | Размер сегмента |
-| `segment.ms` | 7 дней | Максимальный возраст активного сегмента |
+| `retention.ms` (topic) / `log.retention.hours` (broker) | 7 kun | Saqlash vaqti |
+| `retention.bytes` | `-1` (limitsiz) | **Har bir partition uchun** o'lcham limiti |
+| `segment.bytes` | 1 GB | Segment o'lchami |
+| `segment.ms` | 7 kun | Faol segmentning maksimal yoshi |
 
 ```bash
 docker exec kafka-1 /opt/kafka/bin/kafka-configs.sh \
@@ -1889,36 +1873,36 @@ docker exec kafka-1 /opt/kafka/bin/kafka-configs.sh \
   --add-config retention.ms=259200000
 ```
 
-> Ловушка: при маленьком трафике активный сегмент может не закрываться неделями, и данные будут храниться дольше retention. Для таких топиков уменьшай `segment.ms`.
+> Tuzoq: trafik kam bo'lganda faol segment haftalab yopilmasligi mumkin va ma'lumotlar retentiondan uzoqroq saqlanadi. Bunday topiclar uchun `segment.ms` ni kamaytiring.
 
-## 8.5 cleanup.policy: delete и compact
+## 8.5 cleanup.policy: delete va compact
 
-**`delete`** (по умолчанию) удаляет целые сегменты старше retention.
+**`delete`** (standart qiymat) retentiondan eski bo'lgan segmentlarni butunligicha o'chiradi.
 
-**`compact`** оставляет **последнее значение для каждого ключа**:
+**`compact`** **har bir kalit uchun oxirgi qiymatni** qoldiradi:
 
 ```text
-До компактизации:
+Kompaktlashdan oldin:
 offset 0: user-1 -> {"name":"Ann"}
 offset 1: user-2 -> {"name":"Bob"}
 offset 2: user-1 -> {"name":"Anna"}
-offset 3: user-2 -> null            <- tombstone (удаление ключа)
+offset 3: user-2 -> null            <- tombstone (kalitni o'chirish)
 offset 4: user-3 -> {"name":"Kate"}
 
-После компактизации:
+Kompaktlashdan keyin:
 offset 2: user-1 -> {"name":"Anna"}
 offset 4: user-3 -> {"name":"Kate"}
-(tombstone user-2 удалится после delete.retention.ms)
+(user-2 uchun tombstone delete.retention.ms dan keyin o'chiriladi)
 ```
 
-Где используют log compaction:
+Log compaction qayerda ishlatiladi:
 
-- `__consumer_offsets` и другие внутренние топики;
-- снапшоты состояния: профили пользователей, цены, остатки, настройки;
-- CDC-топики (последнее состояние строки таблицы);
-- changelog-топики state store в Kafka Streams.
+- `__consumer_offsets` va boshqa ichki topiclar;
+- holat snapshotlari: foydalanuvchi profillari, narxlar, qoldiqlar, sozlamalar;
+- CDC-topiclar (jadval satrining oxirgi holati);
+- Kafka Streamsdagi state storelarning changelog-topiclari.
 
-Настройки компактизации: `min.cleanable.dirty.ratio` (0.5), `min.compaction.lag.ms`, `max.compaction.lag.ms`, `delete.retention.ms` (1 день). Можно комбинировать: `cleanup.policy=compact,delete`.
+Kompaktlash sozlamalari: `min.cleanable.dirty.ratio` (0.5), `min.compaction.lag.ms`, `max.compaction.lag.ms`, `delete.retention.ms` (1 kun). Birlashtirish mumkin: `cleanup.policy=compact,delete`.
 
 ```bash
 docker exec kafka-1 /opt/kafka/bin/kafka-topics.sh \
@@ -1931,51 +1915,51 @@ docker exec kafka-1 /opt/kafka/bin/kafka-topics.sh \
 
 ## 8.6 Tiered Storage
 
-**Tiered Storage** (KIP-405, production-ready с Kafka 3.9) выносит закрытые сегменты в объектное хранилище (S3, GCS, Azure Blob, MinIO), а на локальных дисках брокера держит только «горячий» хвост.
+**Tiered Storage** (KIP-405, Kafka 3.9 dan production-ready) yopilgan segmentlarni obyekt omboriga (S3, GCS, Azure Blob, MinIO) chiqaradi, brokerning lokal disklarida esa faqat «qaynoq» dumni saqlaydi.
 
 ```text
-broker local disk:  последние 1-2 дня (быстро)
-object storage:     месяцы и годы (дёшево)
+broker local disk:  oxirgi 1-2 kun (tez)
+object storage:     oylar va yillar (arzon)
 ```
 
-Что даёт: дешёвое длительное хранение, меньшие диски, быстрый перезапуск и перебалансировка брокеров. Включается `remote.log.storage.system.enable=true` на брокере и `remote.storage.enable=true` на топике, плюс плагин RemoteStorageManager для конкретного хранилища.
+Nima beradi: arzon uzoq muddatli saqlash, kichikroq disklar, brokerlarni tez qayta ishga tushirish va qayta balanslash. Brokerda `remote.log.storage.system.enable=true`, topicda `remote.storage.enable=true` bilan yoqiladi, bunga qo'shimcha muayyan ombor uchun RemoteStorageManager plagini kerak.
 
-### Вопросы для самопроверки
+### O'z-o'zini tekshirish uchun savollar
 
-1. Почему Kafka эффективно работает с диском и не держит данные в JVM heap?
-2. Почему retention может не срабатывать на топике с редкими записями?
-3. Когда выбрать `compact` вместо `delete`?
-4. Что такое tombstone?
+1. Nima uchun Kafka disk bilan samarali ishlaydi va ma'lumotlarni JVM heapda saqlamaydi?
+2. Nima uchun yozuvlar kam keladigan topicda retention ishlamay qolishi mumkin?
+3. Qachon `delete` o'rniga `compact` ni tanlash kerak?
+4. Tombstone nima?
 
 ---
 
-# Модуль 9. Share Groups: очереди в Kafka
+# Modul 9. Share Groups: Kafkadagi navbatlar
 
-## 9.1 Какую проблему решают Share Groups
+## 9.1 Share Groups qanday muammoni hal qiladi
 
-В обычной consumer group параллелизм ограничен числом partitions. Для очереди задач (отправка писем, генерация PDF, вызовы внешних API) это неудобно: хочется 100 воркеров на топик с 6 partitions.
+Oddiy consumer groupda parallellik partitionlar soni bilan cheklangan. Vazifalar navbati (xat yuborish, PDF generatsiya qilish, tashqi APIlarni chaqirish) uchun bu noqulay: 6 ta partitionli topicga 100 ta worker qo'ygingiz keladi.
 
-**Share Groups** (KIP-932 «Queues for Kafka», общедоступны с Kafka 4.2) позволяют:
+**Share Groups** (KIP-932 «Queues for Kafka», Kafka 4.2 dan hamma uchun ochiq) quyidagilarga imkon beradi:
 
-- нескольким consumer **читать один и тот же partition одновременно**;
-- подтверждать **каждую запись отдельно**;
-- автоматически **повторно доставлять** неподтверждённые записи;
-- ограничивать число попыток доставки.
+- bir nechta consumer **bitta partitionni bir vaqtda o'qiydi**;
+- **har bir yozuv alohida** tasdiqlanadi;
+- tasdiqlanmagan yozuvlar avtomatik **qayta yetkaziladi**;
+- yetkazish urinishlari soni cheklanadi.
 
 ```text
-Consumer group:  partition-0 -> ровно 1 consumer
+Consumer group:  partition-0 -> aynan 1 ta consumer
 Share group:     partition-0 -> consumer-1, consumer-2, ... consumer-N
 ```
 
-## 9.2 Как это работает
+## 9.2 Bu qanday ishlaydi
 
-- брокер выдаёт записи consumer с **временной блокировкой (acquisition lock)**, по умолчанию 30 секунд;
-- consumer подтверждает запись: `ACCEPT` (обработано), `RELEASE` (вернуть в очередь), `REJECT` (отбросить как необрабатываемую);
-- если блокировка истекла без подтверждения, запись доставляется другому consumer;
-- после превышения лимита попыток (`group.share.delivery.count.limit`, по умолчанию 5) запись считается необрабатываемой;
-- **порядок не гарантируется**, это осознанный компромисс ради параллелизма.
+- broker yozuvlarni consumerga **vaqtinchalik blokirovka (acquisition lock)** bilan beradi, standart qiymati 30 soniya;
+- consumer yozuvni tasdiqlaydi: `ACCEPT` (qayta ishlandi), `RELEASE` (navbatga qaytarish), `REJECT` (qayta ishlab bo'lmaydigan deb tashlab yuborish);
+- agar blokirovka tasdiqsiz tugasa, yozuv boshqa consumerga yetkaziladi;
+- urinishlar limiti (`group.share.delivery.count.limit`, standart qiymati 5) oshib ketgach, yozuv qayta ishlab bo'lmaydigan hisoblanadi;
+- **tartib kafolatlanmaydi**, bu parallellik uchun ongli ravishda qilingan murosa.
 
-## 9.3 Пример на Java
+## 9.3 Javadagi misol
 
 ```java
 Properties props = new Properties();
@@ -1994,9 +1978,9 @@ try (KafkaShareConsumer<String, String> consumer = new KafkaShareConsumer<>(prop
                 sendEmail(r.value());
                 consumer.acknowledge(r, AcknowledgeType.ACCEPT);
             } catch (TemporaryException e) {
-                consumer.acknowledge(r, AcknowledgeType.RELEASE); // повторить позже
+                consumer.acknowledge(r, AcknowledgeType.RELEASE); // keyinroq takrorlash
             } catch (Exception e) {
-                consumer.acknowledge(r, AcknowledgeType.REJECT);  // не повторять
+                consumer.acknowledge(r, AcknowledgeType.REJECT);  // takrorlamaslik
             }
         }
         consumer.commitSync();
@@ -2004,71 +1988,71 @@ try (KafkaShareConsumer<String, String> consumer = new KafkaShareConsumer<>(prop
 }
 ```
 
-Консольный клиент для экспериментов:
+Tajribalar uchun konsol klienti:
 
 ```bash
 docker exec -it kafka-1 /opt/kafka/bin/kafka-console-share-consumer.sh \
   --bootstrap-server kafka-1:9092 --topic email-jobs --group email-workers
 ```
 
-Если в твоём кластере share groups выключены, их включают через feature flag:
+Agar klasteringizda share groups o'chirilgan bo'lsa, ular feature flag orqali yoqiladi:
 
 ```bash
 docker exec kafka-1 /opt/kafka/bin/kafka-features.sh \
   --bootstrap-server kafka-1:9092 upgrade --feature share.version=1
 ```
 
-## 9.4 Consumer group или share group
+## 9.4 Consumer group yoki share group
 
-| Нужно | Выбор |
+| Nima kerak | Tanlov |
 |---|---|
-| Порядок событий по ключу | Consumer group |
-| Stream processing, агрегаты, CDC | Consumer group |
-| Очередь независимых задач, воркеры | Share group |
-| Параллелизм больше числа partitions | Share group |
-| Поштучный retry без блокировки partition | Share group |
+| Hodisalarning kalit bo'yicha tartibi | Consumer group |
+| Stream processing, agregatlar, CDC | Consumer group |
+| Mustaqil vazifalar navbati, workerlar | Share group |
+| Partitionlar sonidan katta parallellik | Share group |
+| Partitionni bloklamasdan har bir yozuvni alohida retry qilish | Share group |
 
 ---
 
-# Модуль 10. Schema Registry, Avro, Protobuf и проектирование событий
+# Modul 10. Schema Registry, Avro, Protobuf va hodisalarni loyihalash
 
-## 10.1 Зачем схемы, если Kafka хранит байты
+## 10.1 Kafka baytlarni saqlasa, sxemalar nima uchun kerak
 
-Kafka не проверяет содержимое сообщений. Без контракта рано или поздно случится:
+Kafka xabarlar tarkibini tekshirmaydi. Kontrakt bo'lmasa, ertami-kechmi shunday bo'ladi:
 
 ```text
-Order Service переименовал поле amount -> total_amount
-   -> 5 потребителей падают в 3 часа ночи
+Order Service maydon nomini o'zgartirdi: amount -> total_amount
+   -> 5 ta iste'molchi tungi soat 3 da yiqiladi
 ```
 
-**Schema Registry** хранит версии схем и проверяет совместимость при публикации новой версии. Реализации: Confluent Schema Registry, Apicurio Registry, Karapace.
+**Schema Registry** sxemalar versiyalarini saqlaydi va yangi versiya e'lon qilinayotganda moslikni tekshiradi. Implementatsiyalari: Confluent Schema Registry, Apicurio Registry, Karapace.
 
 ```text
-producer --(регистрирует схему, получает schema id)--> Schema Registry
+producer --(sxemani ro'yxatdan o'tkazadi, schema id oladi)--> Schema Registry
 producer --[magic byte][schema id][payload]--> Kafka
-consumer --(по schema id получает схему)--> Schema Registry
+consumer --(schema id bo'yicha sxemani oladi)--> Schema Registry
 ```
 
-## 10.2 Форматы сообщений
+## 10.2 Xabar formatlari
 
-| Формат | Плюсы | Минусы | Когда выбирать |
+| Format | Afzalliklari | Kamchiliklari | Qachon tanlash kerak |
 |---|---|---|---|
-| **JSON** | Читаемый, прост в отладке | Большой размер, нет строгой схемы | Прототипы, небольшие нагрузки |
-| **JSON Schema** | JSON + валидация | Размер как у JSON | Когда нужен JSON и контракт |
-| **Avro** | Компактный, отличная эволюция схем | Нужен реестр схем | Data-платформы, CDC, аналитика |
-| **Protobuf** | Компактный, кодогенерация, gRPC-экосистема | Правила эволюции нужно соблюдать | Микросервисы, полиглотные команды |
+| **JSON** | O'qish oson, debug qilish sodda | O'lchami katta, qat'iy sxema yo'q | Prototiplar, kichik yuklamalar |
+| **JSON Schema** | JSON + validatsiya | O'lchami JSON bilan bir xil | JSON ham, kontrakt ham kerak bo'lganda |
+| **Avro** | Ixcham, sxemalar evolyutsiyasi a'lo darajada | Sxemalar reyestri kerak | Data-platformalar, CDC, analitika |
+| **Protobuf** | Ixcham, kod generatsiyasi, gRPC ekotizimi | Evolyutsiya qoidalariga rioya qilish kerak | Mikroservislar, turli tillarda yozadigan (polyglot) jamoalar |
 
-## 10.3 Режимы совместимости схем
+## 10.3 Sxemalarning moslik rejimlari
 
-| Режим | Разрешено | Кого обновлять первым |
+| Rejim | Nimaga ruxsat berilgan | Kimni birinchi yangilash kerak |
 |---|---|---|
-| `BACKWARD` (часто по умолчанию) | Новая схема читает старые данные: удалить поле, добавить поле с default | Consumer |
-| `FORWARD` | Старая схема читает новые данные: добавить поле, удалить поле с default | Producer |
-| `FULL` | И то и другое | В любом порядке |
-| `*_TRANSITIVE` | Проверка против **всех** прошлых версий | |
-| `NONE` | Без проверки | Не используй в продакшене |
+| `BACKWARD` (ko'pincha standart qiymat) | Yangi sxema eski ma'lumotlarni o'qiydi: maydonni o'chirish, defaultli maydon qo'shish | Consumer |
+| `FORWARD` | Eski sxema yangi ma'lumotlarni o'qiydi: maydon qo'shish, defaultli maydonni o'chirish | Producer |
+| `FULL` | Ikkalasi ham | Istalgan tartibda |
+| `*_TRANSITIVE` | **Barcha** oldingi versiyalarga nisbatan tekshirish | |
+| `NONE` | Tekshiruvsiz | Productionda ishlatmang |
 
-Пример Avro-схемы:
+Avro-sxema misoli:
 
 ```json
 {
@@ -2086,16 +2070,16 @@ consumer --(по schema id получает схему)--> Schema Registry
 }
 ```
 
-**Правила безопасной эволюции:**
+**Xavfsiz evolyutsiya qoidalari:**
 
-- добавляй новые поля только с `default`;
-- не переименовывай поля, добавляй новое и помечай старое устаревшим;
-- не меняй тип поля;
-- ломающее изменение = новый топик или новый тип события (`v2`).
+- yangi maydonlarni faqat `default` bilan qo'shing;
+- maydonlar nomini o'zgartirmang, yangisini qo'shing va eskisini eskirgan deb belgilang;
+- maydon turini o'zgartirmang;
+- buzuvchi o'zgarish (breaking change) = yangi topic yoki yangi hodisa turi (`v2`).
 
-## 10.4 Проектирование событий
+## 10.4 Hodisalarni loyihalash
 
-**Хорошее событие:**
+**Yaxshi hodisa:**
 
 ```json
 {
@@ -2114,24 +2098,24 @@ consumer --(по schema id получает схему)--> Schema Registry
 }
 ```
 
-| Вопрос | Рекомендация |
+| Savol | Tavsiya |
 |---|---|
-| Один топик на тип события или на сущность? | Для порядка жизненного цикла: один топик на агрегат (`orders`) с разными типами событий |
-| Толстое или тонкое событие? | Event-carried state transfer (все нужные данные) снижает обратные HTTP-вызовы; тонкое событие проще, но порождает связанность |
-| Деньги | Целые числа в минимальных единицах (копейки) + валюта, не float |
-| Время | UTC, ISO-8601 или epoch millis |
-| Метаданные | В headers: `trace_id`, `event_type`, `content-type` |
-| Персональные данные | Минимизируй, для compacted-топиков удаляй через tombstone |
+| Har bir hodisa turiga bitta topicmi yoki har bir obyektgami? | Hayot sikli tartibi uchun: har bir agregatga bitta topic (`orders`), ichida turli hodisa turlari |
+| Semiz hodisami yoki ozg'in hodisami? | Event-carried state transfer (barcha kerakli ma'lumotlar) ortga qaytuvchi HTTP chaqiruvlarini kamaytiradi; ozg'in hodisa soddaroq, lekin bog'liqlik tug'diradi |
+| Pul | Minimal birliklardagi butun sonlar (tiyin) + valyuta, float emas |
+| Vaqt | UTC, ISO-8601 yoki epoch millis |
+| Metadata | Headerlarda: `trace_id`, `event_type`, `content-type` |
+| Shaxsiy ma'lumotlar | Minimallashtiring, compacted-topiclarda tombstone orqali o'chiring |
 
-Стандарт **CloudEvents** описывает общий формат метаданных событий и может служить основой соглашений в компании.
+**CloudEvents** standarti hodisalar metadatasining umumiy formatini tavsiflaydi va kompaniyadagi kelishuvlarga asos bo'lishi mumkin.
 
 ---
 
-# Модуль 11. Kafka Connect и CDC с Debezium
+# Modul 11. Kafka Connect va Debezium bilan CDC
 
-## 11.1 Что такое Kafka Connect
+## 11.1 Kafka Connect nima
 
-**Kafka Connect** это фреймворк для интеграции Kafka с внешними системами **без написания кода**.
+**Kafka Connect** Kafkani tashqi tizimlar bilan **kod yozmasdan** integratsiya qilish uchun freymvork.
 
 ```text
 PostgreSQL --[Source connector]--> Kafka --[Sink connector]--> Elasticsearch
@@ -2139,20 +2123,20 @@ MySQL                                                         S3 / ClickHouse
 MongoDB                                                       Snowflake / JDBC
 ```
 
-| Понятие | Смысл |
+| Tushuncha | Ma'nosi |
 |---|---|
-| **Source connector** | Читает из внешней системы и пишет в Kafka |
-| **Sink connector** | Читает из Kafka и пишет во внешнюю систему |
-| **Worker** | JVM-процесс Connect; в distributed-режиме воркеры образуют кластер |
-| **Task** | Единица параллелизма коннектора |
-| **Converter** | Сериализация: `JsonConverter`, `AvroConverter`, `ProtobufConverter` |
-| **SMT** (Single Message Transform) | Лёгкая трансформация записи: переименовать поле, извлечь ключ, маршрутизировать |
+| **Source connector** | Tashqi tizimdan o'qiydi va Kafkaga yozadi |
+| **Sink connector** | Kafkadan o'qiydi va tashqi tizimga yozadi |
+| **Worker** | Connectning JVM-jarayoni; distributed rejimda workerlar klaster hosil qiladi |
+| **Task** | Connectorning parallellik birligi |
+| **Converter** | Serializatsiya: `JsonConverter`, `AvroConverter`, `ProtobufConverter` |
+| **SMT** (Single Message Transform) | Yozuvni yengil o'zgartirish: maydon nomini o'zgartirish, kalitni ajratib olish, marshrutlash |
 
-Состояние distributed Connect хранится в Kafka: топики `connect-configs`, `connect-offsets`, `connect-status`.
+Distributed Connectning holati Kafkada saqlanadi: `connect-configs`, `connect-offsets`, `connect-status` topiclari.
 
 ## 11.2 CDC: Change Data Capture
 
-**CDC** превращает изменения в базе данных в поток событий. **Debezium** читает журнал транзакций (WAL в PostgreSQL, binlog в MySQL, oplog в MongoDB) и публикует каждое `INSERT`, `UPDATE`, `DELETE` в Kafka.
+**CDC** ma'lumotlar bazasidagi o'zgarishlarni hodisalar oqimiga aylantiradi. **Debezium** tranzaksiyalar jurnalini (PostgreSQLda WAL, MySQLda binlog, MongoDBda oplog) o'qiydi va har bir `INSERT`, `UPDATE`, `DELETE` ni Kafkaga e'lon qiladi.
 
 ```text
 UPDATE customers SET email='new@mail.ru' WHERE id=42;
@@ -2171,13 +2155,13 @@ topic: crm.public.customers
 }
 ```
 
-Преимущества перед опросом таблицы (`SELECT ... WHERE updated_at > ?`): видны удаления, нет нагрузки от частых запросов, все промежуточные изменения, минимальная задержка.
+Jadvalni so'rov bilan tekshirib turishga (`SELECT ... WHERE updated_at > ?`) nisbatan afzalliklari: o'chirishlar ko'rinadi, tez-tez so'rovlardan yuklama yo'q, barcha oraliq o'zgarishlar keladi, kechikish minimal.
 
-## 11.3 Пример: Debezium PostgreSQL connector
+## 11.3 Misol: Debezium PostgreSQL connector
 
-Подготовка PostgreSQL: `wal_level=logical`, пользователь с правом `REPLICATION`.
+PostgreSQLni tayyorlash: `wal_level=logical`, `REPLICATION` huquqiga ega foydalanuvchi.
 
-Регистрация коннектора через REST API Kafka Connect:
+Connectorni Kafka Connect REST API orqali ro'yxatdan o'tkazish:
 
 ```bash
 curl -X POST http://localhost:8083/connectors \
@@ -2201,16 +2185,16 @@ curl -X POST http://localhost:8083/connectors \
   }'
 ```
 
-Полезные команды REST API:
+REST APIning foydali buyruqlari:
 
 ```bash
-curl http://localhost:8083/connectors                              # список
-curl http://localhost:8083/connectors/crm-postgres-cdc/status      # статус задач
+curl http://localhost:8083/connectors                              # ro'yxat
+curl http://localhost:8083/connectors/crm-postgres-cdc/status      # tasklar holati
 curl -X POST http://localhost:8083/connectors/crm-postgres-cdc/restart?includeTasks=true
 curl -X PUT  http://localhost:8083/connectors/crm-postgres-cdc/pause
 ```
 
-## 11.4 Outbox через Debezium Event Router
+## 11.4 Debezium Event Router orqali outbox
 
 ```json
 {
@@ -2223,9 +2207,9 @@ curl -X PUT  http://localhost:8083/connectors/crm-postgres-cdc/pause
 }
 ```
 
-Запись в `outbox` с `aggregatetype=order` окажется в топике `shop.order.events.v1` с ключом `aggregateid`.
+`outbox` dagi `aggregatetype=order` bo'lgan yozuv `shop.order.events.v1` topiciga `aggregateid` kaliti bilan tushadi.
 
-## 11.5 Ошибки в Kafka Connect
+## 11.5 Kafka Connectdagi xatolar
 
 ```properties
 errors.tolerance=all
@@ -2234,37 +2218,37 @@ errors.deadletterqueue.context.headers.enable=true
 errors.log.enable=true
 ```
 
-Dead letter queue в Connect работает для **sink**-коннекторов: сломанная запись уходит в DLQ, а коннектор продолжает работу.
+Connectda dead letter queue **sink**-connectorlar uchun ishlaydi: buzuq yozuv DLQga ketadi, connector esa ishni davom ettiradi.
 
-**Типичные проблемы CDC:** растущий replication slot в PostgreSQL при остановленном коннекторе (WAL заполняет диск), изменение схемы таблицы, долгий initial snapshot больших таблиц, `REPLICA IDENTITY` для получения `before` при `UPDATE`/`DELETE`.
+**CDCning tipik muammolari:** connector to'xtatilganda PostgreSQLda o'sib boruvchi replication slot (WAL diskni to'ldiradi), jadval sxemasining o'zgarishi, katta jadvallarning uzoq davom etadigan initial snapshoti, `UPDATE`/`DELETE` da `before` ni olish uchun `REPLICA IDENTITY`.
 
 ---
 
-# Модуль 12. Kafka Streams: потоковая обработка данных
+# Modul 12. Kafka Streams: ma'lumotlar oqimini qayta ishlash
 
-## 12.1 Что такое Kafka Streams
+## 12.1 Kafka Streams nima
 
-**Kafka Streams** это Java-библиотека для stream processing. Она **не требует отдельного кластера**: приложение это обычный JAR, который масштабируется запуском дополнительных экземпляров.
+**Kafka Streams** stream processing uchun Java-kutubxona. U **alohida klasterni talab qilmaydi**: ilova oddiy JAR bo'lib, qo'shimcha nusxalarni ishga tushirish orqali masshtablanadi.
 
 ```text
 orders topic --> [Kafka Streams app x3 instances] --> orders-per-minute topic
                         |
-                   state store (RocksDB) + changelog topic в Kafka
+                   state store (RocksDB) + Kafkadagi changelog topic
 ```
 
-Альтернативы: **Apache Flink** (мощный отдельный кластер, SQL, сложные окна), **ksqlDB** (SQL поверх Kafka Streams), **Spark Structured Streaming**.
+Muqobillar: **Apache Flink** (kuchli alohida klaster, SQL, murakkab oynalar), **ksqlDB** (Kafka Streams ustidagi SQL), **Spark Structured Streaming**.
 
 ## 12.2 KStream, KTable, GlobalKTable
 
-| Абстракция | Смысл | Пример |
+| Abstraksiya | Ma'nosi | Misol |
 |---|---|---|
-| **KStream** | Поток независимых событий (insert) | Клики, платежи |
-| **KTable** | Changelog: последнее значение по ключу (upsert) | Текущий профиль пользователя |
-| **GlobalKTable** | KTable, полностью реплицированная на каждый экземпляр | Небольшие справочники |
+| **KStream** | Mustaqil hodisalar oqimi (insert) | Kliklar, to'lovlar |
+| **KTable** | Changelog: kalit bo'yicha oxirgi qiymat (upsert) | Foydalanuvchining joriy profili |
+| **GlobalKTable** | Har bir nusxaga to'liq replikatsiya qilingan KTable | Kichik ma'lumotnomalar |
 
-**Двойственность потока и таблицы:** поток изменений можно свернуть в таблицу, а таблицу развернуть обратно в поток изменений.
+**Oqim va jadvalning ikki yoqlamaligi:** o'zgarishlar oqimini jadvalga yig'ish mumkin, jadvalni esa qaytadan o'zgarishlar oqimiga yoyish mumkin.
 
-## 12.3 Пример: выручка по пользователям и заказы в минуту
+## 12.3 Misol: foydalanuvchilar bo'yicha tushum va daqiqadagi buyurtmalar
 
 ```java
 Properties props = new Properties();
@@ -2277,7 +2261,7 @@ props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.StringSerde.cla
 StreamsBuilder builder = new StreamsBuilder();
 KStream<String, String> orders = builder.stream("orders");
 
-// 1. Количество заказов в минуту (tumbling window)
+// 1. Daqiqadagi buyurtmalar soni (tumbling window)
 orders
     .groupBy((key, value) -> "all")
     .windowedBy(TimeWindows.ofSizeWithNoGrace(Duration.ofMinutes(1)))
@@ -2286,7 +2270,7 @@ orders
     .map((windowedKey, count) -> KeyValue.pair(windowedKey.window().startTime().toString(), count.toString()))
     .to("orders-per-minute");
 
-// 2. Сумма заказов по пользователю (KTable)
+// 2. Foydalanuvchi bo'yicha buyurtmalar summasi (KTable)
 orders
     .selectKey((key, value) -> extractUserId(value))
     .mapValues(value -> extractAmount(value))
@@ -2300,139 +2284,139 @@ Runtime.getRuntime().addShutdownHook(new Thread(streams::close));
 streams.start();
 ```
 
-## 12.4 Ключевые концепции Kafka Streams
+## 12.4 Kafka Streamsning asosiy konsepsiyalari
 
-| Концепция | Что важно знать |
+| Konsepsiya | Nimani bilish muhim |
 |---|---|
-| **Stateless-операции** | `filter`, `map`, `flatMap`, `branch`: не требуют хранилища |
-| **Stateful-операции** | `count`, `aggregate`, `reduce`, `join`: состояние в RocksDB + changelog-топик |
-| **Repartition** | `selectKey`/`groupBy` по новому ключу создают внутренний repartition-топик |
-| **Окна** | Tumbling, hopping, sliding, session |
-| **Grace period** | Сколько ждать опоздавших событий после закрытия окна |
-| **Event time** | Обработка по времени события, а не времени прихода |
-| **Joins** | Stream-stream (в окне), stream-table (обогащение), table-table |
-| **Co-partitioning** | Для join топики должны иметь одинаковое число partitions и одинаковые ключи |
-| **Interactive queries** | Чтение state store напрямую из приложения через REST |
-| **Standby replicas** | `num.standby.replicas` ускоряет восстановление состояния после падения |
+| **Stateless-operatsiyalar** | `filter`, `map`, `flatMap`, `branch`: ombor talab qilmaydi |
+| **Stateful-operatsiyalar** | `count`, `aggregate`, `reduce`, `join`: holat RocksDBda + changelog-topic |
+| **Repartition** | Yangi kalit bo'yicha `selectKey`/`groupBy` ichki repartition-topic yaratadi |
+| **Oynalar** | Tumbling, hopping, sliding, session |
+| **Grace period** | Oyna yopilgandan keyin kechikkan hodisalarni qancha kutish |
+| **Event time** | Kelgan vaqti emas, hodisa vaqti bo'yicha qayta ishlash |
+| **Joins** | Stream-stream (oyna ichida), stream-table (boyitish), table-table |
+| **Co-partitioning** | Join uchun topiclarning partitionlar soni ham, kalitlari ham bir xil bo'lishi kerak |
+| **Interactive queries** | State storeni REST orqali to'g'ridan-to'g'ri ilovadan o'qish |
+| **Standby replicas** | `num.standby.replicas` yiqilishdan keyin holatni tiklashni tezlashtiradi |
 
 ---
 
-# Модуль 13. Обработка ошибок: retry, DLQ и poison pill
+# Modul 13. Xatolarni qayta ishlash: retry, DLQ va poison pill
 
-## 13.1 Типы ошибок
+## 13.1 Xato turlari
 
-| Тип | Пример | Что делать |
+| Tur | Misol | Nima qilish kerak |
 |---|---|---|
-| **Временная** (transient) | Таймаут БД, 503 от внешнего API | Повторить с backoff |
-| **Постоянная** (permanent) | Невалидный JSON, нарушение бизнес-правила | Отправить в DLQ, не повторять |
-| **Poison pill** | Сообщение, которое всегда роняет десериализатор | DLQ, иначе partition заблокирован навсегда |
+| **Vaqtinchalik** (transient) | Ma'lumotlar bazasi timeouti, tashqi APIdan 503 | Backoff bilan takrorlash |
+| **Doimiy** (permanent) | Yaroqsiz JSON, biznes-qoidaning buzilishi | DLQga yuborish, takrorlamaslik |
+| **Poison pill** | Deserializatorni har doim yiqitadigan xabar | DLQ, aks holda partition butunlay bloklanadi |
 
-## 13.2 Почему нельзя бесконечно повторять в consumer
-
-```text
-partition-3: [msg 100 - сломан] [101] [102] [103] ...
-consumer бесконечно ретраит 100
--> все события partition-3 стоят
--> lag растёт, заказы клиентов не обрабатываются
-```
-
-## 13.3 Паттерн retry-топиков и DLQ
+## 13.2 Nima uchun consumerda cheksiz takrorlab bo'lmaydi
 
 ```text
-orders ---> main consumer --ошибка--> orders.retry.30s ---> retry consumer (ждёт 30 s)
-                                           |
-                                        ошибка
-                                           v
-                                    orders.retry.5m ---> retry consumer (ждёт 5 min)
-                                           |
-                                        ошибка
-                                           v
-                                      orders.dlq  ---> алерт, ручной разбор, повторная отправка
+partition-3: [msg 100 - buzuq] [101] [102] [103] ...
+consumer 100 ni cheksiz retry qiladi
+-> partition-3 ning barcha hodisalari to'xtab turadi
+-> lag o'sadi, mijozlarning buyurtmalari qayta ishlanmaydi
 ```
 
-Правила:
+## 13.3 Retry-topiclar va DLQ patterni
 
-- в headers храни `original-topic`, `original-partition`, `original-offset`, `attempt`, `error-class`, `error-message`, `failed-at`;
-- retry-consumer не спит в `poll`-цикле, а ставит partition на паузу (`pause`/`resume`) до наступления времени повтора;
-- **retry-топики нарушают порядок**; если порядок по ключу критичен, блокируй ключ до успешной обработки или ретраи делай на месте с ограничением;
-- на DLQ обязательно заведи **алерт** и инструмент **повторной отправки** (redrive);
-- в Spring for Apache Kafka есть готовая реализация: `@RetryableTopic` и `DefaultErrorHandler` с `DeadLetterPublishingRecoverer`.
+```text
+orders ---> main consumer --xato----> orders.retry.30s ---> retry consumer (30 s kutadi)
+                                           |
+                                         xato
+                                           v
+                                    orders.retry.5m ---> retry consumer (5 min kutadi)
+                                           |
+                                         xato
+                                           v
+                                      orders.dlq  ---> alert, qo'lda tahlil, qayta yuborish
+```
 
-## 13.4 Ошибки десериализации
+Qoidalar:
 
-В Java-клиенте исключение десериализации выбрасывается из `poll()` и блокирует partition. Решения:
+- headerlarda `original-topic`, `original-partition`, `original-offset`, `attempt`, `error-class`, `error-message`, `failed-at` ni saqlang;
+- retry-consumer `poll`-siklda uxlamaydi, balki takrorlash vaqti kelguncha partitionni pauzaga qo'yadi (`pause`/`resume`);
+- **retry-topiclar tartibni buzadi**; agar kalit bo'yicha tartib juda muhim bo'lsa, muvaffaqiyatli qayta ishlanguncha kalitni bloklang yoki retrylarni cheklov bilan joyida bajaring;
+- DLQga albatta **alert** va **qayta yuborish** (redrive) vositasini o'rnating;
+- Spring for Apache Kafkada tayyor implementatsiya bor: `@RetryableTopic` va `DeadLetterPublishingRecoverer` bilan `DefaultErrorHandler`.
 
-- обёртка `ErrorHandlingDeserializer` (Spring Kafka);
-- читать `byte[]` и десериализовать в коде с `try/catch`;
-- в Kafka Streams: `deserialization.exception.handler=LogAndContinueExceptionHandler` или собственный обработчик с отправкой в DLQ.
+## 13.4 Deserializatsiya xatolari
+
+Java-klientda deserializatsiya exceptioni `poll()` dan tashlanadi va partitionni bloklaydi. Yechimlar:
+
+- `ErrorHandlingDeserializer` wrapperi (Spring Kafka);
+- `byte[]` ni o'qib, kodda `try/catch` bilan deserializatsiya qilish;
+- Kafka Streamsda: `deserialization.exception.handler=LogAndContinueExceptionHandler` yoki DLQga yuboradigan o'z handleringiz.
 
 ---
 
-# Модуль 14. Производительность и тюнинг Kafka
+# Modul 14. Kafka unumdorligi va tuning
 
-## 14.1 Throughput против latency
+## 14.1 Throughput va latency
 
 ```text
-                больше батчи, больше linger.ms, сжатие
+                kattaroq batchlar, kattaroq linger.ms, siqish
 throughput  <----------------------------------------->  latency
-                маленькие батчи, linger.ms=0, acks=1
+                kichik batchlar, linger.ms=0, acks=1
 ```
 
-Сначала определи цель: миллионы событий в секунду для аналитики или p99 < 10 ms для торговой системы. Одновременно получить максимум обоих нельзя.
+Avval maqsadni aniqlang: analitika uchun soniyasiga millionlab hodisami yoki savdo tizimi uchun p99 < 10 ms mi. Ikkalasining maksimumiga bir vaqtda erishib bo'lmaydi.
 
-## 14.2 Тюнинг producer
+## 14.2 Producer tuningi
 
-| Параметр | Для throughput | Для latency |
+| Parametr | Throughput uchun | Latency uchun |
 |---|---|---|
 | `linger.ms` | 20-100 | 0-5 |
 | `batch.size` | 128 KB - 1 MB | 16-32 KB |
 | `compression.type` | `lz4`, `zstd` | `none`, `lz4` |
-| `buffer.memory` | 64-256 MB | По умолчанию |
-| `acks` | `all` (надёжность обычно важнее) | `all` или `1` |
+| `buffer.memory` | 64-256 MB | Standart qiymat |
+| `acks` | `all` (odatda ishonchlilik muhimroq) | `all` yoki `1` |
 
-## 14.3 Тюнинг consumer
+## 14.3 Consumer tuningi
 
-| Параметр | По умолчанию | Для throughput |
+| Parametr | Standart qiymat | Throughput uchun |
 |---|---|---|
-| `fetch.min.bytes` | 1 | 64 KB - 1 MB: брокер копит данные перед ответом |
-| `fetch.max.wait.ms` | 500 | Верхняя граница ожидания при `fetch.min.bytes` |
-| `max.partition.fetch.bytes` | 1 MB | Больше для крупных сообщений |
-| `fetch.max.bytes` | 50 MB | Лимит ответа fetch |
-| `max.poll.records` | 500 | Больше при быстрой обработке |
+| `fetch.min.bytes` | 1 | 64 KB - 1 MB: broker javob berishdan oldin ma'lumot to'playdi |
+| `fetch.max.wait.ms` | 500 | `fetch.min.bytes` bo'lganda kutishning yuqori chegarasi |
+| `max.partition.fetch.bytes` | 1 MB | Yirik xabarlar uchun kattaroq |
+| `fetch.max.bytes` | 50 MB | Fetch javobining limiti |
+| `max.poll.records` | 500 | Qayta ishlash tez bo'lsa kattaroq |
 
-Чаще всего узкое место не Kafka, а **обработка в consumer**: синхронные вызовы БД по одной записи. Используй пакетную запись (batch insert), параллельную обработку по ключам, асинхронные клиенты.
+Ko'pincha tor joy (bottleneck) Kafka emas, balki **consumerdagi qayta ishlash** bo'ladi: ma'lumotlar bazasiga har bir yozuv uchun alohida sinxron chaqiruvlar. Paketli yozishdan (batch insert), kalitlar bo'yicha parallel qayta ishlashdan, asinxron klientlardan foydalaning.
 
-## 14.4 Тюнинг брокера
+## 14.4 Broker tuningi
 
 ```properties
-num.network.threads=6          # потоки сетевых запросов (по умолчанию 3)
-num.io.threads=16              # потоки обработки запросов/диска (по умолчанию 8)
-num.replica.fetchers=4         # параллельная репликация (по умолчанию 1)
+num.network.threads=6          # tarmoq so'rovlari threadlari (standart 3)
+num.io.threads=16              # so'rovlar/diskni qayta ishlash threadlari (standart 8)
+num.replica.fetchers=4         # parallel replikatsiya (standart 1)
 socket.send.buffer.bytes=1048576
 socket.receive.buffer.bytes=1048576
-message.max.bytes=1048588      # максимальный размер батча (~1 MB)
+message.max.bytes=1048588      # batchning maksimal o'lchami (~1 MB)
 auto.create.topics.enable=false
 ```
 
-Не трогай `log.flush.interval.*`: Kafka полагается на репликацию, а не на fsync каждой записи.
+`log.flush.interval.*` ga tegmang: Kafka har bir yozuvning fsynciga emas, replikatsiyaga tayanadi.
 
-## 14.5 Операционная система и железо
+## 14.5 Operatsion tizim va apparat ta'minoti
 
-| Область | Рекомендация |
+| Soha | Tavsiya |
 |---|---|
-| **Диски** | NVMe/SSD или несколько HDD в JBOD; отдельные диски под данные Kafka |
-| **Файловая система** | XFS (или ext4), монтирование с `noatime` |
-| **Память** | JVM heap 6 GB, остальное page cache |
+| **Disklar** | NVMe/SSD yoki JBODdagi bir nechta HDD; Kafka ma'lumotlari uchun alohida disklar |
+| **Fayl tizimi** | XFS (yoki ext4), `noatime` bilan mount qilish |
+| **Xotira** | JVM heap 6 GB, qolgani page cache |
 | **Swap** | `vm.swappiness=1` |
-| **Лимиты** | `nofile` ≥ 100000 (много сегментов и сокетов), `vm.max_map_count` ≥ 262144 |
-| **Сеть** | 10-25 Gbit, репликация и consumer часто упираются в сеть раньше диска |
-| **JVM** | Java 17 или 21, G1GC (по умолчанию), следи за паузами GC |
-| **CPU** | Важен для TLS, сжатия и большого числа соединений |
+| **Limitlar** | `nofile` ≥ 100000 (segmentlar va soketlar ko'p), `vm.max_map_count` ≥ 262144 |
+| **Tarmoq** | 10-25 Gbit, replikatsiya va consumerlar ko'pincha diskdan oldin tarmoqqa taqaladi |
+| **JVM** | Java 17 yoki 21, G1GC (standart), GC pauzalarini kuzating |
+| **CPU** | TLS, siqish va ko'p sonli ulanishlar uchun muhim |
 
-## 14.6 Нагрузочное тестирование
+## 14.6 Yuklama testi
 
 ```bash
-# producer: 5 млн записей по 1 KB
+# producer: har biri 1 KB dan 5 mln yozuv
 docker exec kafka-1 /opt/kafka/bin/kafka-producer-perf-test.sh \
   --topic perf --num-records 5000000 --record-size 1024 --throughput -1 \
   --producer-props bootstrap.servers=kafka-1:9092 acks=all linger.ms=20 batch.size=262144 compression.type=lz4
@@ -2442,52 +2426,52 @@ docker exec kafka-1 /opt/kafka/bin/kafka-consumer-perf-test.sh \
   --bootstrap-server kafka-1:9092 --topic perf --messages 5000000 --group perf-test
 ```
 
-Тестируй на реальном размере и формате сообщений, с тем же `acks`, TLS и числом partitions, что в продакшене.
+Xabarlarning real o'lchami va formatida, productiondagi bilan bir xil `acks`, TLS va partitionlar soni bilan test qiling.
 
-## 14.7 Большие сообщения
+## 14.7 Katta xabarlar
 
-Kafka оптимизирована под сообщения до ~1 MB. Для файлов, изображений и больших документов используй **claim check pattern**: положи объект в S3/MinIO, а в Kafka отправь ссылку и метаданные.
+Kafka ~1 MB gacha bo'lgan xabarlar uchun optimallashtirilgan. Fayllar, rasmlar va katta hujjatlar uchun **claim check pattern** dan foydalaning: obyektni S3/MinIOga qo'ying, Kafkaga esa havola va metadatani yuboring.
 
 ---
 
-# Модуль 15. Мониторинг Kafka: метрики, consumer lag, алерты
+# Modul 15. Kafka monitoringi: metrikalar, consumer lag, alertlar
 
-## 15.1 Стек мониторинга
+## 15.1 Monitoring steki
 
 ```text
 Kafka brokers (JMX) --> JMX Exporter --> Prometheus --> Grafana
                                             |
 Consumer lag -------> kafka-exporter/Burrow +--> Alertmanager --> Telegram/Slack/PagerDuty
-Клиентские метрики --> Micrometer ---------->
+Klient metrikalari --> Micrometer ---------->
 ```
 
-## 15.2 Главные метрики брокера
+## 15.2 Brokerning asosiy metrikalari
 
-| Метрика (JMX) | Норма | Что означает отклонение |
+| Metrika (JMX) | Norma | Chetga chiqish nimani bildiradi |
 |---|---|---|
-| `kafka.server:type=ReplicaManager,name=UnderReplicatedPartitions` | 0 | Реплики отстают: брокер упал, перегружен диск или сеть |
-| `kafka.server:type=ReplicaManager,name=UnderMinIsrPartitionCount` | 0 | Запись с `acks=all` отклоняется |
-| `kafka.controller:type=KafkaController,name=OfflinePartitionsCount` | 0 | Partitions без лидера: данные недоступны |
-| `kafka.controller:type=KafkaController,name=ActiveControllerCount` | 1 на кластер | 0 = нет контроллера, >1 = split brain |
-| `kafka.server:type=ReplicaManager,name=IsrShrinksPerSec` / `IsrExpandsPerSec` | Около 0 | Реплики «мигают»: сеть, GC, перегрузка |
-| `kafka.server:type=KafkaRequestHandlerPool,name=RequestHandlerAvgIdlePercent` | > 30% | Брокер не успевает обрабатывать запросы |
-| `kafka.network:type=SocketServer,name=NetworkProcessorAvgIdlePercent` | > 30% | Перегружены сетевые потоки |
-| `kafka.network:type=RequestMetrics,name=TotalTimeMs,request=Produce` | Стабильная | Рост p99 задержки записи |
-| `kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec` / `BytesOutPerSec` | По профилю | Трафик и планирование ёмкости |
-| Диск, CPU, сеть, GC pause | Запас > 30% | Необходимо масштабирование |
+| `kafka.server:type=ReplicaManager,name=UnderReplicatedPartitions` | 0 | Replikalar ortda qolmoqda: broker yiqilgan, disk yoki tarmoq ortiqcha yuklangan |
+| `kafka.server:type=ReplicaManager,name=UnderMinIsrPartitionCount` | 0 | `acks=all` bilan yozish rad etilmoqda |
+| `kafka.controller:type=KafkaController,name=OfflinePartitionsCount` | 0 | Leadersiz partitionlar: ma'lumotlarga kirib bo'lmaydi |
+| `kafka.controller:type=KafkaController,name=ActiveControllerCount` | Klasterga 1 ta | 0 = controller yo'q, >1 = split brain |
+| `kafka.server:type=ReplicaManager,name=IsrShrinksPerSec` / `IsrExpandsPerSec` | 0 atrofida | Replikalar «miltillayapti»: tarmoq, GC, ortiqcha yuklama |
+| `kafka.server:type=KafkaRequestHandlerPool,name=RequestHandlerAvgIdlePercent` | > 30% | Broker so'rovlarni qayta ishlashga ulgurmayapti |
+| `kafka.network:type=SocketServer,name=NetworkProcessorAvgIdlePercent` | > 30% | Tarmoq threadlari ortiqcha yuklangan |
+| `kafka.network:type=RequestMetrics,name=TotalTimeMs,request=Produce` | Barqaror | Yozish kechikishining p99 qiymati o'smoqda |
+| `kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec` / `BytesOutPerSec` | Profil bo'yicha | Trafik va sig'imni rejalashtirish |
+| Disk, CPU, tarmoq, GC pause | Zaxira > 30% | Masshtablash zarur |
 
-## 15.3 Метрики клиентов
+## 15.3 Klient metrikalari
 
-| Клиент | Метрика | Зачем |
+| Klient | Metrika | Nima uchun |
 |---|---|---|
-| Producer | `record-error-rate`, `record-retry-rate` | Ошибки и ретраи отправки |
-| Producer | `request-latency-avg`, `batch-size-avg`, `compression-rate-avg` | Эффективность батчинга |
-| Producer | `buffer-available-bytes` | Буфер переполняется, `send()` блокируется |
-| Consumer | `records-lag-max` | Отставание |
-| Consumer | `commit-rate`, `rebalance-rate-per-hour` | Частые rebalance = проблема |
-| Consumer | `last-poll-seconds-ago` | Застрявший poll-цикл |
+| Producer | `record-error-rate`, `record-retry-rate` | Yuborishdagi xatolar va retrylar |
+| Producer | `request-latency-avg`, `batch-size-avg`, `compression-rate-avg` | Batching samaradorligi |
+| Producer | `buffer-available-bytes` | Bufer to'lib ketmoqda, `send()` bloklanmoqda |
+| Consumer | `records-lag-max` | Ortda qolish |
+| Consumer | `commit-rate`, `rebalance-rate-per-hour` | Tez-tez rebalance = muammo |
+| Consumer | `last-poll-seconds-ago` | Tiqilib qolgan poll-sikl |
 
-## 15.4 Алерты, которые должны быть у каждого
+## 15.4 Har kimda bo'lishi kerak bo'lgan alertlar
 
 ```yaml
 groups:
@@ -2515,33 +2499,33 @@ groups:
     labels: {severity: warning}
 ```
 
-> Имена метрик зависят от правил JMX Exporter и выбранного exporter лага. Сверь их со своей конфигурацией.
+> Metrikalar nomlari JMX Exporter qoidalariga va tanlangan lag exporteriga bog'liq. Ularni o'z konfiguratsiyangiz bilan solishtiring.
 
-**Лучший алерт по lag** выражается во времени: «группа отстаёт больше чем на 5 минут», а не «lag больше 100000 сообщений». 100000 сообщений для кликов это секунды, а для платежей это катастрофа.
+**Lag bo'yicha eng yaxshi alert** vaqt bilan ifodalanadi: «lag 100000 ta xabardan ko'p» emas, balki «guruh 5 daqiqadan ko'proq ortda qolmoqda». 100000 ta xabar kliklar uchun soniyalar, to'lovlar uchun esa falokat.
 
 ## 15.5 Runbook: under-replicated partitions
 
-1. Все URP на одном брокере? Проверь, жив ли брокер, диск, GC-логи.
-2. URP на всех брокерах? Проверь сеть и общий трафик (`BytesInPerSec`).
-3. Растёт `IsrShrinksPerSec`? Ищи паузы GC и насыщение сети.
-4. Диск заполнен? Сократи retention проблемных топиков, добавь диски, перенеси partitions.
+1. Barcha URP bitta brokerdami? Broker tirikligini, diskni, GC-loglarni tekshiring.
+2. URP barcha brokerlardami? Tarmoqni va umumiy trafikni (`BytesInPerSec`) tekshiring.
+3. `IsrShrinksPerSec` o'syaptimi? GC pauzalarini va tarmoqning to'yinishini qidiring.
+4. Disk to'lganmi? Muammoli topiclarning retentionini qisqartiring, disk qo'shing, partitionlarni ko'chiring.
 
 ---
 
-# Модуль 16. Безопасность Kafka: TLS, SASL, ACL, квоты
+# Modul 16. Kafka xavfsizligi: TLS, SASL, ACL, kvotalar
 
-## 16.1 Три уровня защиты
+## 16.1 Himoyaning uch darajasi
 
-| Уровень | Механизм |
+| Daraja | Mexanizm |
 |---|---|
-| **Шифрование** | TLS между клиентами и брокерами, между брокерами, до контроллеров |
-| **Аутентификация** | mTLS, SASL/SCRAM-SHA-512, SASL/OAUTHBEARER (OIDC), SASL/GSSAPI (Kerberos) |
-| **Авторизация** | ACL через `StandardAuthorizer` (KRaft) |
-| **Квоты** | Лимиты байт/с и запросов на клиента или пользователя |
+| **Shifrlash** | Klientlar va brokerlar o'rtasida, brokerlar o'rtasida, controllerlargacha TLS |
+| **Autentifikatsiya** | mTLS, SASL/SCRAM-SHA-512, SASL/OAUTHBEARER (OIDC), SASL/GSSAPI (Kerberos) |
+| **Avtorizatsiya** | `StandardAuthorizer` (KRaft) orqali ACL |
+| **Kvotalar** | Klient yoki foydalanuvchi uchun bayt/s va so'rovlar limitlari |
 
-По умолчанию Kafka работает **без шифрования и аутентификации**. Никогда не открывай такой кластер в интернет.
+Standart holatda Kafka **shifrlashsiz va autentifikatsiyasiz** ishlaydi. Bunday klasterni hech qachon internetga ochmang.
 
-## 16.2 Конфигурация брокера с SASL_SSL
+## 16.2 SASL_SSL bilan broker konfiguratsiyasi
 
 ```properties
 listeners=SASL_SSL://:9094,CONTROLLER://:9093
@@ -2561,7 +2545,7 @@ allow.everyone.if.no.acl.found=false
 super.users=User:admin
 ```
 
-## 16.3 Пользователи SCRAM
+## 16.3 SCRAM foydalanuvchilari
 
 ```bash
 kafka-configs.sh --bootstrap-server kafka-1:9094 --command-config admin.properties \
@@ -2569,7 +2553,7 @@ kafka-configs.sh --bootstrap-server kafka-1:9094 --command-config admin.properti
   --entity-type users --entity-name order-service
 ```
 
-Конфигурация клиента:
+Klient konfiguratsiyasi:
 
 ```properties
 bootstrap.servers=kafka-1.prod.internal:9094
@@ -2580,31 +2564,31 @@ ssl.truststore.location=/etc/app/truststore.p12
 ssl.truststore.type=PKCS12
 ```
 
-## 16.4 ACL: принцип минимальных привилегий
+## 16.4 ACL: minimal imtiyozlar tamoyili
 
 ```bash
-# producer: писать в orders
+# producer: orders ga yozish
 kafka-acls.sh --bootstrap-server kafka-1:9094 --command-config admin.properties \
   --add --allow-principal User:order-service \
   --operation Write --operation Describe --topic shop.orders.events.v1
 
-# идемпотентный producer
+# idempotent producer
 kafka-acls.sh --bootstrap-server kafka-1:9094 --command-config admin.properties \
   --add --allow-principal User:order-service --operation IdempotentWrite --cluster
 
-# consumer: читать топик и использовать свою группу
+# consumer: topicni o'qish va o'z guruhidan foydalanish
 kafka-acls.sh --bootstrap-server kafka-1:9094 --command-config admin.properties \
   --add --allow-principal User:billing-service \
   --operation Read --operation Describe --topic shop.orders.events.v1 \
   --group billing --resource-pattern-type literal
 
-# список ACL
+# ACL ro'yxati
 kafka-acls.sh --bootstrap-server kafka-1:9094 --command-config admin.properties --list
 ```
 
-Для транзакционного producer добавь `Write` и `Describe` на `--transactional-id`. Префиксные ACL (`--resource-pattern-type prefixed --topic shop.orders.`) упрощают управление по доменам.
+Tranzaksion producer uchun `--transactional-id` ga `Write` va `Describe` qo'shing. Prefiksli ACLlar (`--resource-pattern-type prefixed --topic shop.orders.`) domenlar bo'yicha boshqaruvni soddalashtiradi.
 
-## 16.5 Квоты
+## 16.5 Kvotalar
 
 ```bash
 kafka-configs.sh --bootstrap-server kafka-1:9094 --command-config admin.properties \
@@ -2612,13 +2596,13 @@ kafka-configs.sh --bootstrap-server kafka-1:9094 --command-config admin.properti
   --entity-type users --entity-name analytics-service
 ```
 
-Квоты защищают кластер от «шумного соседа»: одна команда с неудачным батч-джобом не должна положить Kafka для всей компании.
+Kvotalar klasterni «shovqinli qo'shni»dan himoya qiladi: bitta jamoaning omadsiz batch-jobi butun kompaniya uchun Kafkani yiqitmasligi kerak.
 
 ---
 
-# Модуль 17. Kafka в продакшене: архитектура и эксплуатация
+# Modul 17. Kafka productionda: arxitektura va ekspluatatsiya
 
-## 17.1 Референсная архитектура кластера
+## 17.1 Klasterning namunaviy arxitekturasi
 
 ```text
                  Availability Zone A    Zone B          Zone C
@@ -2626,49 +2610,49 @@ Controllers:     controller-1           controller-2    controller-3
 Brokers:         broker-1, broker-4     broker-2, 5     broker-3, 6
                  (broker.rack=a)        (rack=b)        (rack=c)
 
-Топики: RF=3, min.insync.replicas=2, реплики в разных зонах
-Клиенты: acks=all, идемпотентность, client.rack для чтения из своей зоны
+Topiclar: RF=3, min.insync.replicas=2, replikalar turli zonalarda
+Klientlar: acks=all, idempotentlik, o'z zonasidan o'qish uchun client.rack
 ```
 
-## 17.2 Расчёт ёмкости (capacity planning)
+## 17.2 Sig'imni hisoblash (capacity planning)
 
 ```text
-Входящий трафик:          50 MB/s
-Retention:                 7 дней
+Kiruvchi trafik:          50 MB/s
+Retention:                 7 kun
 Replication factor:        3
-Запас:                     40%
+Zaxira:                    40%
 
-Хранение = 50 MB/s × 86400 s × 7 × 3 ≈ 90.7 TB
-С запасом 40%             ≈ 127 TB
-Сжатие (lz4, ~x3 для JSON) уменьшает объём, учитывай фактический коэффициент
+Saqlash = 50 MB/s × 86400 s × 7 × 3 ≈ 90.7 TB
+40% zaxira bilan          ≈ 127 TB
+Siqish (lz4, JSON uchun ~x3) hajmni kamaytiradi, haqiqiy koeffitsiyentni hisobga oling
 ```
 
-Проверь также: исходящий сетевой трафик (репликация × 2 + все consumer groups), число partitions на брокер (ориентир до 4000 реплик на брокер для типового железа), время восстановления брокера после замены диска.
+Yana quyidagilarni tekshiring: chiquvchi tarmoq trafigi (replikatsiya × 2 + barcha consumer grouplar), bitta brokerdagi partitionlar soni (tipik apparat uchun mo'ljal: brokerga 4000 tagacha replika), disk almashtirilgandan keyin brokerning tiklanish vaqti.
 
-## 17.3 Чеклист проектирования топика
+## 17.3 Topicni loyihalash cheklisti
 
-- [ ] Понятное имя по стандарту компании
-- [ ] Ключ выбран под бизнес-инвариант порядка
-- [ ] Число partitions рассчитано с запасом
+- [ ] Kompaniya standartiga mos tushunarli nom
+- [ ] Kalit tartibning biznes invariantiga mos tanlangan
+- [ ] Partitionlar soni zaxira bilan hisoblangan
 - [ ] `replication.factor=3`, `min.insync.replicas=2`
-- [ ] Retention согласован с потребителями и требованиями к данным
-- [ ] `cleanup.policy` выбран осознанно
-- [ ] Схема зарегистрирована, задан режим совместимости
-- [ ] Определены владелец топика и список потребителей
-- [ ] Есть DLQ и алерты для критичных потребителей
-- [ ] Выданы ACL по принципу минимальных привилегий
-- [ ] Персональные данные минимизированы
+- [ ] Retention iste'molchilar va ma'lumotlarga qo'yilgan talablar bilan kelishilgan
+- [ ] `cleanup.policy` ongli ravishda tanlangan
+- [ ] Sxema ro'yxatdan o'tkazilgan, moslik rejimi belgilangan
+- [ ] Topic egasi va iste'molchilar ro'yxati aniqlangan
+- [ ] Muhim iste'molchilar uchun DLQ va alertlar bor
+- [ ] ACLlar minimal imtiyozlar tamoyili bo'yicha berilgan
+- [ ] Shaxsiy ma'lumotlar minimallashtirilgan
 
-## 17.4 Операции с кластером
+## 17.4 Klaster bilan operatsiyalar
 
-**Rolling restart и обновление версии:** по одному брокеру, дождаться `UnderReplicatedPartitions = 0` перед следующим, контроллеры обновлять отдельно. После обновления бинарников поднимается `metadata.version`:
+**Rolling restart va versiyani yangilash:** brokerlarni bittadan, keyingisiga o'tishdan oldin `UnderReplicatedPartitions = 0` bo'lishini kutish, controllerlarni alohida yangilash. Binar fayllar yangilangandan keyin `metadata.version` ko'tariladi:
 
 ```bash
 kafka-features.sh --bootstrap-server kafka-1:9092 describe
 kafka-features.sh --bootstrap-server kafka-1:9092 upgrade --release-version 4.3
 ```
 
-**Перенос partitions** на новые брокеры:
+**Partitionlarni** yangi brokerlarga **ko'chirish**:
 
 ```bash
 kafka-reassign-partitions.sh --bootstrap-server kafka-1:9092 \
@@ -2681,44 +2665,44 @@ kafka-reassign-partitions.sh --bootstrap-server kafka-1:9092 \
   --reassignment-json-file plan.json --verify
 ```
 
-Всегда используй `--throttle`, иначе перенос данных съест сеть и продакшен-трафик пострадает. Для автоматической балансировки есть **Cruise Control**.
+Har doim `--throttle` dan foydalaning, aks holda ma'lumotlarni ko'chirish tarmoqni band qilib qo'yadi va production trafigi zarar ko'radi. Avtomatik balanslash uchun **Cruise Control** bor.
 
-## 17.5 Kafka в Kubernetes
+## 17.5 Kubernetesda Kafka
 
-- **Strimzi**: самый популярный open-source оператор Kafka для Kubernetes. Ресурсы `Kafka`, `KafkaNodePool`, `KafkaTopic`, `KafkaUser`, `KafkaConnect`, поддержка KRaft.
-- Используй `StatefulSet`-подобное хранилище с локальными или быстрыми сетевыми дисками, anti-affinity по зонам, PodDisruptionBudget.
-- Внешний доступ: отдельный адрес для каждого брокера (LoadBalancer, NodePort или Ingress с TLS passthrough), иначе снова проблема `advertised.listeners`.
+- **Strimzi**: Kubernetes uchun eng mashhur open-source Kafka operatori. `Kafka`, `KafkaNodePool`, `KafkaTopic`, `KafkaUser`, `KafkaConnect` resurslari, KRaftni qo'llab-quvvatlash.
+- Lokal yoki tez tarmoq disklariga ega `StatefulSet`ga o'xshash ombordan, zonalar bo'yicha anti-affinitydan, PodDisruptionBudgetdan foydalaning.
+- Tashqi kirish: har bir broker uchun alohida manzil (LoadBalancer, NodePort yoki TLS passthrough bilan Ingress), aks holda yana `advertised.listeners` muammosi chiqadi.
 
-## 17.6 Multi-DC и disaster recovery
+## 17.6 Multi-DC va disaster recovery
 
-| Схема | Инструмент | Особенности |
+| Sxema | Vosita | Xususiyatlari |
 |---|---|---|
-| **Active-passive** | MirrorMaker 2 | Резервный кластер в другом ДЦ, переключение клиентов при аварии |
-| **Active-active** | MirrorMaker 2 с префиксами топиков | Каждый ДЦ пишет локально, данные зеркалируются (`dc1.orders`) |
-| **Stretched cluster** | Один кластер на 3 ДЦ | Нужна низкая задержка между ДЦ (< 10-20 ms), RPO = 0 |
+| **Active-passive** | MirrorMaker 2 | Boshqa DCdagi zaxira klaster, avariya paytida klientlarni o'tkazish |
+| **Active-active** | Topic prefikslari bilan MirrorMaker 2 | Har bir DC lokal yozadi, ma'lumotlar ko'zgulanadi (`dc1.orders`) |
+| **Stretched cluster** | 3 ta DCga yoyilgan bitta klaster | DClar orasida past kechikish kerak (< 10-20 ms), RPO = 0 |
 
-**MirrorMaker 2** построен на Kafka Connect, реплицирует топики, конфигурации, ACL и транслирует offsets consumer groups (`emit.checkpoints.enabled`, `sync.group.offsets.enabled`). Помни: offsets в разных кластерах не совпадают, переключение потребителей требует трансляции offsets.
+**MirrorMaker 2** Kafka Connect asosida qurilgan, topiclarni, konfiguratsiyalarni, ACLlarni replikatsiya qiladi va consumer grouplarning offsetlarini translyatsiya qiladi (`emit.checkpoints.enabled`, `sync.group.offsets.enabled`). Yodda tuting: turli klasterlardagi offsetlar bir-biriga mos kelmaydi, iste'molchilarni o'tkazish offsetlarni translyatsiya qilishni talab qiladi.
 
-## 17.7 Антипаттерны Kafka в продакшене
+## 17.7 Productiondagi Kafka antipatternlari
 
-| Антипаттерн | Чем плохо | Как правильно |
+| Antipattern | Nimasi yomon | To'g'risi qanday |
 |---|---|---|
-| `replication.factor=1` | Потеря данных при сбое диска | RF=3 |
-| `auto.create.topics.enable=true` | Опечатка создаёт топик с дефолтами | Топики через IaC (Terraform, Strimzi, GitOps) |
-| Kafka как база данных для запросов | Нет индексов и выборок по полям | Kafka как лог + материализация в БД |
-| Тысячи топиков на каждого клиента | Взрыв метаданных и partitions | Один топик + ключ/заголовки |
-| Сообщения по 10-50 MB | Давление на память, репликацию | Claim check через S3 |
-| Новый producer на каждый запрос | Утечка соединений, нет батчинга | Один producer на приложение |
-| Игнорирование ошибок `send()` | Молчаливая потеря данных | Обработка callback, метрика ошибок |
-| Нет мониторинга lag | Узнаёшь о проблеме от пользователей | Алерты по lag во времени |
-| Синхронная длинная обработка в poll-цикле | Шторм rebalance | Меньше `max.poll.records`, пауза partitions |
-| Порядок через один partition на весь топик | Нет масштабирования | Порядок по ключу |
+| `replication.factor=1` | Disk buzilganda ma'lumot yo'qoladi | RF=3 |
+| `auto.create.topics.enable=true` | Imlo xatosi standart sozlamali topic yaratadi | Topiclar IaC orqali (Terraform, Strimzi, GitOps) |
+| Kafka so'rovlar uchun ma'lumotlar bazasi sifatida | Indekslar va maydonlar bo'yicha tanlash yo'q | Kafka log sifatida + ma'lumotlar bazasida materializatsiya |
+| Har bir mijozga minglab topic | Metadata va partitionlar portlashi | Bitta topic + kalit/headerlar |
+| 10-50 MB li xabarlar | Xotira va replikatsiyaga bosim | S3 orqali claim check |
+| Har bir so'rovga yangi producer | Ulanishlar sizib chiqadi, batching yo'q | Har bir ilovaga bitta producer |
+| `send()` xatolarini e'tiborsiz qoldirish | Ma'lumotlarning jimgina yo'qolishi | Callbackni qayta ishlash, xatolar metrikasi |
+| Lag monitoringi yo'q | Muammo haqida foydalanuvchilardan bilasiz | Vaqt bilan ifodalangan lag alertlari |
+| Poll-siklda uzoq sinxron qayta ishlash | Rebalance bo'roni | Kichikroq `max.poll.records`, partitionlarni pauza qilish |
+| Butun topicga bitta partition orqali tartib | Masshtablash yo'q | Kalit bo'yicha tartib |
 
 ---
 
-# Модуль 18. Итоговый проект: event-driven интернет-магазин
+# Modul 18. Yakuniy loyiha: event-driven internet-do'kon
 
-## 18.1 Архитектура
+## 18.1 Arxitektura
 
 ```text
                HTTP
@@ -2727,49 +2711,49 @@ Client -----> Order Service ---(outbox + Debezium)---> shop.orders.events.v1
          +------------------------------+-----------------+-----------------+
          v                              v                                   v
   Payment Service                Inventory Service                 Analytics (Kafka Streams)
-  (идемпотентный,                (резерв товара)                   заказы в минуту,
-   транзакции Kafka)                    |                           выручка по категориям
+  (idempotent,                   (tovar rezervi)                   daqiqadagi buyurtmalar,
+   Kafka tranzaksiyalari)               |                           kategoriyalar bo'yicha tushum
          |                              v                                   |
          v                     shop.inventory.events.v1                     v
  payments.transactions.events.v1                                   analytics.orders.stats.v1
          |                                                                  |
          v                                                                  v
- Notification Service (share group, email-воркеры)                ClickHouse (sink connector)
+ Notification Service (share group, email-workerlar)              ClickHouse (sink connector)
          |
          v
  notifications.email.dlq
 ```
 
-## 18.2 Требования
+## 18.2 Talablar
 
-1. **Order Service** сохраняет заказ в PostgreSQL и пишет событие в outbox в одной транзакции. Debezium публикует `OrderCreated`.
-2. **Топики**: RF=3, `min.insync.replicas=2`, ключ `order_id`, Avro или Protobuf схемы в Schema Registry с режимом `BACKWARD`.
-3. **Payment Service** читает `OrderCreated`, списывает оплату идемпотентно по `event_id`, публикует `PaymentSucceeded` или `PaymentFailed`.
-4. **Inventory Service** резервирует товар; при `PaymentFailed` снимает резерв (сага через хореографию).
-5. **Notification Service** работает через share group, временные ошибки SMTP ретраит, постоянные отправляет в DLQ.
-6. **Analytics** на Kafka Streams считает заказы в минуту и выручку с `exactly_once_v2`.
-7. **Мониторинг**: Prometheus + Grafana, алерты по URP, offline partitions и lag.
-8. **Безопасность**: SASL/SCRAM, отдельный пользователь и ACL на каждый сервис.
+1. **Order Service** buyurtmani PostgreSQLga saqlaydi va hodisani bitta tranzaksiyada outboxga yozadi. Debezium `OrderCreated` ni e'lon qiladi.
+2. **Topiclar**: RF=3, `min.insync.replicas=2`, kalit `order_id`, Schema Registryda `BACKWARD` rejimidagi Avro yoki Protobuf sxemalari.
+3. **Payment Service** `OrderCreated` ni o'qiydi, to'lovni `event_id` bo'yicha idempotent tarzda yechadi, `PaymentSucceeded` yoki `PaymentFailed` ni e'lon qiladi.
+4. **Inventory Service** tovarni rezerv qiladi; `PaymentFailed` bo'lganda rezervni bekor qiladi (xoreografiya orqali saga).
+5. **Notification Service** share group orqali ishlaydi, SMTPning vaqtinchalik xatolarini retry qiladi, doimiylarini DLQga yuboradi.
+6. Kafka Streamsdagi **Analytics** daqiqadagi buyurtmalarni va tushumni `exactly_once_v2` bilan hisoblaydi.
+7. **Monitoring**: Prometheus + Grafana, URP, offline partitions va lag bo'yicha alertlar.
+8. **Xavfsizlik**: SASL/SCRAM, har bir servisga alohida foydalanuvchi va ACL.
 
-## 18.3 Хаос-тестирование
+## 18.3 Xaos-test
 
-- [ ] Останови лидера partition во время нагрузки: нет потерь, нет ошибок у клиентов дольше нескольких секунд.
-- [ ] Убей Payment Service посреди батча: после рестарта нет двойных списаний.
-- [ ] Отправь сломанное сообщение: оно в DLQ, остальные обрабатываются.
-- [ ] Останови Debezium на 10 минут: после запуска все события доставлены.
-- [ ] Выполни rolling restart всех брокеров под нагрузкой.
-- [ ] Добавь несовместимое изменение схемы: Schema Registry его отклоняет.
+- [ ] Yuklama paytida partition leaderini to'xtating: yo'qotish yo'q, klientlarda bir necha soniyadan uzoq xatolar yo'q.
+- [ ] Payment Serviceni batch o'rtasida o'ldiring: qayta ishga tushgandan keyin ikki marta pul yechish yo'q.
+- [ ] Buzuq xabar yuboring: u DLQda, qolganlari qayta ishlanmoqda.
+- [ ] Debeziumni 10 daqiqaga to'xtating: ishga tushgandan keyin barcha hodisalar yetkazilgan.
+- [ ] Yuklama ostida barcha brokerlarni rolling restart qiling.
+- [ ] Sxemaga mos kelmaydigan o'zgarish qo'shing: Schema Registry uni rad etadi.
 
 ---
 
-# Шпаргалка Kafka CLI
+# Kafka CLI shpargalkasi
 
-Команды ниже выполняются внутри контейнера (`docker exec -it kafka-1 bash`, затем `cd /opt/kafka/bin`) или с локально установленным дистрибутивом Kafka.
+Quyidagi buyruqlar konteyner ichida (`docker exec -it kafka-1 bash`, keyin `cd /opt/kafka/bin`) yoki lokal o'rnatilgan Kafka distributivi bilan bajariladi.
 
 ```bash
 BS=kafka-1:9092   # bootstrap server
 
-# ---------- Топики ----------
+# ---------- Topiclar ----------
 kafka-topics.sh --bootstrap-server $BS --list
 kafka-topics.sh --bootstrap-server $BS --create --topic t --partitions 6 --replication-factor 3
 kafka-topics.sh --bootstrap-server $BS --describe --topic t
@@ -2778,7 +2762,7 @@ kafka-topics.sh --bootstrap-server $BS --delete --topic t
 kafka-topics.sh --bootstrap-server $BS --describe --under-replicated-partitions
 kafka-topics.sh --bootstrap-server $BS --describe --unavailable-partitions
 
-# ---------- Конфигурации ----------
+# ---------- Konfiguratsiyalar ----------
 kafka-configs.sh --bootstrap-server $BS --describe --entity-type topics --entity-name t
 kafka-configs.sh --bootstrap-server $BS --alter --entity-type topics --entity-name t --add-config retention.ms=86400000
 kafka-configs.sh --bootstrap-server $BS --alter --entity-type topics --entity-name t --delete-config retention.ms
@@ -2797,10 +2781,10 @@ kafka-consumer-groups.sh --bootstrap-server $BS --group g --topic t --reset-offs
 kafka-consumer-groups.sh --bootstrap-server $BS --delete --group g
 
 # ---------- Offsets ----------
-kafka-get-offsets.sh --bootstrap-server $BS --topic t              # последние offsets
-kafka-get-offsets.sh --bootstrap-server $BS --topic t --time -2    # самые ранние
+kafka-get-offsets.sh --bootstrap-server $BS --topic t              # oxirgi offsetlar
+kafka-get-offsets.sh --bootstrap-server $BS --topic t --time -2    # eng dastlabkilari
 
-# ---------- Кластер / KRaft ----------
+# ---------- Klaster / KRaft ----------
 kafka-metadata-quorum.sh --bootstrap-server $BS describe --status
 kafka-metadata-quorum.sh --bootstrap-server $BS describe --replication
 kafka-features.sh --bootstrap-server $BS describe
@@ -2808,7 +2792,7 @@ kafka-broker-api-versions.sh --bootstrap-server $BS
 kafka-log-dirs.sh --bootstrap-server $BS --describe --topic-list t
 kafka-leader-election.sh --bootstrap-server $BS --election-type preferred --all-topic-partitions
 
-# ---------- Отладка ----------
+# ---------- Debug ----------
 kafka-dump-log.sh --files /path/00000000000000000000.log --print-data-log
 kafka-producer-perf-test.sh --topic t --num-records 1000000 --record-size 1024 --throughput -1 --producer-props bootstrap.servers=$BS
 kafka-consumer-perf-test.sh --bootstrap-server $BS --topic t --messages 1000000
@@ -2816,335 +2800,335 @@ kafka-consumer-perf-test.sh --bootstrap-server $BS --topic t --messages 1000000
 
 ---
 
-# Шпаргалка важных настроек
+# Muhim sozlamalar shpargalkasi
 
 ## Producer
 
-| Параметр | По умолчанию | Рекомендация |
+| Parametr | Standart qiymat | Tavsiya |
 |---|---|---|
 | `acks` | `all` | `all` |
 | `enable.idempotence` | `true` | `true` |
 | `linger.ms` | `5` | 5-50 |
 | `batch.size` | `16384` | 32-256 KB |
-| `compression.type` | `none` | `lz4` или `zstd` |
-| `delivery.timeout.ms` | `120000` | Под SLA |
-| `max.in.flight.requests.per.connection` | `5` | ≤ 5 с идемпотентностью |
+| `compression.type` | `none` | `lz4` yoki `zstd` |
+| `delivery.timeout.ms` | `120000` | SLAga qarab |
+| `max.in.flight.requests.per.connection` | `5` | Idempotentlik bilan ≤ 5 |
 
 ## Consumer
 
-| Параметр | По умолчанию | Рекомендация |
+| Parametr | Standart qiymat | Tavsiya |
 |---|---|---|
-| `group.protocol` | `classic` | `consumer` для новых приложений на 4.x |
-| `enable.auto.commit` | `true` | `false` + ручной commit после обработки |
-| `auto.offset.reset` | `latest` | Осознанный выбор под сценарий |
-| `max.poll.records` | `500` | Под время обработки |
-| `max.poll.interval.ms` | `300000` | Больше максимального времени обработки батча |
-| `isolation.level` | `read_uncommitted` | `read_committed` при транзакциях |
-| `group.instance.id` | нет | Задать для static membership в Kubernetes |
+| `group.protocol` | `classic` | 4.x dagi yangi ilovalar uchun `consumer` |
+| `enable.auto.commit` | `true` | `false` + qayta ishlashdan keyin qo'lda commit |
+| `auto.offset.reset` | `latest` | Ssenariyga qarab ongli tanlov |
+| `max.poll.records` | `500` | Qayta ishlash vaqtiga qarab |
+| `max.poll.interval.ms` | `300000` | Batchni qayta ishlashning maksimal vaqtidan katta |
+| `isolation.level` | `read_uncommitted` | Tranzaksiyalarda `read_committed` |
+| `group.instance.id` | yo'q | Kubernetesda static membership uchun belgilash |
 
-## Topic и broker
+## Topic va broker
 
-| Параметр | По умолчанию | Рекомендация |
+| Parametr | Standart qiymat | Tavsiya |
 |---|---|---|
 | `replication.factor` / `default.replication.factor` | `1` | `3` |
 | `min.insync.replicas` | `1` | `2` |
-| `unclean.leader.election.enable` | `false` | `false` для важных данных |
-| `retention.ms` | 7 дней | Под требования |
-| `cleanup.policy` | `delete` | `compact` для состояния |
+| `unclean.leader.election.enable` | `false` | Muhim ma'lumotlar uchun `false` |
+| `retention.ms` | 7 kun | Talablarga qarab |
+| `cleanup.policy` | `delete` | Holat uchun `compact` |
 | `auto.create.topics.enable` | `true` | `false` |
-| `compression.type` (топик) | `producer` | `producer` |
+| `compression.type` (topic) | `producer` | `producer` |
 
 ---
 
-# Вопросы на собеседовании по Kafka с ответами
+# Kafka bo'yicha ish suhbati savollari va javoblari
 
 ## Junior
 
 <details>
-<summary><b>1. Что такое Apache Kafka?</b></summary>
+<summary><b>1. Apache Kafka nima?</b></summary>
 
-Распределённая платформа потоковой передачи событий. Хранит события в реплицируемом append-only логе, разделённом на partitions, и позволяет многим независимым потребителям читать их с любой позиции.
+Hodisalarni oqim tarzida uzatuvchi taqsimlangan platforma. Hodisalarni partitionlarga bo'lingan, replikatsiya qilinadigan append-only logda saqlaydi va ko'plab mustaqil iste'molchilarga ularni istalgan pozitsiyadan o'qish imkonini beradi.
 </details>
 
 <details>
-<summary><b>2. Чем Kafka отличается от RabbitMQ?</b></summary>
+<summary><b>2. Kafka RabbitMQdan nimasi bilan farq qiladi?</b></summary>
 
-Kafka хранит сообщения после чтения и отдаёт их по offset, масштабируется через partitions, подходит для event streaming и replay. RabbitMQ это брокер очередей со сложной маршрутизацией, где сообщение обычно удаляется после подтверждения.
+Kafka xabarlarni o'qilgandan keyin ham saqlaydi va ularni offset bo'yicha beradi, partitionlar orqali masshtablanadi, event streaming va replay uchun mos keladi. RabbitMQ murakkab marshrutlashga ega navbatlar brokeri bo'lib, unda xabar odatda tasdiqlangandan keyin o'chiriladi.
 </details>
 
 <details>
-<summary><b>3. Что такое topic, partition и offset?</b></summary>
+<summary><b>3. Topic, partition va offset nima?</b></summary>
 
-Topic это именованный поток событий. Partition это упорядоченный журнал внутри топика и единица параллелизма. Offset это порядковый номер записи внутри partition.
+Topic hodisalarning nomlangan oqimi. Partition topic ichidagi tartiblangan jurnal va parallellik birligi. Offset partition ichidagi yozuvning tartib raqami.
 </details>
 
 <details>
-<summary><b>4. Гарантирует ли Kafka порядок сообщений?</b></summary>
+<summary><b>4. Kafka xabarlar tartibini kafolatlaydimi?</b></summary>
 
-Только внутри одного partition. Чтобы события одной сущности шли по порядку, их отправляют с одинаковым ключом.
+Faqat bitta partition ichida. Bitta obyektning hodisalari tartib bilan kelishi uchun ular bir xil kalit bilan yuboriladi.
 </details>
 
 <details>
-<summary><b>5. Что такое consumer group?</b></summary>
+<summary><b>5. Consumer group nima?</b></summary>
 
-Набор consumer с одним `group.id`, которые делят partitions топика: каждый partition читается одним consumer группы. Разные группы читают независимо.
+Bitta `group.id` ga ega bo'lgan va topic partitionlarini bo'lib oladigan consumerlar to'plami: har bir partitionni guruhdagi bitta consumer o'qiydi. Turli guruhlar mustaqil o'qiydi.
 </details>
 
 <details>
-<summary><b>6. Что будет, если consumer больше, чем partitions?</b></summary>
+<summary><b>6. Consumerlar partitionlardan ko'p bo'lsa, nima bo'ladi?</b></summary>
 
-Лишние consumer простаивают и ждут, пока освободится partition. Ускорения не будет.
+Ortiqcha consumerlar bo'sh turadi va partition bo'shashini kutadi. Tezlashish bo'lmaydi.
 </details>
 
 <details>
-<summary><b>7. Нужен ли ZooKeeper для Kafka?</b></summary>
+<summary><b>7. Kafka uchun ZooKeeper kerakmi?</b></summary>
 
-Нет. С Kafka 4.0 ZooKeeper удалён, метаданные управляются встроенным протоколом KRaft.
+Yo'q. Kafka 4.0 dan boshlab ZooKeeper olib tashlangan, metadata ichki o'rnatilgan KRaft protokoli bilan boshqariladi.
 </details>
 
 ## Middle
 
 <details>
-<summary><b>8. Как producer выбирает partition?</b></summary>
+<summary><b>8. Producer partitionni qanday tanlaydi?</b></summary>
 
-Явно указанный partition; иначе `murmur2(key) % numPartitions`; при отсутствии ключа sticky partitioner, заполняющий батч для одного partition перед переключением.
+Aniq ko'rsatilgan partition; aks holda `murmur2(key) % numPartitions`; kalit bo'lmasa, boshqasiga o'tishdan oldin bitta partition uchun batchni to'ldiradigan sticky partitioner.
 </details>
 
 <details>
-<summary><b>9. Объясни acks=0, 1, all.</b></summary>
+<summary><b>9. acks=0, 1, all ni tushuntiring.</b></summary>
 
-`0`: без подтверждения. `1`: подтверждает лидер. `all`: подтверждают все реплики из ISR. Надёжность `all` зависит от `min.insync.replicas`.
+`0`: tasdiqsiz. `1`: leader tasdiqlaydi. `all`: ISRdagi barcha replikalar tasdiqlaydi. `all` ning ishonchliligi `min.insync.replicas` ga bog'liq.
 </details>
 
 <details>
-<summary><b>10. Что такое ISR?</b></summary>
+<summary><b>10. ISR nima?</b></summary>
 
-In-Sync Replicas: реплики, которые успевают за лидером в пределах `replica.lag.time.max.ms`. Только они могут стать лидером при обычных выборах.
+In-Sync Replicas: `replica.lag.time.max.ms` doirasida leaderga ulgurib borayotgan replikalar. Oddiy saylovda faqat ular leader bo'la oladi.
 </details>
 
 <details>
-<summary><b>11. Почему acks=all без min.insync.replicas недостаточно?</b></summary>
+<summary><b>11. Nima uchun min.insync.replicas bo'lmasa acks=all yetarli emas?</b></summary>
 
-ISR может сжаться до одного лидера, и `acks=all` фактически станет `acks=1`. При падении лидера подтверждённые данные пропадут. `min.insync.replicas=2` запрещает запись в такой ситуации.
+ISR bitta leadergacha qisqarishi mumkin va `acks=all` amalda `acks=1` ga aylanadi. Leader yiqilsa, tasdiqlangan ma'lumotlar yo'qoladi. `min.insync.replicas=2` bunday vaziyatda yozishni taqiqlaydi.
 </details>
 
 <details>
-<summary><b>12. Что такое идемпотентный producer?</b></summary>
+<summary><b>12. Idempotent producer nima?</b></summary>
 
-Producer с PID и sequence number на партицию: брокер отбрасывает повторно отправленные батчи. Защищает от дублей при ретраях внутри одного экземпляра producer.
+PID va har bir partition uchun sequence numberga ega producer: broker qayta yuborilgan batchlarni tashlab yuboradi. Bitta producer nusxasi ichidagi retrylarda dublikatlardan himoya qiladi.
 </details>
 
 <details>
-<summary><b>13. Чем at-least-once отличается от at-most-once?</b></summary>
+<summary><b>13. At-least-once at-most-oncedan nimasi bilan farq qiladi?</b></summary>
 
-At-most-once: коммит до обработки, возможна потеря. At-least-once: коммит после обработки, возможны дубли. В продакшене обычно at-least-once плюс идемпотентная обработка.
+At-most-once: qayta ishlashdan oldin commit, yo'qotish mumkin. At-least-once: qayta ishlashdan keyin commit, dublikatlar mumkin. Productionda odatda at-least-once va idempotent qayta ishlash qo'llanadi.
 </details>
 
 <details>
-<summary><b>14. Что вызывает rebalance и как его уменьшить?</b></summary>
+<summary><b>14. Rebalancega nima sabab bo'ladi va uni qanday kamaytirish mumkin?</b></summary>
 
-Подключение и уход consumer, пропуск heartbeat, превышение `max.poll.interval.ms`, изменение подписки. Уменьшить: static membership, cooperative rebalancing или новый протокол KIP-848, быстрая обработка, корректный `close()`.
+Consumerning ulanishi va chiqib ketishi, heartbeatning o'tkazib yuborilishi, `max.poll.interval.ms` dan oshib ketish, obunaning o'zgarishi. Kamaytirish: static membership, cooperative rebalancing yoki yangi KIP-848 protokoli, tez qayta ishlash, to'g'ri `close()`.
 </details>
 
 <details>
-<summary><b>15. Что такое consumer lag и когда он проблема?</b></summary>
+<summary><b>15. Consumer lag nima va u qachon muammo?</b></summary>
 
-Разница между high watermark и committed offset. Проблема, когда lag стабильно растёт или задержка обработки выходит за SLA.
+High watermark va committed offset orasidagi farq. Lag barqaror o'sib borsa yoki qayta ishlash kechikishi SLAdan chiqib ketsa, muammo.
 </details>
 
 <details>
-<summary><b>16. Чем log compaction отличается от retention delete?</b></summary>
+<summary><b>16. Log compaction retention deletedan nimasi bilan farq qiladi?</b></summary>
 
-Delete удаляет старые сегменты по времени или размеру. Compaction хранит последнее значение каждого ключа; tombstone (value = null) удаляет ключ.
+Delete eski segmentlarni vaqt yoki o'lcham bo'yicha o'chiradi. Compaction har bir kalitning oxirgi qiymatini saqlaydi; tombstone (value = null) kalitni o'chiradi.
 </details>
 
 <details>
-<summary><b>17. Почему увеличение partitions ломает порядок по ключу?</b></summary>
+<summary><b>17. Nima uchun partitionlarni ko'paytirish kalit bo'yicha tartibni buzadi?</b></summary>
 
-Меняется `hash(key) % N`, и новые события ключа попадают в другой partition, чем старые.
+`hash(key) % N` o'zgaradi va kalitning yangi hodisalari eskilaridan boshqa partitionga tushadi.
 </details>
 
 <details>
-<summary><b>18. Как обработать сообщение, которое всегда падает?</b></summary>
+<summary><b>18. Har doim yiqiladigan xabarni qanday qayta ishlash kerak?</b></summary>
 
-Не ретраить бесконечно: ограниченное число попыток, retry-топики с задержкой, затем DLQ с метаданными ошибки и алертом.
+Cheksiz retry qilmaslik: cheklangan sondagi urinishlar, kechikishli retry-topiclar, keyin xato metadatasi va alert bilan DLQ.
 </details>
 
 ## Senior
 
 <details>
-<summary><b>19. Как работают транзакции Kafka?</b></summary>
+<summary><b>19. Kafka tranzaksiyalari qanday ishlaydi?</b></summary>
 
-`transactional.id` + Transaction Coordinator + `__transaction_state`. Producer пишет данные в несколько partitions и offsets через `sendOffsetsToTransaction`, коммит записывает control markers. Consumer с `read_committed` читает до Last Stable Offset. Fencing по эпохе producer отсекает зомби.
+`transactional.id` + Transaction Coordinator + `__transaction_state`. Producer ma'lumotlarni bir nechta partitionga, offsetlarni esa `sendOffsetsToTransaction` orqali yozadi, commit control markerlarni yozadi. `read_committed` bilan ishlaydigan consumer Last Stable Offsetgacha o'qiydi. Producer epochi bo'yicha fencing zombilarni kesib tashlaydi.
 </details>
 
 <details>
-<summary><b>20. Где заканчивается exactly-once в Kafka?</b></summary>
+<summary><b>20. Kafkada exactly-once qayerda tugaydi?</b></summary>
 
-На границе Kafka. Внешние побочные эффекты (БД, HTTP, email) требуют идемпотентности, outbox или хранения offset в той же транзакции, что и результат.
+Kafka chegarasida. Tashqi qo'shimcha effektlar (ma'lumotlar bazasi, HTTP, email) idempotentlikni, outboxni yoki offsetni natija bilan bitta tranzaksiyada saqlashni talab qiladi.
 </details>
 
 <details>
-<summary><b>21. Что такое high watermark и leader epoch?</b></summary>
+<summary><b>21. High watermark va leader epoch nima?</b></summary>
 
-HW это граница записей, реплицированных на ISR и видимых consumer. Leader epoch позволяет followers после смены лидера корректно обрезать расходящийся хвост лога.
+HW ISRga replikatsiya qilingan va consumerlarga ko'rinadigan yozuvlar chegarasi. Leader epoch leader almashganidan keyin followerlarga logning farq qilib qolgan oxirgi qismini to'g'ri kesib tashlash imkonini beradi.
 </details>
 
 <details>
-<summary><b>22. Почему Kafka быстрая?</b></summary>
+<summary><b>22. Nima uchun Kafka tez?</b></summary>
 
-Последовательный I/O, page cache, zero-copy, батчинг и сжатие на уровне батча, партиционирование, эффективный бинарный протокол.
+Ketma-ket I/O, page cache, zero-copy, batching va batch darajasidagi siqish, partitsiyalash, samarali binar protokol.
 </details>
 
 <details>
-<summary><b>23. Как выбрать число partitions?</b></summary>
+<summary><b>23. Partitionlar sonini qanday tanlash kerak?</b></summary>
 
-`max(T/Tp, T/Tc)` с запасом на рост, с учётом ограничений на порядок, времени rebalance, числа реплик на брокер и end-to-end задержки.
+O'sish uchun zaxira bilan `max(T/Tp, T/Tc)`, bunda tartibga oid cheklovlar, rebalance vaqti, brokerdagi replikalar soni va end-to-end kechikish hisobga olinadi.
 </details>
 
 <details>
-<summary><b>24. Как надёжно опубликовать событие после записи в БД?</b></summary>
+<summary><b>24. Ma'lumotlar bazasiga yozgandan keyin hodisani qanday ishonchli e'lon qilish mumkin?</b></summary>
 
-Transactional outbox: событие пишется в таблицу outbox в той же транзакции, публикуется CDC (Debezium) или relay. Потребители идемпотентны.
+Transactional outbox: hodisa o'sha tranzaksiyaning o'zida outbox jadvaliga yoziladi, uni CDC (Debezium) yoki relay e'lon qiladi. Iste'molchilar idempotent.
 </details>
 
 <details>
-<summary><b>25. Как построить DR для Kafka?</b></summary>
+<summary><b>25. Kafka uchun DRni qanday qurish kerak?</b></summary>
 
-Active-passive или active-active на MirrorMaker 2 с трансляцией offsets, либо stretched cluster на 3 ДЦ с низкой задержкой. Нужно определить RPO/RTO, регулярно тренировать переключение.
+Offsetlarni translyatsiya qiladigan MirrorMaker 2 asosida active-passive yoki active-active, yoki past kechikishli 3 ta DCga yoyilgan stretched cluster. RPO/RTOni belgilash, o'tkazishni muntazam mashq qilish kerak.
 </details>
 
 <details>
-<summary><b>26. Чем Share Groups отличаются от consumer groups?</b></summary>
+<summary><b>26. Share Groups consumer groupsdan nimasi bilan farq qiladi?</b></summary>
 
-Share group позволяет нескольким consumer читать один partition параллельно, с поштучным подтверждением, повторной доставкой и лимитом попыток, но без гарантии порядка.
+Share group bir nechta consumerga bitta partitionni parallel o'qishga imkon beradi: har bir yozuv alohida tasdiqlanadi, qayta yetkazish va urinishlar limiti bor, lekin tartib kafolatlanmaydi.
 </details>
 
 <details>
-<summary><b>27. Что важнее при выборе ключа: равномерность или порядок?</b></summary>
+<summary><b>27. Kalit tanlashda nima muhimroq: bir tekislikmi yoki tartibmi?</b></summary>
 
-Зависит от бизнес-инварианта. Если нарушение порядка ломает корректность (баланс счёта), порядок важнее равномерности. Горячие ключи решаются отдельно.
+Biznes invariantiga bog'liq. Agar tartibning buzilishi to'g'rilikni buzsa (hisob balansi), tartib bir tekislikdan muhimroq. Qaynoq kalitlar alohida hal qilinadi.
 </details>
 
 <details>
-<summary><b>28. Какие изменения дал новый протокол групп KIP-848?</b></summary>
+<summary><b>28. Guruhlarning yangi KIP-848 protokoli qanday o'zgarishlar berdi?</b></summary>
 
-Назначение partitions считается на брокере, rebalance инкрементальный без глобальной синхронизации, медленный участник не блокирует группу, таймауты и assignor настраиваются на стороне сервера.
+Partitionlarni tayinlash brokerda hisoblanadi, rebalance inkremental va global sinxronlashsiz, sekin ishtirokchi guruhni bloklamaydi, timeoutlar va assignor server tomonida sozlanadi.
 </details>
 
 <details>
-<summary><b>29. Как бы ты расследовал рост p99 задержки записи?</b></summary>
+<summary><b>29. Yozish kechikishining p99 qiymati o'sishini qanday tekshirgan bo'lardingiz?</b></summary>
 
-Метрики `TotalTimeMs` по фазам (RequestQueue, Local, Remote), `RequestHandlerAvgIdlePercent`, ISR shrinks, GC-паузы, диск и сеть, изменения трафика и размера батчей у клиентов, «шумные» клиенты и квоты.
+Fazalar bo'yicha `TotalTimeMs` metrikalari (RequestQueue, Local, Remote), `RequestHandlerAvgIdlePercent`, ISR shrinks, GC pauzalari, disk va tarmoq, klientlardagi trafik va batch o'lchamining o'zgarishi, «shovqinli» klientlar va kvotalar.
 </details>
 
 <details>
-<summary><b>30. Когда Kafka не стоит использовать?</b></summary>
+<summary><b>30. Kafkani qachon ishlatmaslik kerak?</b></summary>
 
-Маленькая нагрузка без replay, нужен синхронный ответ, сложная маршрутизация и приоритеты сообщений, нет ресурсов на эксплуатацию.
+Replaysiz kichik yuklama, sinxron javob kerak, murakkab marshrutlash va xabarlar prioriteti kerak, ekspluatatsiyaga resurs yo'q.
 </details>
 
 ---
 
-# FAQ: частые вопросы про Apache Kafka
+# FAQ: Apache Kafka haqida ko'p beriladigan savollar
 
-**Как выучить Kafka с нуля?**
+**Kafkani noldan qanday o'rganish mumkin?**
 
-Пройди модули 0-6 этого курса по порядку, подними кластер из трёх брокеров в Docker, напиши producer и consumer на своём языке, затем сломай кластер и наблюдай за поведением. После этого переходи к транзакциям, Kafka Connect и Kafka Streams.
+Ushbu kursning 0-6 modullarini tartib bilan o'ting, Dockerda uchta brokerdan iborat klasterni ko'taring, o'z tilingizda producer va consumer yozing, keyin klasterni buzing va uning xatti-harakatini kuzating. Shundan so'ng tranzaksiyalar, Kafka Connect va Kafka Streamsga o'ting.
 
-**Сколько времени нужно, чтобы освоить Kafka?**
+**Kafkani o'zlashtirish uchun qancha vaqt kerak?**
 
-Базовое понимание и первые рабочие сервисы: 1-2 недели. Уверенный production-уровень с репликацией, гарантиями доставки и мониторингом: 1-3 месяца практики.
+Asosiy tushuncha va birinchi ishlaydigan servislar: 1-2 hafta. Replikatsiya, yetkazish kafolatlari va monitoring bilan ishonchli production darajasi: 1-3 oy amaliyot.
 
-**Какой язык программирования выбрать для Kafka?**
+**Kafka uchun qaysi dasturlash tilini tanlash kerak?**
 
-Эталонный клиент написан на Java, Kafka Streams и Kafka Connect работают на JVM. Для Go есть franz-go и confluent-kafka-go, для Python confluent-kafka, для .NET Confluent.Kafka, для Node.js KafkaJS и confluent-kafka-javascript.
+Etalon klient Javada yozilgan, Kafka Streams va Kafka Connect JVMda ishlaydi. Go uchun franz-go va confluent-kafka-go, Python uchun confluent-kafka, .NET uchun Confluent.Kafka, Node.js uchun KafkaJS va confluent-kafka-javascript bor.
 
-**Kafka это брокер сообщений или база данных?**
+**Kafka xabar brokerimi yoki ma'lumotlar bazasimi?**
 
-Это распределённый лог событий. Её используют как брокер сообщений и как долговременное хранилище событий, но она не заменяет базу данных с индексами и произвольными запросами.
+Bu taqsimlangan hodisalar logi. U xabar brokeri sifatida ham, hodisalarning uzoq muddatli ombori sifatida ham ishlatiladi, lekin indekslari va ixtiyoriy so'rovlari bor ma'lumotlar bazasining o'rnini bosmaydi.
 
-**Нужен ли ZooKeeper в 2026 году?**
+**2026-yilda ZooKeeper kerakmi?**
 
-Нет. Kafka 4.x работает только в режиме KRaft.
+Yo'q. Kafka 4.x faqat KRaft rejimida ishlaydi.
 
-**Сколько сообщений в секунду выдерживает Kafka?**
+**Kafka soniyasiga nechta xabarga bardosh beradi?**
 
-Кластер на типовом железе обрабатывает сотни тысяч и миллионы сообщений в секунду. Реальный предел зависит от размера сообщений, `acks`, сжатия, дисков, сети и числа partitions.
+Tipik apparatdagi klaster soniyasiga yuz minglab va millionlab xabarni qayta ishlaydi. Haqiqiy chegara xabarlar o'lchamiga, `acks` ga, siqishga, disklarga, tarmoqqa va partitionlar soniga bog'liq.
 
-**Может ли Kafka потерять сообщения?**
+**Kafka xabarlarni yo'qotishi mumkinmi?**
 
-Может при неправильной настройке: RF=1, `acks=1`, `min.insync.replicas=1`, включённый unclean leader election, игнорирование ошибок `send()`, коммит offset до обработки. С настройками из модуля 4 и 5 потеря подтверждённых данных при отказе одного брокера исключена.
+Noto'g'ri sozlanganda mumkin: RF=1, `acks=1`, `min.insync.replicas=1`, yoqilgan unclean leader election, `send()` xatolarini e'tiborsiz qoldirish, offsetni qayta ishlashdan oldin commit qilish. 4 va 5-modullardagi sozlamalar bilan bitta broker ishdan chiqqanda tasdiqlangan ma'lumotlarning yo'qolishi istisno qilinadi.
 
-**Как в Kafka сделать отложенные сообщения или задержку?**
+**Kafkada kechiktirilgan xabarlar yoki kechikishni qanday qilish mumkin?**
 
-Встроенных отложенных сообщений нет. Используют retry-топики с паузой partitions, внешний планировщик или хранение задач в БД с публикацией по времени.
+Ichki o'rnatilgan kechiktirilgan xabarlar yo'q. Partitionlarni pauza qiladigan retry-topiclar, tashqi rejalashtiruvchi (scheduler) yoki vazifalarni ma'lumotlar bazasida saqlab, vaqti kelganda e'lon qilish qo'llanadi.
 
-**Kafka или RabbitMQ: что выбрать?**
+**Kafka yoki RabbitMQ: qaysi birini tanlash kerak?**
 
-Kafka для event streaming, аналитики, CDC, высокой нагрузки и replay. RabbitMQ для очередей задач, RPC и сложной маршрутизации. С появлением Share Groups Kafka закрывает часть сценариев очередей.
+Kafka event streaming, analitika, CDC, yuqori yuklama va replay uchun. RabbitMQ vazifalar navbatlari, RPC va murakkab marshrutlash uchun. Share Groups paydo bo'lishi bilan Kafka navbat ssenariylarining bir qismini qoplaydi.
 
-**Что лучше: своя Kafka или managed-сервис?**
+**Qaysi biri yaxshi: o'z Kafkangizmi yoki managed-servismi?**
 
-Managed-сервис экономит время на эксплуатации, обновлениях и мониторинге. Своя Kafka даёт контроль над стоимостью и конфигурацией, но требует экспертизы команды.
+Managed-servis ekspluatatsiya, yangilanishlar va monitoringga ketadigan vaqtni tejaydi. O'z Kafkangiz narx va konfiguratsiya ustidan nazorat beradi, lekin jamoadan ekspertiza talab qiladi.
 
 ---
 
-# Глоссарий Kafka
+# Kafka lug'ati
 
-| Термин | Определение |
+| Termin | Ta'rif |
 |---|---|
-| **Acks** | Уровень подтверждения записи producer |
-| **Broker** | Сервер Kafka, хранящий partitions |
-| **Bootstrap servers** | Начальные адреса брокеров для получения метаданных |
-| **CDC** | Change Data Capture, захват изменений из БД |
-| **Changelog topic** | Топик, в котором Kafka Streams сохраняет state store |
-| **Cleanup policy** | Политика очистки: `delete` или `compact` |
-| **Consumer group** | Группа consumer, делящих partitions |
-| **Consumer lag** | Отставание группы от конца лога |
-| **Controller** | Узел, управляющий метаданными кластера |
-| **DLQ** | Dead Letter Queue, топик для необрабатываемых сообщений |
-| **Exactly-once (EOS)** | Семантика обработки ровно один раз |
-| **Fencing** | Отсечение устаревшего экземпляра producer или consumer |
-| **High watermark** | Последний offset, реплицированный на ISR |
-| **Idempotent producer** | Producer, исключающий дубли при ретраях |
-| **ISR** | In-Sync Replicas, синхронные реплики |
-| **KRaft** | Протокол консенсуса метаданных Kafka на основе Raft |
-| **Leader** | Реплика partition, принимающая запись |
-| **Log compaction** | Хранение последнего значения по ключу |
-| **LEO** | Log End Offset, следующий offset для записи |
-| **Offset** | Номер записи в partition |
-| **Outbox** | Паттерн надёжной публикации событий через таблицу БД |
-| **Partition** | Упорядоченный журнал внутри топика |
-| **Rebalance** | Перераспределение partitions в группе |
-| **Replication factor** | Число копий partition |
-| **Retention** | Срок или объём хранения данных |
-| **Schema Registry** | Сервис хранения и проверки схем сообщений |
-| **Segment** | Файл лога partition на диске |
-| **Share group** | Группа с очередной семантикой и поштучным подтверждением |
-| **Tombstone** | Запись с value = null, удаляющая ключ в compacted-топике |
-| **Topic** | Именованный поток событий |
-| **Transactional ID** | Идентификатор транзакционного producer |
+| **Acks** | Producer yozuvini tasdiqlash darajasi |
+| **Broker** | Partitionlarni saqlaydigan Kafka serveri |
+| **Bootstrap servers** | Metadatani olish uchun brokerlarning boshlang'ich manzillari |
+| **CDC** | Change Data Capture, ma'lumotlar bazasidagi o'zgarishlarni ushlab olish |
+| **Changelog topic** | Kafka Streams state storeni saqlaydigan topic |
+| **Cleanup policy** | Tozalash siyosati: `delete` yoki `compact` |
+| **Consumer group** | Partitionlarni bo'lib oladigan consumerlar guruhi |
+| **Consumer lag** | Guruhning log oxiridan ortda qolishi |
+| **Controller** | Klaster metadatasini boshqaradigan tugun |
+| **DLQ** | Dead Letter Queue, qayta ishlab bo'lmaydigan xabarlar uchun topic |
+| **Exactly-once (EOS)** | Aynan bir marta qayta ishlash semantikasi |
+| **Fencing** | Producer yoki consumerning eskirgan nusxasini kesib tashlash |
+| **High watermark** | ISRga replikatsiya qilingan oxirgi offset |
+| **Idempotent producer** | Retrylarda dublikatlarni istisno qiladigan producer |
+| **ISR** | In-Sync Replicas, sinxron replikalar |
+| **KRaft** | Raft asosidagi Kafka metadata konsensus protokoli |
+| **Leader** | Yozishni qabul qiladigan partition replikasi |
+| **Log compaction** | Kalit bo'yicha oxirgi qiymatni saqlash |
+| **LEO** | Log End Offset, yozish uchun keyingi offset |
+| **Offset** | Partitiondagi yozuv raqami |
+| **Outbox** | Hodisalarni ma'lumotlar bazasi jadvali orqali ishonchli e'lon qilish patterni |
+| **Partition** | Topic ichidagi tartiblangan jurnal |
+| **Rebalance** | Guruhdagi partitionlarni qayta taqsimlash |
+| **Replication factor** | Partition nusxalari soni |
+| **Retention** | Ma'lumotlarni saqlash muddati yoki hajmi |
+| **Schema Registry** | Xabar sxemalarini saqlash va tekshirish servisi |
+| **Segment** | Partition logining diskdagi fayli |
+| **Share group** | Navbat semantikasiga ega va har bir yozuvni alohida tasdiqlaydigan guruh |
+| **Tombstone** | Compacted-topicda kalitni o'chiradigan, value = null bo'lgan yozuv |
+| **Topic** | Hodisalarning nomlangan oqimi |
+| **Transactional ID** | Tranzaksion producerning identifikatori |
 
 ---
 
-# Официальные источники и что читать дальше
+# Rasmiy manbalar va keyin nima o'qish kerak
 
-- [Документация Apache Kafka](https://kafka.apache.org/documentation/)
-- [Релизы и анонсы Apache Kafka](https://kafka.apache.org/blog/)
+- [Apache Kafka hujjatlari](https://kafka.apache.org/documentation/)
+- [Apache Kafka relizlari va e'lonlari](https://kafka.apache.org/blog/)
 - [Kafka Improvement Proposals (KIP)](https://cwiki.apache.org/confluence/display/KAFKA/Kafka+Improvement+Proposals)
-- [KIP-848: новый протокол consumer group](https://cwiki.apache.org/confluence/display/KAFKA/KIP-848%3A+The+Next+Generation+of+the+Consumer+Rebalance+Protocol)
+- [KIP-848: consumer groupning yangi protokoli](https://cwiki.apache.org/confluence/display/KAFKA/KIP-848%3A+The+Next+Generation+of+the+Consumer+Rebalance+Protocol)
 - [KIP-932: Queues for Kafka](https://cwiki.apache.org/confluence/display/KAFKA/KIP-932%3A+Queues+for+Kafka)
-- [Документация Debezium](https://debezium.io/documentation/)
-- [Strimzi: Kafka в Kubernetes](https://strimzi.io/documentation/)
-- Книги: «Kafka: The Definitive Guide» (2-е издание), «Designing Data-Intensive Applications» (Martin Kleppmann), «Kafka Streams in Action».
+- [Debezium hujjatlari](https://debezium.io/documentation/)
+- [Strimzi: Kubernetesda Kafka](https://strimzi.io/documentation/)
+- Kitoblar: «Kafka: The Definitive Guide» (2-nashr), «Designing Data-Intensive Applications» (Martin Kleppmann), «Kafka Streams in Action».
 
 ---
 
-## Как помочь курсу
+## Kursga qanday yordam berish mumkin
 
-- ⭐ Поставь звезду репозиторию, чтобы курс видели больше разработчиков.
-- Нашёл ошибку или неточность? Создай Issue или Pull Request.
-- Поделись курсом с командой и коллегами, которые изучают Kafka.
+- ⭐ Kursni ko'proq dasturchilar ko'rishi uchun repozitoriyga yulduzcha qo'ying.
+- Xato yoki noaniqlik topdingizmi? Issue yoki Pull Request yarating.
+- Kursni jamoangiz va Kafkani o'rganayotgan hamkasblaringiz bilan baham ko'ring.
 
-**Ключевые темы курса:** Apache Kafka курс, Kafka с нуля, Kafka обучение бесплатно, Kafka на русском, Kafka tutorial, KRaft, Kafka Docker Compose, Kafka producer consumer, consumer group, rebalance, exactly-once, Kafka transactions, transactional outbox, Kafka Streams, Kafka Connect, Debezium CDC, Schema Registry, Avro, Protobuf, Kafka мониторинг, Kafka безопасность, Kafka в Kubernetes, Strimzi, Kafka vs RabbitMQ, вопросы на собеседовании по Kafka.
+**Kursning asosiy mavzulari:** Apache Kafka kursi, Kafka noldan, Kafka bepul kurs, Kafka o'zbek tilida, Kafka tutorial, KRaft, Kafka Docker Compose, Kafka producer consumer, consumer group, rebalance, exactly-once, Kafka transactions, transactional outbox, Kafka Streams, Kafka Connect, Debezium CDC, Schema Registry, Avro, Protobuf, Kafka monitoring, Kafka xavfsizligi, Kubernetesda Kafka, Strimzi, Kafka vs RabbitMQ, Kafka bo'yicha ish suhbati savollari.
